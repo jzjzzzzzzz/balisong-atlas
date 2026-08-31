@@ -1,0 +1,13 @@
+{
+  "archive": "Evidence archive",
+  "exhibit": "Digital exhibit",
+  "method": "Research method",
+  "admin": "Research workspace",
+  "tagline": "Every reconstruction should reveal its evidence.",
+  "observed": "Directly visible in a saved image or stated in a reviewed document.",
+  "inferred": "An evidence-based interpretation that still requires explanation.",
+  "unknown": "Current sources are insufficient; no completion has been made.",
+  "viewEvidence": "View evidence",
+  "reviewQueue": "Review queue",
+  "language": "中文"
+}

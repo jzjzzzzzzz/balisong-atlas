@@ -1,0 +1,13 @@
+{
+  "archive": "证据档案",
+  "exhibit": "数字展览",
+  "method": "研究方法",
+  "admin": "研究工作台",
+  "tagline": "每一次重建，都应当展示它的证据。",
+  "observed": "图片中可以直接观察到，或经审核文献直接陈述。",
+  "inferred": "基于证据提出、但仍需要解释的推测。",
+  "unknown": "当前来源不足，未进行补全。",
+  "viewEvidence": "查看证据",
+  "reviewQueue": "审核队列",
+  "language": "English"
+}

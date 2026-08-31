@@ -1,0 +1,4 @@
+import type { ReactNode } from "react";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+export function AdminSection({ eyebrow, title, description, action, children }: { eyebrow: string; title: string; description: string; action?: ReactNode; children: ReactNode }) { return <main className="mx-auto max-w-[1500px] px-5 py-8 lg:px-9 lg:py-10"><div className="mb-8 flex flex-wrap items-end justify-between gap-5"><div><div className="mb-4 flex items-center gap-1 text-[10px] uppercase tracking-[.12em] text-quiet"><Link href="/admin/projects">Projects</Link><ChevronRight size={11}/><span>Demo Collection</span></div><p className="eyebrow">{eyebrow}</p><h1 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl">{title}</h1><p className="mt-3 max-w-3xl text-sm leading-6 text-quiet">{description}</p></div>{action}</div>{children}</main>; }
