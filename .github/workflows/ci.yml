@@ -1,0 +1,49 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      AI_MODE: mock
+      APP_ENV: test
+      APP_SECRET: ci-only-test-secret-ci-only-test-secret
+      DATABASE_URL: sqlite+aiosqlite:///./data/ci.db
+      S3_ENDPOINT: file:///tmp/balisong-atlas-ci
+      S3_BUCKET: ci
+      S3_ACCESS_KEY: ci
+      S3_SECRET_KEY: ci-only
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: corepack pnpm install --frozen-lockfile
+      - run: corepack pnpm lint
+      - run: corepack pnpm typecheck
+      - run: corepack pnpm build
+      - run: corepack pnpm --filter @balisong-atlas/web exec playwright install --with-deps chromium
+      - run: corepack pnpm test
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --all-groups --frozen
+      - run: uv run ruff check .
+      - run: PYTHONPATH=services/api:services/worker:. uv run mypy
+      - run: PYTHONPATH=services/api:services/worker:. uv run pytest
+      - name: Migration from empty database
+        run: PYTHONPATH=services/api:. uv run alembic upgrade head && PYTHONPATH=services/api:. uv run alembic current
+      - name: API import check
+        run: PYTHONPATH=services/api:services/worker:. uv run python -c "from app.main import app; assert app.title == 'Balisong Atlas API'"
+      - name: Docker Compose config check
+        run: cp .env.example .env && docker compose config --quiet
