@@ -1,0 +1,70 @@
+[project]
+name = "balisong-atlas"
+version = "0.1.0"
+description = "Evidence-first digital archive and safe visual reconstruction platform"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+  "aiosqlite==0.21.0",
+  "alembic==1.16.5",
+  "argon2-cffi==25.1.0",
+  "asyncpg==0.30.0",
+  "beautifulsoup4==4.13.5",
+  "boto3==1.40.21",
+  "email-validator==2.2.0",
+  "fastapi==0.116.1",
+  "httpx==0.28.1",
+  "itsdangerous==2.2.0",
+  "opencv-python-headless==4.12.0.88",
+  "pgvector==0.4.1",
+  "pillow==11.3.0",
+  "pydantic==2.11.7",
+  "pydantic-settings==2.10.1",
+  "pymupdf==1.26.4",
+  "python-json-logger==3.3.0",
+  "python-multipart==0.0.20",
+  "sqlalchemy[asyncio]==2.0.43",
+  "uvicorn[standard]==0.35.0"
+]
+
+[dependency-groups]
+dev = [
+  "mypy==1.17.1",
+  "pytest==8.4.1",
+  "pytest-asyncio==1.1.0",
+  "ruff==0.12.11",
+  "types-beautifulsoup4==4.12.0.20250516",
+  "types-boto3==1.0.2",
+  "types-passlib==1.7.7.20250602"
+]
+
+[tool.setuptools.packages.find]
+where = ["services/api", "services/worker"]
+include = ["app*", "worker*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["services/api", "services/worker", "."]
+testpaths = ["services/api/tests", "services/worker/tests", "packages/safe-3d/tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["services/api", "services/worker", "packages", "scripts"]
+exclude = ["services/api/alembic/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "ASYNC", "S"]
+ignore = ["S101", "B008"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+mypy_path = ["services/api", "services/worker", "."]
+packages = ["app", "worker"]
+plugins = ["pydantic.mypy"]
+exclude = ["services/api/alembic"]
+
+[[tool.mypy.overrides]]
+module = ["fitz.*", "cv2.*", "boto3.*", "botocore.*"]
+ignore_missing_imports = true

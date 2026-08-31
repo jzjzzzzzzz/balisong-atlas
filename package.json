@@ -1,0 +1,13 @@
+{
+  "name": "@balisong-atlas/root",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.15.1",
+  "scripts": {
+    "dev": "pnpm --filter @balisong-atlas/web dev",
+    "lint": "pnpm --filter @balisong-atlas/web lint",
+    "typecheck": "pnpm --filter @balisong-atlas/web typecheck",
+    "build": "pnpm --filter @balisong-atlas/web build",
+    "test": "pnpm --filter @balisong-atlas/web test"
+  }
+}
