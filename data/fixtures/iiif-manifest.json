@@ -1,0 +1,57 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://example.org/iiif/demo/manifest",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Fictional abstract study"
+    ]
+  },
+  "provider": [
+    {
+      "id": "https://example.org/museum",
+      "type": "Agent",
+      "label": {
+        "en": [
+          "Fictional Museum Lab"
+        ]
+      }
+    }
+  ],
+  "requiredStatement": {
+    "label": {
+      "en": [
+        "Attribution"
+      ]
+    },
+    "value": {
+      "en": [
+        "Balisong Atlas fictional fixture, CC0"
+      ]
+    }
+  },
+  "rights": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "metadata": [
+    {
+      "label": {
+        "en": [
+          "Record type"
+        ]
+      },
+      "value": {
+        "en": [
+          "Abstract digital fixture"
+        ]
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "https://example.org/iiif/demo/canvas/1",
+      "type": "Canvas",
+      "height": 480,
+      "width": 720,
+      "items": []
+    }
+  ]
+}

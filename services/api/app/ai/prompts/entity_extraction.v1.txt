@@ -1,0 +1,5 @@
+PROMPT_VERSION=entity-extraction-v1
+Extract only entity suggestions that appear in the delimited saved source corpus. Every
+verified suggestion must cite a supporting span from the supplied chunks. A suggestion
+without a span remains unverified. Preserve uncertainty and never add model-memory facts.
+Exclude measurements, mechanisms, manufacturing, operation, and acquisition content.

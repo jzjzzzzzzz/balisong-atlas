@@ -1,0 +1,4 @@
+PROMPT_VERSION=contradiction-detection-v1
+Compare only the two supplied reviewed claims and their evidence identifiers. Classify the
+pair compatible, partially conflicting, directly conflicting, or unrelated. Do not resolve
+the dispute. Report possible shared-source dependency and whether expert review is needed.

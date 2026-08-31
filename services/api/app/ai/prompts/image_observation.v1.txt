@@ -1,0 +1,4 @@
+PROMPT_VERSION=image-observation-v1
+Describe only directly visible external appearance. Do not calculate real dimensions or
+ratios, infer internal structure, fill occlusion, describe assembly, or provide use steps.
+Classify every result observed, inferred, or unknown; all results require human review.

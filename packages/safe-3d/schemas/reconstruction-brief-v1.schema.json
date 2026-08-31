@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://balisong-atlas.example/schemas/reconstruction-brief-v1.json",
+  "title": "ReconstructionBriefV1",
+  "description": "Generated from the authoritative Pydantic model in app.services.reconstruction.brief.",
+  "type": "object",
+  "required": ["schema_version", "project_id", "artifact_id", "hypothesis_id", "title", "historical_period", "visual_features", "uncertainties", "excluded_information", "safety_constraints"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "project_id": {"type": "string", "format": "uuid"},
+    "artifact_id": {"type": "string", "format": "uuid"},
+    "hypothesis_id": {"type": "string", "format": "uuid"},
+    "title": {"type": "object", "required": ["en", "zh"], "properties": {"en": {"type": "string"}, "zh": {"type": "string"}}, "additionalProperties": false},
+    "historical_period": {"type": "object"},
+    "visual_features": {"type": "array"},
+    "uncertainties": {"type": "array"},
+    "excluded_information": {"type": "array"},
+    "safety_constraints": {
+      "type": "object",
+      "properties": {
+        "nonfunctional": {"const": true}, "real_scale_removed": {"const": true},
+        "joined_mesh_only": {"const": true}, "no_internal_mechanism": {"const": true},
+        "no_moving_parts": {"const": true}, "no_manufacturing_exports": {"const": true},
+        "neutral_central_insert": {"const": true}, "no_sharpened_edge": {"const": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

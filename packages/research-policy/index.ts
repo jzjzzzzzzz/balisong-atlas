@@ -1,0 +1,1 @@
+export const publicProxyControls = { rotate: true, limitedZoom: true, background: true, evidence: true, download: false, measurement: false, section: false, explodedView: false, parts: false, joints: false, animation: false, export: false } as const;

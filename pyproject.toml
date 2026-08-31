@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "balisong-atlas"
 version = "0.1.0"
@@ -55,7 +59,7 @@ exclude = ["services/api/alembic/versions"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "ASYNC", "S"]
-ignore = ["S101", "B008"]
+ignore = ["S101", "B008", "E501", "UP017"]
 
 [tool.mypy]
 python_version = "3.12"
@@ -67,4 +71,8 @@ exclude = ["services/api/alembic"]
 
 [[tool.mypy.overrides]]
 module = ["fitz.*", "cv2.*", "boto3.*", "botocore.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["pgvector.*"]
 ignore_missing_imports = true

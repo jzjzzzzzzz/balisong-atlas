@@ -4,7 +4,7 @@ PY := uv run
 
 .PHONY: bootstrap dev down logs migrate seed test lint typecheck create-admin process-demo render-demo reset-db
 bootstrap:
-	cp -n .env.example .env || true
+	python3 scripts/bootstrap_env.py
 	$(PNPM) install --frozen-lockfile
 	uv sync --all-groups --frozen
 
@@ -18,10 +18,10 @@ logs:
 	docker compose logs -f --tail=200
 
 migrate:
-	$(PY) alembic upgrade head
+	docker compose exec api alembic upgrade head
 
 seed:
-	PYTHONPATH=services/api:services/worker:. $(PY) python scripts/seed.py
+	docker compose exec api python scripts/seed.py
 
 test:
 	$(PNPM) test
@@ -37,13 +37,13 @@ typecheck:
 
 create-admin:
 	@test -n "$(EMAIL)" || (echo "Usage: make create-admin EMAIL=example@example.com" && exit 2)
-	PYTHONPATH=services/api:. $(PY) python scripts/create_admin.py "$(EMAIL)"
+	docker compose exec api python scripts/create_admin.py "$(EMAIL)"
 
 process-demo:
-	PYTHONPATH=services/api:services/worker:. $(PY) python scripts/process_demo.py
+	docker compose exec worker python scripts/process_demo.py
 
 render-demo:
-	PYTHONPATH=services/api:. $(PY) python scripts/render_demo.py
+	docker compose exec api python scripts/render_demo.py
 
 reset-db:
 	@read -p "Delete local volumes and database? [y/N] " answer; [ "$$answer" = "y" ]

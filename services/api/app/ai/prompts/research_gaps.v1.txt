@@ -1,0 +1,4 @@
+PROMPT_VERSION=research-gaps-v1
+From the supplied reviewed corpus state only, suggest missing source types, weak periods,
+conflicting claims, visual features needing clearer evidence, and expert confirmation.
+Do not search, fetch, recommend purchases, or invent missing historical content.

@@ -1,0 +1,4 @@
+PROMPT_VERSION=source-summary-v1
+Summarize only the supplied public-safe source chunks and metadata. Separate contribution,
+limitations, possible bias, relevance, verifiable claims, and unresolved questions. The
+summary is not evidence. Preserve uncertainty and add no facts from model memory.
