@@ -190,7 +190,15 @@ export function EvidenceEraTimeline() {
               <button type="button" onClick={() => setShowDemo(false)} className="focus-ring font-mono text-[9px] font-bold uppercase tracking-[.1em] underline underline-offset-4">{locale === "zh" ? "返回时期门禁" : "Return to period gate"}</button>
             </div>
             <SafeProxyViewer />
-          </div> : <LockedProxy onOpenDemo={() => setShowDemo(true)} />}
+          </div> : <div>
+            <LockedProxy onOpenDemo={() => setShowDemo(true)} />
+            <div className="mt-4">
+              <div className="mb-3 border border-ochre/40 bg-amber-50 px-4 py-3 text-xs leading-5 text-ochre">
+                {locale === "zh" ? "历史时期视觉代理仍被证据门禁阻止；下方仅展示不带时期断言的证据边界视觉研究。" : "The historical-period proxy remains gated; the study below is a method-only visual without a period claim."}
+              </div>
+              <SafeProxyViewer mode="evidence-bounded" />
+            </div>
+          </div>}
         </div>
 
         <aside className="bg-white/35 px-6 py-7">
