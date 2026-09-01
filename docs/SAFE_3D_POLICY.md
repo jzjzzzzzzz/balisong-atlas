@@ -41,19 +41,23 @@ Only the attribution URL is stored; the GIF is not bundled or treated as
 historical-form evidence.
 
 The era selector changes geometry as well as color. It uses five distinct
-external visual hypotheses: segmented scale-and-collar handles with a leaf-form
-comparison insert; horn-appearance scales and bolsters with a spear/leaf insert;
-plain pinned slabs with a straight-back insert; all-metal skeletonized handles
-with an angular clip-form insert; and a narrow milled-channel handle with a
-slender contemporary insert. The interface exposes the active handle and insert
-cue plus its evidence state.
+external visual hypotheses: an 1880 patent-documented paired-handle comparison
+with a curved neutral insert; a 1951–1953 Batangas industry frame with an interpreted
+horn-appearance proxy; a 1969 national-cultural-display frame whose form remains
+interpreted; all-metal skeletonized catalogue handles with an angular neutral
+insert; and a narrow contemporary channel-style handle with a slender neutral
+insert. The interface exposes the active handle and insert cue plus its evidence
+state.
 
-The regional cues are inferred from the CCP's 1994 `Metalcraft` description of
-horn appearance, metal nail decoration, and multiple external forms. The
-industrial cues are observed in 1979–1994 catalogue scans. The contemporary
-cues use modern manufacturer anatomy imagery. The 1771 and 1926–1951 frames
-remain explicitly unknown/inferred where no object-level record supports a
-specific balisong geometry. None of these presets reproduces internal structure,
-a named commercial model, a process sequence, or published measurements.
+The 1880 comparative external relationship is directly observed in US Patent
+229,706, but no internal or mechanically exact detail is copied. The 1951
+report verifies an active Batangas industry but supplies no object image. Regional
+cues are inferred from the 1953 transcription lead and the CCP's 1994
+`Metalcraft` description of horn appearance, metal nail decoration, and
+multiple external forms. The 1969 checkpoint is verified as a cultural-display
+record while its object geometry remains unresolved. Industrial cues are
+observed in 1979–1994 catalogue scans. Contemporary cues use modern manufacturer
+anatomy imagery. None of these presets reproduces internal structure, a named
+commercial model, a process sequence, or published measurements.
 
 Release uses short-lived or controlled asset access. A browser-displayed asset cannot receive absolute DRM; no-download UI is an access/control limitation, not a claim that saving is impossible.

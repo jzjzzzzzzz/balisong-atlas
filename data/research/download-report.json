@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-01T06:23:35.519788+00:00",
+  "generated_at": "2026-09-01T07:45:02.182439+00:00",
   "collector_version": "1.0",
-  "catalog_records": 93,
+  "catalog_records": 97,
   "download_requested": true,
   "download_results": [
     {
@@ -598,6 +598,22 @@
       "storage_key": "data/storage/research/sha256/ef/ef4ed0982839ca6014efd154ce80f47fc7ade7d9b311accb2df14fc8548c1f89.pdf"
     },
     {
+      "source_id": "ilang-ilang-balisong-fiction-1947",
+      "status": "downloaded",
+      "original_filename": "16ba6c45eb7dd8698a8c1eb10104994a3efcef25.pdf",
+      "sha256": "7de0d66ad66ad45b0bf3b3f6777fb95c126182defed0a60f0f508d25026e0a89",
+      "bytes": 1894134,
+      "storage_key": "data/storage/research/sha256/7d/7de0d66ad66ad45b0bf3b3f6777fb95c126182defed0a60f0f508d25026e0a89.pdf"
+    },
+    {
+      "source_id": "jansen-clasp-knife-patent-1880",
+      "status": "already_present",
+      "original_filename": "US229706.pdf",
+      "sha256": "784386305f89a856748c954bb33895f387b692d217d04fae736ae6e9650577ed",
+      "bytes": 238996,
+      "storage_key": "data/storage/research/sha256/78/784386305f89a856748c954bb33895f387b692d217d04fae736ae6e9650577ed.pdf"
+    },
+    {
       "source_id": "krieger-1926-usnm-bulletin-137",
       "status": "already_present",
       "original_filename": "Bulletin_-_United_States_National_Museum_%28IA_bulletinunitedst1371926unit%29.pdf",
@@ -606,12 +622,28 @@
       "storage_key": "data/storage/research/sha256/67/67b39c14c750232b6cb6678e5a46e21776d8fa995c5ed617f5fdb2c9e6f174b8.pdf"
     },
     {
+      "source_id": "lardizabal-community-schools-batangas-1951",
+      "status": "downloaded",
+      "original_filename": "b5009d4f2d293814435954ce8890ebb74d4b7ef0.pdf",
+      "sha256": "9e34d38b0751ff3af2e1f8a29ec0dee4ee16359846efe5b0896381b5c3a5e998",
+      "bytes": 2808396,
+      "storage_key": "data/storage/research/sha256/9e/9e34d38b0751ff3af2e1f8a29ec0dee4ee16359846efe5b0896381b5c3a5e998.pdf"
+    },
+    {
       "source_id": "met-gods-of-war",
       "status": "already_present",
       "original_filename": "The_Gods_of_War_Sacred_Imagery_and_the_Decoration_of_Arms_and_Armor.pdf",
       "sha256": "b5924fb3387bdba8c40c6f0ab5b795f8159b71506ce3b113708b9b777e2f77f0",
       "bytes": 7179863,
       "storage_key": "data/storage/research/sha256/b5/b5924fb3387bdba8c40c6f0ab5b795f8159b71506ce3b113708b9b777e2f77f0.pdf"
+    },
+    {
+      "source_id": "us-customs-imported-balisong-knives-1971",
+      "status": "already_present",
+      "original_filename": "FR-1971-05-21.pdf",
+      "sha256": "79c0eff26e4d14bbd26eaf12de20c8bca1f500d5268030519238ece1b07b4e1c",
+      "bytes": 33575989,
+      "storage_key": "data/storage/research/sha256/79/79c0eff26e4d14bbd26eaf12de20c8bca1f500d5268030519238ece1b07b4e1c.pdf"
     },
     {
       "source_id": "yasa-nayong-pilipino-2024",

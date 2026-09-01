@@ -12,6 +12,7 @@ import { useMemo, useState } from "react";
 import { useLanguage } from "@/components/Providers";
 import { BalisongKineticShowcase } from "@/features/reconstruction/BalisongKineticShowcase";
 import { SafeProxyViewer } from "@/features/reconstruction/SafeProxyViewer";
+import { CertaintyAuditPanel } from "@/features/exhibits/CertaintyAuditPanel";
 import { researchLibrary } from "@/lib/research-library";
 
 type PeriodState = "direct-lead" | "context" | "metadata";
@@ -30,20 +31,20 @@ type EvidencePeriod = {
 
 const periods: EvidencePeriod[] = [
   {
-    id: "comparative-1771",
-    date: "1771",
-    title: { en: "Comparative cutlery record", zh: "欧洲刀具对照记录" },
+    id: "comparative-1880",
+    date: "1880",
+    title: { en: "Documented comparative form", zh: "有图版记录的比较形态" },
     scope: {
-      en: "A dated French cutlery book and a museum contact lead are retained to audit—not confirm—recurring origin narratives.",
-      zh: "保留一部有明确年代的法国刀具书籍和一条博物馆联系线索，用于核查而不是确认反复出现的起源叙述。",
+      en: "US Patent 229,706 directly documents a Solingen clasp-knife with two rotating handle sections. Perret's 1771 book remains only an unresolved earlier comparison.",
+      zh: "美国专利第 229,706 号直接记录了索林根一件具有两段转动刀柄的折叠刀。佩雷 1771 年著作仍只是一条尚未解决的更早比较线索。",
     },
-    status: { en: "Relevance under review", zh: "相关性审核中" },
+    status: { en: "Record and broad form verified", zh: "记录与宽泛形态已核验" },
     gap: {
-      en: "A curator must identify the exact plate and determine whether the depicted object is genuinely comparable before any claim is proposed.",
-      zh: "必须由馆员定位具体图版并判断所示物件是否真正具有可比性，之后才能提出任何主张。",
+      en: "The patent proves a comparable form existed by 1880; it does not establish origin, a Philippine connection, or a transmission route.",
+      zh: "专利只能证明可比较形态到 1880 年已经存在；它不能确立起源、菲律宾联系或传播路线。",
     },
-    state: "metadata",
-    sourceRanks: [17, 16],
+    state: "direct-lead",
+    sourceRanks: [26, 17, 16],
   },
   {
     id: "regional-1895-1919",
@@ -62,36 +63,36 @@ const periods: EvidencePeriod[] = [
     sourceRanks: [4, 5, 8],
   },
   {
-    id: "museum-1926-1951",
-    date: "1926–1951",
-    title: { en: "Museum and local-history records", zh: "博物馆与地方史记录" },
+    id: "philippine-1947-1953",
+    date: "1947–1953",
+    title: { en: "Philippine vocabulary and industry records", zh: "菲律宾术语与产业记录" },
     scope: {
-      en: "Museum material-culture catalogues and retrospective local-history holdings provide comparison and archival leads.",
-      zh: "博物馆物质文化目录和回溯性地方史馆藏提供比较材料与档案线索。",
+      en: "A 1947 Philippine periodical verifies popular-media vocabulary; a contemporaneous 1951 report records active Batangas production; a Taal transcription records an established local industry in 1953.",
+      zh: "一份 1947 年菲律宾期刊核验了通俗媒体术语；1951 年同期报告记录八打雁已有活跃生产；塔阿尔转录稿则记录了 1953 年已经形成的当地产业。",
     },
-    status: { en: "Context only", zh: "仅作背景材料" },
+    status: { en: "Vocabulary and industry verified; form unresolved", zh: "术语与产业已核验；形态仍未解决" },
     gap: {
-      en: "No reviewed passage or image in this lane currently supports a public balisong form for this period.",
-      zh: "这一研究区间目前没有经过审核的段落或图片能够支持公开展示该时期的 balisong 形态。",
-    },
-    state: "context",
-    sourceRanks: [13, 3],
-  },
-  {
-    id: "craft-1955-1994",
-    date: "1955–1994",
-    title: { en: "Craft, cinema, and catalogue visibility", zh: "工艺、电影与目录可见性" },
-    scope: {
-      en: "A 1955 studio-inventory title, a Philippine metalcraft reference, and 1979–1994 catalogue scans create separate media, craft, and design-history checkpoints.",
-      zh: "1955 年片厂目录标题、菲律宾金属工艺参考与 1979—1994 年目录扫描，分别建立媒体、工艺和设计史检查点。",
-    },
-    status: { en: "Direct page leads found", zh: "已发现直接页面线索" },
-    gap: {
-      en: "The film inventory proves only a dated title; a viewing copy is still required. Catalogue scans can support broad external form, but their host and image rights need review.",
-      zh: "电影目录只能证明一个有明确年代的片名，仍需取得可观看副本。目录扫描可支持宽泛的外部形态，但托管方和图像权利需要审核。",
+      en: "The 1947 fiction and 1951 report provide no reliable object image. The 1953 National Library page images still need comparison, so no exact period proxy is supported.",
+      zh: "1947 年文学作品与 1951 年报告都不提供可靠实物图像；1953 年国家图书馆原始页图仍须比对，因此不能支持精确时期代理。",
     },
     state: "direct-lead",
-    sourceRanks: [20, 1, 18, 22],
+    sourceRanks: [29, 30, 25, 3, 13],
+  },
+  {
+    id: "craft-1969-1994",
+    date: "1969–1994",
+    title: { en: "Cultural display, regulation, and catalogue visibility", zh: "文化展示、监管与目录可见性" },
+    scope: {
+      en: "A 1969 brochure citation chain, a 1971 Customs notice, a Philippine legal record, a 1994 metalcraft reference, and 1979–1994 catalogue scans create independently dated checkpoints.",
+      zh: "1969 年手册引用链、1971 年海关通知、菲律宾法律记录、1994 年金属工艺参考与 1979—1994 年目录扫描，形成了彼此独立定年的检查点。",
+    },
+    status: { en: "Four dated records; catalogue form observed", zh: "四条定年记录；目录形态可直接观察" },
+    gap: {
+      en: "The original 1969 brochure is not locally available. Catalogue scans support broad external form, but their host, source family, and image rights still need review.",
+      zh: "项目尚未在本地获得 1969 年原始手册。目录扫描可支持宽泛外部形态，但托管方、来源家族与图像权利仍需审核。",
+    },
+    state: "direct-lead",
+    sourceRanks: [27, 18, 28, 22, 1],
   },
   {
     id: "contemporary-1995-present",
@@ -155,6 +156,7 @@ export function EvidenceEraTimeline() {
   );
 
   return <div className="space-y-8">
+    <CertaintyAuditPanel />
     <div className="flex flex-wrap items-center justify-between gap-4 border-y border-ink/20 py-3">
       <div className="flex gap-1" role="tablist" aria-label={locale === "zh" ? "时间线研究层" : "Timeline research layer"}>
         <button type="button" role="tab" aria-selected={layer === "design"} onClick={() => { setLayer("design"); setShowDemo(false); }} className={`focus-ring px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[.1em] ${layer === "design" ? "bg-ink text-white" : "text-quiet hover:bg-ink/5"}`}>{locale === "zh" ? "物件设计史" : "Object design history"}</button>

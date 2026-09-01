@@ -27,7 +27,7 @@ one dependent source family.
 | Year | Source | Access in this checkout | Evaluation state |
 |---|---|---|---|
 | 1771 | Jean-Jacques Perret, *L'art du coutelier. Première partie* | BnF/Gallica metadata only | Primary bibliographic record for auditing recurring French-origin narratives. It does not by itself identify a balisong or establish origin; mechanically detailed content remains excluded from AI/search. |
-| 1880 | Edmund Jansen, *Clasp-Knife*, US Patent 229,706 | Metadata only | Comparative primary record. Mechanically detailed; excluded from AI and public search. It does not demonstrate Philippine origin. |
+| 1880 | Edmund Jansen, *Clasp-Knife*, US Patent 229,706 | Private public-domain research copy | The drawing directly verifies a comparable two-section external form by 1880. Mechanically detailed; excluded from AI and public search. It does not demonstrate Philippine origin or transmission. |
 | 1895 | Manuel Sastrón, *Filipinas: pequeños estudios; Batangas y su provincia* | Private research copy | Contemporary regional book. Page-level relevance has not yet been established. |
 | 1903 | *Official handbook of the Philippines and catalogue of the Philippine exhibit* | Private research copy | Period government catalogue for institutional and material-culture context. |
 | 1904 | *Official catalogue, Philippine exhibits, Universal Exposition, St. Louis* | Private research copy | Period catalogue; requires provenance and bias review. |
@@ -40,8 +40,13 @@ one dependent source family.
 | 1914 | Dean C. Worcester, *The Philippines Past and Present* | Private research copy | Broad historical context with significant authorial/colonial bias to evaluate. |
 | 1926 | Herbert W. Krieger, *The Collection of Primitive Weapons and Armor of the Philippine Islands in the United States National Museum* | Private public-domain research copy | Museum monograph. It contains controlled measurements and technical description and remains excluded from AI/public search. |
 | 1946–1951 | *Historical data for the province of Batangas* | Institutional catalogue metadata | Retrospective local-history compilation. It cannot be treated as contemporary evidence for earlier dates. |
+| 1947 | “Limang kaluluwa o isang buhay,” *Ilang-Ilang* | Private digitized periodical research copy | Dated Philippine popular-fiction use of the term. It supports terminology and media history, not origin or object form; operational passages remain excluded. |
+| 1951 | Gregorio Lardizabal, “The Community-Centered Schools and the Adult Education Program,” *The Philippine Educator* | Private digitized periodical research copy | Contemporaneous report based on 1950–1951 visits. It verifies active Batangas production by 1951; process content remains excluded and it supplies no visual form. |
 | 1953 | *History and Cultural Life of Balisong, Bauan, Batangas* | Web transcription lead; archival original not yet compared | Specific place-name lead. It concerns Balisong in Bauan, not the Taal craft, and the transcription is not independent from the National Library holding. |
+| 1953 | *Historical Data of Taal, Batangas, Part III* | Paginated web transcription lead; archival original not yet compared | Contains a `History of Balisong Knives` section and describes an established local industry in 1953. The origin narrative remains retrospective testimony. |
 | 1955 | *Balisong*, directed by Conrado Conde | Legacy Sampaguita Pictures archive-inventory metadata | Dated media-history checkpoint only. No frame or publicity image is cached, and a viewing copy is required before visual observation. |
+| 1969 | *Ang Nayong Pilipino, the Philippine Village* | CiNii Books institutional metadata; later scholarly citation chain | Confirms the identity of the brochure cited for a Batangas-and-balisong display section. The original brochure must be inspected before quotation or visual observation. |
+| 1971 | United States Bureau of Customs, *Imported Balisong Knives* | Private public-domain Federal Register research copy | Federal Register 36 FR 9263 verifies dated use of the term and a broad external description. Its provenance phrase is an agency assertion, not provenance proof. |
 | 1987 | *People of the Philippines v. Rogelio Lasanas, et al.* | Public legal record | Primary regulation-language context. It supplies no design, construction, or motion evidence. |
 | 1994 | “Metalcraft,” *CCP Encyclopedia of Philippine Art, Visual Arts* | Private restricted research copy | Direct craft context and bibliography; copyright and controlled-content flags are pending review. |
 | 2002 | Ramon N. Villegas, ed., *Batangas: Forged in Fire* | Catalogue metadata | Regional secondary-source lead; no digital copy was offered by the catalogue. |
@@ -68,6 +73,11 @@ verified statement about the exhibition subject merely because it is old.
 - [BnF record: Jean-Jacques Perret, *L'art du coutelier* (1771)](https://catalogue.bnf.fr/ark:/12148/cb31085475c.public)
 - [UP Open University repository: Yasa thesis](https://repository.upou.edu.ph/items/111fb70a-64da-46cb-92e7-8a874e1a6bbc)
 - [UP Libraries: Mercado *Balisong* short-film thesis record](https://tuklas.up.edu.ph/Record/UP-99796217613424750)
+- [Google Patents: US Patent 229,706 (1880)](https://patents.google.com/patent/US229706A/en)
+- [GPO: Federal Register, 21 May 1971](https://www.govinfo.gov/app/details/FR-1971-05-21)
+- [CiNii Books: *Ang Nayong Pilipino* (1969)](https://ci.nii.ac.jp/ncid/BA59540895)
+- [UP Diliman Rare Periodicals: *Ilang-Ilang* article (1947)](https://repository.mainlib.upd.edu.ph/omekas/s/rare-periodicals/media/13521)
+- [UP Diliman repository: Lardizabal education report (1951)](https://repository.mainlib.upd.edu.ph/omekas/files/original/b5009d4f2d293814435954ce8890ebb74d4b7ef0.pdf)
 
 The Thiers record is an institutional contact/collection lead. It does not by
 itself verify popular “French origin” narratives. The Met object record supplies
@@ -103,13 +113,10 @@ and manufacturing passages are not copied, embedded, or placed in public search.
 writes `data/research/screening.json`. It records term-group counts, page
 numbers, text-availability status, and a discovery rank. It does **not** retain
 page text or excerpts, extract measurements, send content to AI, or create
-evidence. The current pass screened all 77 PDFs without failures: two files
-surfaced direct-term leads, six surfaced regional/material co-occurrence
-leads, and 76 contained at least some searchable text. Nineteen records were
-initially prioritized in the public-safe reading-room interface for human review.
-Five newly catalogued legal, film, municipal, local-history, and thesis leads
-bring the current curated review register to 24 records; these metadata-only
-additions do not change the PDF screening totals.
+evidence. The current pass screened all 81 PDFs without failures: four files
+surfaced direct-term leads, seven surfaced regional/material co-occurrence
+leads, and 80 contained at least some searchable text. Thirty records are
+prioritized in the public-safe reading-room interface for human review.
 
 Every collected file starts with:
 
@@ -125,9 +132,9 @@ recorded actions.
 
 ### Actual collection snapshot
 
-The 2026-09-01 expanded run catalogued **93 records** and placed **77 PDF
-research copies** in private CAS storage, totalling **1,797,956,296 bytes**
-(about 1.67 GiB). The corpus is weighted toward old books, official records,
+The 2026-09-01 expanded run catalogued **97 records** and placed **81 PDF
+research copies** in private CAS storage, totalling **1,836,473,811 bytes**
+(about 1.71 GiB). The corpus is weighted toward old books, official records,
 and historical periodicals rather than web posts. The tracked
 download report contains the actual SHA-256 and byte count for every available
 copy. The original Smithsonian endpoint returned HTTP 403 to the collector, so
@@ -156,3 +163,8 @@ use unauthorized mirrors or evade institutional access controls.
 5. Audit the citation lineage of recurring origin dates before proposing any chronology claim.
 6. Locate an authorized viewing copy of the 1955 *Balisong* film and keep any
    resulting media observation separate from object-history evidence.
+7. Request or consult the original 1969 *Ang Nayong Pilipino* brochure at the
+   holding library before accepting its text or imagery.
+
+The record-by-record findings and explicit limits are maintained in
+`docs/CERTAINTY_AUDIT.md` and `data/research/certainty-audit.json`.

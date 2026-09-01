@@ -10,7 +10,7 @@ import { useLanguage } from "@/components/Providers";
 
 type EraPresetId = "comparative" | "regional" | "museum" | "craft" | "contemporary";
 type HandleStyle = "segmented-scale" | "horn-and-bolster" | "pinned-slab" | "skeletonized-metal" | "milled-channel";
-type InsertStyle = "comparative-leaf" | "regional-spear" | "catalogue-straight" | "industrial-clip" | "contemporary-drop";
+type InsertStyle = "comparative-clasp" | "regional-spear" | "catalogue-straight" | "industrial-clip" | "contemporary-drop";
 type EvidenceState = "observed" | "inferred" | "unknown";
 
 type EraPreset = {
@@ -39,39 +39,39 @@ type EraPreset = {
 const eraPresets: readonly EraPreset[] = [
   {
     id: "comparative",
-    period: { en: "1771 comparative frame", zh: "1771 比较框架" },
-    title: { en: "European comparison — form unverified", zh: "欧洲比较对象——形态未验证" },
-    note: { en: "Perret’s dated book is retained to test a recurring comparison. No reviewed plate currently identifies a balisong.", zh: "保留佩雷这部有明确年代的书，是为了检验反复出现的比较叙述。目前没有经过审核的图版能够识别出 balisong。" },
-    source: { en: "Perret, L’art du coutelier — bibliographic record only", zh: "佩雷《刀匠技艺》——目前仅有书目记录" },
+    period: { en: "1880 documented comparison", zh: "1880 有图版记录的比较对象" },
+    title: { en: "Documented two-section clasp form", zh: "有记录的双柄折叠形态" },
+    note: { en: "US Patent 229,706 directly depicts two scale-clad handle sections rotating around a central implement. The proxy follows only that broad external reading and removes real scale and mechanical detail.", zh: "美国专利第 229,706 号直接描绘了两段带贴片的刀柄围绕中央部分转动。视觉代理只采用这一宽泛外观解读，并移除真实尺度与机械细节。" },
+    source: { en: "US Patent 229,706 — drawing p. 1; specification pp. 2–3", zh: "美国专利第 229,706 号——图版第 1 页；说明第 2—3 页" },
     handle: "#4b4640", inset: "#17191a", metal: "#b9b8b2", accent: "#8e7654", background: "#0c1012",
-    handleStyle: "segmented-scale", insertStyle: "comparative-leaf", handleWidth: 0.29, handleLength: 1.38, pivotSpread: 0.36, hasLatch: true, evidenceState: "unknown",
-    structureCue: { en: "Segmented scale-and-collar comparison", zh: "分段贴片与金属套箍的比较结构" },
-    insertCue: { en: "Symmetrical leaf comparison silhouette", zh: "对称叶形比较轮廓" },
-    evidenceCue: { en: "Unknown: the 1771 record does not verify a balisong form.", zh: "未知：1771 年书目记录不能验证蝴蝶刀形态。" },
+    handleStyle: "segmented-scale", insertStyle: "comparative-clasp", handleWidth: 0.29, handleLength: 1.38, pivotSpread: 0.36, hasLatch: true, evidenceState: "observed",
+    structureCue: { en: "Paired tapered handles with visible scales and an end latch", zh: "成对渐收式刀柄、可见贴片与末端闩扣" },
+    insertCue: { en: "Curved neutral insert derived from the broad drawing silhouette", zh: "根据图版宽泛轮廓转译的弧形中性插片" },
+    evidenceCue: { en: "Observed comparative form: verified in the 1880 patent drawing. Philippine origin and transmission remain unresolved.", zh: "比较形态可直接观察：已由 1880 年专利图版核验；菲律宾起源与传播路线仍未解决。" },
   },
   {
     id: "regional",
-    period: { en: "1895–1919 regional frame", zh: "1895—1919 地区框架" },
-    title: { en: "Batangas craft-description hypothesis", zh: "八打雁工艺描述假设" },
-    note: { en: "Sastrón and exposition catalogues establish regional context, while later craft writing supplies appearance cues. No period object image confirms this assembly.", zh: "萨斯特龙著作与博览会目录提供地区背景，较晚的工艺文献提供外观线索；目前没有同期实物图像确认这一组合。" },
-    source: { en: "1895 regional book + 1904 catalogues + later craft description", zh: "1895 地区书籍＋1904 目录＋后期工艺描述" },
+    period: { en: "1951–1953 industry records", zh: "1951—1953 产业记录" },
+    title: { en: "Batangas industry record — appearance interpreted", zh: "八打雁产业记录——外观仍属解释" },
+    note: { en: "A contemporaneous 1951 report verifies an active Batangas industry, and a paginated Taal transcription records an established local industry in 1953. The 1994 Metalcraft entry supplies later visible appearance vocabulary; no reviewed mid-century object image confirms this assembly.", zh: "一份 1951 年同期报告核验了八打雁已有活跃产业，带页码的塔阿尔转录稿则记录了 1953 年已经形成的当地产业。1994 年《金属工艺》条目提供较晚的可见外观术语；尚无经过审核的 20 世纪中期实物图像确认这一组合。" },
+    source: { en: "Philippine Educator, printed p. 18 + Taal Historical Data, transcribed pp. 13–14 + Metalcraft, pp. 4–5", zh: "《菲律宾教育者》印刷页第 18 页＋《塔阿尔历史资料》转录第 13—14 页＋《金属工艺》第 4—5 页" },
     handle: "#59433a", inset: "#171718", metal: "#c2bbae", accent: "#9f7d4d", background: "#0c1112",
     handleStyle: "horn-and-bolster", insertStyle: "regional-spear", handleWidth: 0.3, handleLength: 1.46, pivotSpread: 0.38, hasLatch: true, evidenceState: "inferred",
     structureCue: { en: "Horn-appearance scales, brass-appearance bolsters, visible pins", zh: "角质外观贴片、黄铜外观箍件与可见铆钉" },
     insertCue: { en: "Spear/leaf-form regional hypothesis", zh: "矛叶形地区视觉假设" },
-    evidenceCue: { en: "Inferred from later Philippine craft descriptions; not a period object record.", zh: "依据后期菲律宾工艺文献推测，并非同期实物记录。" },
+    evidenceCue: { en: "The 1951 industry record is verified and the 1953 local record is corroborated; this exact visual assembly remains inferred.", zh: "1951 年产业记录已核验，1953 年地方记录已印证；这一具体视觉组合仍属于推测。" },
   },
   {
     id: "museum",
-    period: { en: "1926–1951 museum frame", zh: "1926—1951 博物馆框架" },
-    title: { en: "Museum comparison hypothesis", zh: "博物馆比较假设" },
-    note: { en: "USNM Bulletin 137 and Batangas local-history holdings are comparison leads. This restrained form is not presented as a documented period object.", zh: "美国国家博物馆第 137 号公报与八打雁地方史馆藏只提供比较线索；这一克制形态不被表述为有同期记录的实物。" },
-    source: { en: "USNM Bulletin 137 + National Library local-history holdings", zh: "美国国家博物馆第 137 号公报＋国家图书馆地方史馆藏" },
+    period: { en: "1969 cultural-display frame", zh: "1969 文化展示框架" },
+    title: { en: "National display record — form unresolved", zh: "国家文化展示记录——形态未解决" },
+    note: { en: "Institutional metadata confirms the 1969 Nayong Pilipino brochure, while later scholarship locates a Batangas-and-balisong section within it. The original brochure image has not been reviewed, so this restrained appearance remains interpretive.", zh: "机构目录确认了 1969 年菲律宾村手册，后期学术研究则定位到其中的“八打雁与 balisong”章节。项目尚未审核原始手册图像，因此这一克制外观仍属于解释。" },
+    source: { en: "1969 brochure catalogue record + Yasa 2024, PDF pp. 90 and 112", zh: "1969 年手册目录记录＋Yasa 2024，第 90、112 页" },
     handle: "#353a3d", inset: "#121517", metal: "#c6c8c6", accent: "#858b8c", background: "#0a0f12",
     handleStyle: "pinned-slab", insertStyle: "catalogue-straight", handleWidth: 0.27, handleLength: 1.44, pivotSpread: 0.34, hasLatch: true, evidenceState: "inferred",
     structureCue: { en: "Plain slab scales with repeated visible pin pattern", zh: "平直贴片柄与重复可见铆钉纹样" },
     insertCue: { en: "Straight-back catalogue study silhouette", zh: "直背式博物馆目录研究轮廓" },
-    evidenceCue: { en: "Inferred: museum and archive leads still need object-level confirmation.", zh: "推测：博物馆与档案线索仍需实物级确认。" },
+    evidenceCue: { en: "The 1969 cultural-display checkpoint is corroborated; its object form is still unknown.", zh: "1969 年文化展示节点已相互印证；其中的物件形态仍然未知。" },
   },
   {
     id: "craft",
@@ -210,12 +210,12 @@ function HandlePin({ position, preset }: { position: number; preset: EraPreset }
 function CentralDisplayInsert({ preset }: { preset: EraPreset }) {
   const silhouette = useMemo(() => {
     const shape = new Shape();
-    if (preset.insertStyle === "comparative-leaf") {
-      shape.moveTo(-0.09, -0.62);
-      shape.lineTo(-0.075, 0.66);
-      shape.bezierCurveTo(-0.068, 0.82, -0.032, 0.95, 0, 1.02);
-      shape.bezierCurveTo(0.032, 0.95, 0.068, 0.82, 0.075, 0.66);
-      shape.lineTo(0.09, -0.62);
+    if (preset.insertStyle === "comparative-clasp") {
+      shape.moveTo(-0.115, -0.62);
+      shape.lineTo(-0.105, 0.72);
+      shape.bezierCurveTo(-0.09, 0.88, -0.035, 1, 0.035, 1.06);
+      shape.bezierCurveTo(0.055, 0.93, 0.085, 0.79, 0.13, 0.66);
+      shape.bezierCurveTo(0.145, 0.42, 0.138, 0.02, 0.12, -0.62);
     } else if (preset.insertStyle === "regional-spear") {
       shape.moveTo(-0.14, -0.62);
       shape.lineTo(-0.125, 0.52);
@@ -399,8 +399,8 @@ export function BalisongKineticShowcase() {
         <div>
           <h2 className="font-display text-3xl leading-tight lg:text-4xl">{locale === "zh" ? "时期形态与动态视觉研究" : "Period form and kinetic study"}</h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-fog">{locale === "zh"
-            ? "五个研究框架使用五套不同的刃形展示插片与刀柄外部几何。切换时期会重建轮廓、开孔、贴片、箍件和闩锁外观；证据不足的部分继续标记为推测或未知。"
-            : "Five research frames use five distinct blade-form display inserts and handle geometries. Switching period rebuilds silhouettes, openings, scales, bolsters, and latch appearance; unsupported details remain inferred or unknown."}</p>
+            ? "五个研究框架分别对应有图版记录的比较形态、菲律宾地方记录、国家文化展示、工业目录与当代结构术语。切换时期会改变中性插片与刀柄外部几何；记录已核验不代表具体外观或起源已经确定。"
+            : "Five research frames separate a documented comparative form, a Philippine local record, national cultural display, industrial catalogues, and contemporary anatomy. Switching frames changes the neutral insert and visible handle geometry; a verified record does not make its exact appearance or origin certain."}</p>
         </div>
         <div className="flex gap-2">
           <button type="button" onClick={() => setRestartToken((value) => value + 1)} className="focus-ring inline-flex items-center gap-2 border border-white/25 px-3 py-3 font-mono text-[9px] font-bold uppercase tracking-[.1em] hover:bg-white/10"><RotateCcw size={15} aria-hidden="true" />{locale === "zh" ? "重新播放" : "Restart"}</button>
@@ -511,6 +511,11 @@ export function BalisongKineticShowcase() {
     </section>
 
     <section className="divide-y divide-ink/15 border-b border-ink/20 text-sm leading-6">
+      <div className="grid gap-4 py-5 md:grid-cols-[180px_1fr_auto] md:items-center">
+        <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-ochre">{locale === "zh" ? "最早可核验比较形态" : "Earliest verified comparison"}</p>
+        <p className="text-quiet">{locale === "zh" ? "美国专利第 229,706 号的 1880 年图版直接展示成对转动刀柄与合拢外观，因此可用于宽泛外部形态比较。它不证明菲律宾工艺的起源，也不证明任何传播路线；机械细节不进入公共代理。" : "The 1880 drawing in US Patent 229,706 directly shows paired rotating handles and their closed appearance, so it can support a broad external comparison. It proves neither the origin of the Philippine craft nor a transmission route; mechanical detail is excluded from the public proxy."}</p>
+        <a href="https://patents.google.com/patent/US229706A/en" target="_blank" rel="noreferrer" className="focus-ring font-mono text-[9px] font-bold uppercase tracking-[.1em] underline underline-offset-4">{locale === "zh" ? "查看 1880 专利记录" : "View 1880 patent record"}</a>
+      </div>
       <div className="grid gap-4 py-5 md:grid-cols-[180px_1fr_auto] md:items-center">
         <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-ochre">{locale === "zh" ? "运动关系参考" : "Motion relationship"}</p>
         <p className="text-quiet">{locale === "zh" ? "Wikimedia Commons 的 123 帧开放／闭合记录只用于校正三个外部部分的先后关系；不逐帧展示，也不转化为动作教学。" : "A 123-frame Wikimedia Commons opening/closing record is used only to check the sequence of three external bodies; it is neither shown frame-by-frame nor converted into instruction."}</p>

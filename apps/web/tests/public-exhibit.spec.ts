@@ -30,9 +30,9 @@ test("research reading room exposes citations but not private research copies", 
   await page.goto("/exhibits/between-two-handles/sources");
   await expect(page.getByRole("heading", { name: "Books before posts." })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Screened, not accepted." })).toBeVisible();
-  await expect(page.getByText("77", { exact: true })).toBeVisible();
+  await expect(page.getByText("81", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Direct lead", exact: true }).click();
-  await expect(page.getByText("Showing 6 of 24 prioritized records")).toBeVisible();
+  await expect(page.getByText("Showing 11 of 30 prioritized records")).toBeVisible();
   await expect(page.locator("td").filter({ hasText: "Filipinas: pequeños estudios; Batangas y su provincia" }).first()).toBeVisible();
   await expect(page.locator("table").getByRole("link", { name: "Cite" }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
@@ -90,6 +90,11 @@ test("all public exhibit routes honor the selected Chinese locale", async ({ pag
 test("evidence-era timeline locks historical proxies and isolates the fictional method demo", async ({ page }) => {
   await page.goto("/exhibits/between-two-handles/timeline");
   await expect(page.getByRole("heading", { name: "Design evolution timeline" })).toBeVisible();
+  await expect(page.getByTestId("certainty-audit")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Separate a verified record from a certain origin" })).toBeVisible();
+  await expect(page.getByRole("tab", { name: /Record verified/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "A digitized Philippine popular-fiction issue used the word balisong in October 1947." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /contemporaneous education report based on 1950-1951 provincial visits/ })).toBeVisible();
   await expect(page.getByText("Evidence insufficient; visual proxy withheld")).toBeVisible();
   await expect(page.getByText("Accepted claims").locator("..").getByText("0", { exact: true })).toBeVisible();
   await expect(page.getByTestId("safe-proxy-viewer")).toHaveCount(0);
@@ -110,7 +115,11 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-handle-style", "milled-channel");
   await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-insert-style", "contemporary-drop");
   await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-evidence-state", "observed");
-  await page.getByRole("tab", { name: /Batangas craft-description hypothesis/ }).click();
+  await page.getByRole("tab", { name: /Documented two-section clasp form/ }).click();
+  await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-handle-style", "segmented-scale");
+  await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-insert-style", "comparative-clasp");
+  await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-evidence-state", "observed");
+  await page.getByRole("tab", { name: /Batangas industry record/ }).click();
   await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-handle-style", "horn-and-bolster");
   await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-insert-style", "regional-spear");
   await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-evidence-state", "inferred");

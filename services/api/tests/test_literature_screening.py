@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import pymupdf
@@ -37,3 +38,31 @@ def test_pdf_screen_stores_locations_but_not_source_text(tmp_path: Path) -> None
     assert result["matched_groups"]["regional_context"]["page_numbers"] == [1]
     assert "text" not in result
     assert "excerpt" not in result
+
+
+def test_certainty_audit_keeps_records_traceable_and_claims_proposed() -> None:
+    root = Path(__file__).parents[3]
+    audit = json.loads((root / "data/research/certainty-audit.json").read_text())
+    bibliography = json.loads((root / "data/research/bibliography.json").read_text())
+    source_ids = {record["id"] for record in bibliography["records"]}
+    records = audit["records"]
+
+    assert audit["policy"]["claim_lifecycle_status"] == "proposed"
+    assert audit["summary"] == {
+        "verified_records": 7,
+        "corroborated_leads": 2,
+        "unresolved_questions": 3,
+    }
+    assert len(records) == sum(audit["summary"].values())
+    assert {record["status"] for record in records} == {
+        "verified_record",
+        "corroborated_lead",
+        "unresolved",
+    }
+
+    for record in records:
+        assert record["evidence"]
+        assert record["supports"]["en"] and record["supports"]["zh"]
+        assert record["limit"]["en"] and record["limit"]["zh"]
+        assert record["public_safe"] is True
+        assert all(evidence["source_id"] in source_ids for evidence in record["evidence"])

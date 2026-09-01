@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-01T06:31:43.297746+00:00",
+  "generated_at": "2026-09-01T07:45:48.513341+00:00",
   "method": "deterministic_local_term_screen_v1",
   "policy": {
     "stores_page_text": false,
@@ -10,7 +10,7 @@
     "creates_evidence": false,
     "note": "Discovery ranking only; every candidate requires human page review."
   },
-  "scanned_file_count": 77,
+  "scanned_file_count": 81,
   "failures": [],
   "records": [
     {
@@ -160,6 +160,57 @@
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
       "screening_rank": 2
+    },
+    {
+      "page_count": 96,
+      "searchable_page_count": 88,
+      "text_extraction_status": "partial_text",
+      "relevance_band": "direct_term_lead",
+      "relevance_score": 95,
+      "matched_groups": {
+        "direct_subject": {
+          "page_count": 3,
+          "page_numbers": [
+            3,
+            4,
+            71
+          ]
+        },
+        "regional_context": {
+          "page_count": 0,
+          "page_numbers": []
+        },
+        "material_culture": {
+          "page_count": 3,
+          "page_numbers": [
+            3,
+            4,
+            71
+          ]
+        },
+        "craft_history": {
+          "page_count": 6,
+          "page_numbers": [
+            50,
+            51,
+            64,
+            74,
+            75,
+            83
+          ]
+        }
+      },
+      "regional_material_cooccurrence_pages": [],
+      "source_id": "us-customs-imported-balisong-knives-1971",
+      "title": "Imported Balisong Knives: Notice of Court Decision Regarding Admissibility",
+      "year": "1971",
+      "source_tier": "A",
+      "canonical_url": "https://www.govinfo.gov/app/details/FR-1971-05-21",
+      "file_sha256": "79c0eff26e4d14bbd26eaf12de20c8bca1f500d5268030519238ece1b07b4e1c",
+      "requires_page_review": true,
+      "accepted_as_evidence": false,
+      "sensitive_review_status": "pending",
+      "screening_rank": 3
     },
     {
       "page_count": 320,
@@ -453,7 +504,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 3
+      "screening_rank": 4
     },
     {
       "page_count": 760,
@@ -659,7 +710,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 4
+      "screening_rank": 5
     },
     {
       "page_count": 84,
@@ -757,7 +808,48 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 5
+      "screening_rank": 6
+    },
+    {
+      "page_count": 8,
+      "searchable_page_count": 8,
+      "text_extraction_status": "searchable_text",
+      "relevance_band": "direct_term_lead",
+      "relevance_score": 80,
+      "matched_groups": {
+        "direct_subject": {
+          "page_count": 4,
+          "page_numbers": [
+            4,
+            6,
+            7,
+            8
+          ]
+        },
+        "regional_context": {
+          "page_count": 0,
+          "page_numbers": []
+        },
+        "material_culture": {
+          "page_count": 0,
+          "page_numbers": []
+        },
+        "craft_history": {
+          "page_count": 0,
+          "page_numbers": []
+        }
+      },
+      "regional_material_cooccurrence_pages": [],
+      "source_id": "ilang-ilang-balisong-fiction-1947",
+      "title": "Limang kaluluwa o isang buhay",
+      "year": "1947",
+      "source_tier": "A",
+      "canonical_url": "https://repository.mainlib.upd.edu.ph/omekas/s/rare-periodicals/media/13521",
+      "file_sha256": "7de0d66ad66ad45b0bf3b3f6777fb95c126182defed0a60f0f508d25026e0a89",
+      "requires_page_review": true,
+      "accepted_as_evidence": false,
+      "sensitive_review_status": "pending",
+      "screening_rank": 7
     },
     {
       "page_count": 546,
@@ -930,7 +1022,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 6
+      "screening_rank": 8
     },
     {
       "page_count": 136,
@@ -1052,7 +1144,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 7
+      "screening_rank": 9
     },
     {
       "page_count": 724,
@@ -1373,7 +1465,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 8
+      "screening_rank": 10
     },
     {
       "page_count": 532,
@@ -1458,7 +1550,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 9
+      "screening_rank": 11
     },
     {
       "page_count": 842,
@@ -1700,7 +1792,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 10
+      "screening_rank": 12
     },
     {
       "page_count": 668,
@@ -1941,7 +2033,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 11
+      "screening_rank": 13
     },
     {
       "page_count": 394,
@@ -2108,7 +2200,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 12
+      "screening_rank": 14
     },
     {
       "page_count": 496,
@@ -2355,7 +2447,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 13
+      "screening_rank": 15
     },
     {
       "page_count": 104,
@@ -2427,7 +2519,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 14
+      "screening_rank": 16
     },
     {
       "page_count": 76,
@@ -2523,7 +2615,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 15
+      "screening_rank": 17
     },
     {
       "page_count": 116,
@@ -2606,7 +2698,58 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 16
+      "screening_rank": 18
+    },
+    {
+      "page_count": 8,
+      "searchable_page_count": 8,
+      "text_extraction_status": "searchable_text",
+      "relevance_band": "regional_material_context",
+      "relevance_score": 48,
+      "matched_groups": {
+        "direct_subject": {
+          "page_count": 0,
+          "page_numbers": []
+        },
+        "regional_context": {
+          "page_count": 3,
+          "page_numbers": [
+            1,
+            7,
+            8
+          ]
+        },
+        "material_culture": {
+          "page_count": 1,
+          "page_numbers": [
+            7
+          ]
+        },
+        "craft_history": {
+          "page_count": 6,
+          "page_numbers": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      },
+      "regional_material_cooccurrence_pages": [
+        7
+      ],
+      "source_id": "lardizabal-community-schools-batangas-1951",
+      "title": "The Community-Centered Schools and the Adult Education Program",
+      "year": "1951",
+      "source_tier": "A",
+      "canonical_url": "https://repository.mainlib.upd.edu.ph/omekas/files/original/b5009d4f2d293814435954ce8890ebb74d4b7ef0.pdf",
+      "file_sha256": "9e34d38b0751ff3af2e1f8a29ec0dee4ee16359846efe5b0896381b5c3a5e998",
+      "requires_page_review": true,
+      "accepted_as_evidence": false,
+      "sensitive_review_status": "pending",
+      "screening_rank": 19
     },
     {
       "page_count": 182,
@@ -2810,7 +2953,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 17
+      "screening_rank": 20
     },
     {
       "page_count": 100,
@@ -2935,7 +3078,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 18
+      "screening_rank": 21
     },
     {
       "page_count": 789,
@@ -2988,7 +3131,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 19
+      "screening_rank": 22
     },
     {
       "page_count": 76,
@@ -3058,7 +3201,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 20
+      "screening_rank": 23
     },
     {
       "page_count": 76,
@@ -3132,7 +3275,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 21
+      "screening_rank": 24
     },
     {
       "page_count": 346,
@@ -3201,7 +3344,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 22
+      "screening_rank": 25
     },
     {
       "page_count": 88,
@@ -3281,7 +3424,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 23
+      "screening_rank": 26
     },
     {
       "page_count": 84,
@@ -3387,7 +3530,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 24
+      "screening_rank": 27
     },
     {
       "page_count": 290,
@@ -3475,7 +3618,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 25
+      "screening_rank": 28
     },
     {
       "page_count": 846,
@@ -3556,7 +3699,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 26
+      "screening_rank": 29
     },
     {
       "page_count": 636,
@@ -3656,7 +3799,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 27
+      "screening_rank": 30
     },
     {
       "page_count": 268,
@@ -3722,7 +3865,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 28
+      "screening_rank": 31
     },
     {
       "page_count": 278,
@@ -3794,7 +3937,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 29
+      "screening_rank": 32
     },
     {
       "page_count": 64,
@@ -3867,7 +4010,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 30
+      "screening_rank": 33
     },
     {
       "page_count": 310,
@@ -3967,7 +4110,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 31
+      "screening_rank": 34
     },
     {
       "page_count": 100,
@@ -4047,7 +4190,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 32
+      "screening_rank": 35
     },
     {
       "page_count": 126,
@@ -4141,7 +4284,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 33
+      "screening_rank": 36
     },
     {
       "page_count": 540,
@@ -4196,7 +4339,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 34
+      "screening_rank": 37
     },
     {
       "page_count": 76,
@@ -4268,7 +4411,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 35
+      "screening_rank": 38
     },
     {
       "page_count": 92,
@@ -4350,7 +4493,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 36
+      "screening_rank": 39
     },
     {
       "page_count": 458,
@@ -4424,7 +4567,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 37
+      "screening_rank": 40
     },
     {
       "page_count": 392,
@@ -4478,7 +4621,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 38
+      "screening_rank": 41
     },
     {
       "page_count": 74,
@@ -4543,7 +4686,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 39
+      "screening_rank": 42
     },
     {
       "page_count": 146,
@@ -4594,7 +4737,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 40
+      "screening_rank": 43
     },
     {
       "page_count": 100,
@@ -4653,7 +4796,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 41
+      "screening_rank": 44
     },
     {
       "page_count": 212,
@@ -4703,7 +4846,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 42
+      "screening_rank": 45
     },
     {
       "page_count": 356,
@@ -4799,7 +4942,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 43
+      "screening_rank": 46
     },
     {
       "page_count": 440,
@@ -4872,7 +5015,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 44
+      "screening_rank": 47
     },
     {
       "page_count": 172,
@@ -4984,7 +5127,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 45
+      "screening_rank": 48
     },
     {
       "page_count": 152,
@@ -5040,7 +5183,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 46
+      "screening_rank": 49
     },
     {
       "page_count": 84,
@@ -5123,7 +5266,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 47
+      "screening_rank": 50
     },
     {
       "page_count": 84,
@@ -5198,7 +5341,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 48
+      "screening_rank": 51
     },
     {
       "page_count": 80,
@@ -5255,7 +5398,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 49
+      "screening_rank": 52
     },
     {
       "page_count": 230,
@@ -5302,7 +5445,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 50
+      "screening_rank": 53
     },
     {
       "page_count": 259,
@@ -5352,7 +5495,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 51
+      "screening_rank": 54
     },
     {
       "page_count": 266,
@@ -5401,7 +5544,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 52
+      "screening_rank": 55
     },
     {
       "page_count": 86,
@@ -5461,7 +5604,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 53
+      "screening_rank": 56
     },
     {
       "page_count": 96,
@@ -5554,7 +5697,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 54
+      "screening_rank": 57
     },
     {
       "page_count": 68,
@@ -5633,7 +5776,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 55
+      "screening_rank": 58
     },
     {
       "page_count": 360,
@@ -5681,7 +5824,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 56
+      "screening_rank": 59
     },
     {
       "page_count": 464,
@@ -5749,7 +5892,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 57
+      "screening_rank": 60
     },
     {
       "page_count": 134,
@@ -5790,7 +5933,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 58
+      "screening_rank": 61
     },
     {
       "page_count": 478,
@@ -5837,7 +5980,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 59
+      "screening_rank": 62
     },
     {
       "page_count": 84,
@@ -5919,7 +6062,47 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 60
+      "screening_rank": 63
+    },
+    {
+      "page_count": 3,
+      "searchable_page_count": 3,
+      "text_extraction_status": "searchable_text",
+      "relevance_band": "material_culture_context",
+      "relevance_score": 9,
+      "matched_groups": {
+        "direct_subject": {
+          "page_count": 0,
+          "page_numbers": []
+        },
+        "regional_context": {
+          "page_count": 0,
+          "page_numbers": []
+        },
+        "material_culture": {
+          "page_count": 3,
+          "page_numbers": [
+            1,
+            2,
+            3
+          ]
+        },
+        "craft_history": {
+          "page_count": 0,
+          "page_numbers": []
+        }
+      },
+      "regional_material_cooccurrence_pages": [],
+      "source_id": "jansen-clasp-knife-patent-1880",
+      "title": "Clasp-Knife, US Patent 229,706",
+      "year": "1880",
+      "source_tier": "A",
+      "canonical_url": "https://patents.google.com/patent/US229706A/en",
+      "file_sha256": "784386305f89a856748c954bb33895f387b692d217d04fae736ae6e9650577ed",
+      "requires_page_review": true,
+      "accepted_as_evidence": false,
+      "sensitive_review_status": "pending",
+      "screening_rank": 64
     },
     {
       "page_count": 508,
@@ -5968,7 +6151,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 61
+      "screening_rank": 65
     },
     {
       "page_count": 68,
@@ -6025,7 +6208,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 62
+      "screening_rank": 66
     },
     {
       "page_count": 392,
@@ -6061,7 +6244,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 63
+      "screening_rank": 67
     },
     {
       "page_count": 570,
@@ -6097,7 +6280,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 64
+      "screening_rank": 68
     },
     {
       "page_count": 75,
@@ -6133,7 +6316,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 65
+      "screening_rank": 69
     },
     {
       "page_count": 1187,
@@ -6169,7 +6352,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 66
+      "screening_rank": 70
     },
     {
       "page_count": 527,
@@ -6205,7 +6388,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 67
+      "screening_rank": 71
     },
     {
       "page_count": 415,
@@ -6241,7 +6424,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 68
+      "screening_rank": 72
     },
     {
       "page_count": 127,
@@ -6277,7 +6460,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 69
+      "screening_rank": 73
     },
     {
       "page_count": 597,
@@ -6313,7 +6496,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 70
+      "screening_rank": 74
     },
     {
       "page_count": 1256,
@@ -6349,7 +6532,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 71
+      "screening_rank": 75
     },
     {
       "page_count": 747,
@@ -6385,7 +6568,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 72
+      "screening_rank": 76
     },
     {
       "page_count": 1191,
@@ -6421,7 +6604,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 73
+      "screening_rank": 77
     },
     {
       "page_count": 368,
@@ -6457,7 +6640,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 74
+      "screening_rank": 78
     },
     {
       "page_count": 675,
@@ -6493,7 +6676,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 75
+      "screening_rank": 79
     },
     {
       "page_count": 503,
@@ -6529,7 +6712,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 76
+      "screening_rank": 80
     },
     {
       "page_count": 49,
@@ -6565,7 +6748,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 77
+      "screening_rank": 81
     }
   ]
 }

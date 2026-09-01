@@ -186,10 +186,16 @@ The command builds `data/research/bibliography.json`, downloads only explicitly 
 The screening command performs a local, deterministic relevance pass over the
 private PDFs. It stores aggregate term-group counts and page numbers only—not
 source text or excerpts—and its ranking is a review queue rather than evidence.
-The current register contains 93 catalogued records, 77 private PDF research
-copies, and 24 public-safe metadata records prioritized for review. The
+The current register contains 97 catalogued records, 81 private PDF research
+copies, and 30 public-safe metadata records prioritized for review. Four PDFs
+contain direct subject-term leads. The
 thumbnail command renders only three public-domain title pages for
 bibliographic navigation; it does not expose private PDFs or technical plates.
+
+`data/research/certainty-audit.json` and `docs/CERTAINTY_AUDIT.md` separate
+verified source records from corroborated leads and unresolved historical
+questions. A verified record remains a `proposed` claim until a human reviewer
+signs the review event.
 
 The public design-evolution timeline groups sources into explicit **research
 frames**, not asserted historical periods. Selecting a frame shows its sources,

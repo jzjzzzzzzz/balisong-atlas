@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-01",
+  "policy": {
+    "claim_lifecycle_status": "proposed",
+    "note_en": "Verified record means that the dated source explicitly contains the stated record or visible feature. It does not convert the source's own historical assertion into proven provenance, and it is not an accepted claim until a human reviewer signs it.",
+    "note_zh": "“记录已核验”表示有明确日期的来源确实包含所述记录或可见特征；它不会把来源自身的历史断言自动变成已证明的来源链，也不会在没有人工审核签署时成为已接受主张。"
+  },
+  "summary": {
+    "verified_records": 7,
+    "corroborated_leads": 2,
+    "unresolved_questions": 3
+  },
+  "records": [
+    {
+      "id": "verified-1880-two-section-form",
+      "date": "1880-07-06",
+      "status": "verified_record",
+      "statement": {
+        "en": "A dated Solingen patent documents a clasp-knife with two handle sections rotating around a central implement.",
+        "zh": "一份有明确日期的索林根专利记录了两段刀柄围绕中央部分转动的折叠刀构型。"
+      },
+      "evidence": [{
+        "source_id": "jansen-clasp-knife-patent-1880",
+        "source_tier": "A",
+        "locator": "drawing sheet p. 1; specification pp. 2-3",
+        "relation": "supports"
+      }],
+      "supports": {
+        "en": "The broad comparative external form existed in a documented Solingen design by 1880.",
+        "zh": "到 1880 年，索林根已有文献记录这种宽泛可比较的外部形态。"
+      },
+      "limit": {
+        "en": "It does not prove a Philippine origin, a European origin for the balisong, or any transmission route.",
+        "zh": "它不能证明菲律宾起源、balisong 的欧洲起源或任何传播路线。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "verified-1947-philippine-media-vocabulary",
+      "date": "1947-10-12",
+      "status": "verified_record",
+      "statement": {
+        "en": "A digitized Philippine popular-fiction issue used the word balisong in October 1947.",
+        "zh": "一份数字化菲律宾通俗文学期刊在 1947 年 10 月使用了 balisong 一词。"
+      },
+      "evidence": [{
+        "source_id": "ilang-ilang-balisong-fiction-1947",
+        "source_tier": "A",
+        "locator": "Ilang-Ilang, Taon II, Bilang 52, 12 October 1947; repository PDF pp. 4, 6-8",
+        "relation": "supports"
+      }],
+      "supports": {
+        "en": "The term was intelligible in a dated Philippine popular-media context by October 1947.",
+        "zh": "到 1947 年 10 月，该术语已经出现在有明确日期的菲律宾通俗媒体语境中。"
+      },
+      "limit": {
+        "en": "Fiction proves vocabulary and media representation only; it supplies no origin, production chronology, or reliable object-form evidence.",
+        "zh": "文学作品只能证明术语使用与媒体呈现；它不提供起源、生产年代序列或可靠物件形态证据。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "verified-1951-batangas-industry-report",
+      "date": "1951",
+      "status": "verified_record",
+      "statement": {
+        "en": "A contemporaneous education report based on 1950-1951 provincial visits records balisong knife-making as an active Batangas industry.",
+        "zh": "一份基于 1950—1951 年省区考察的同期教育报告，把 balisong 刀具生产记录为八打雁的一项活跃产业。"
+      },
+      "evidence": [{
+        "source_id": "lardizabal-community-schools-batangas-1951",
+        "source_tier": "A",
+        "locator": "repository PDF p. 7; printed p. 18; report dateline 14 July 1951",
+        "relation": "supports"
+      }],
+      "supports": {
+        "en": "Balisong production was explicitly included in a contemporaneous report on Batangas community industries by 1951.",
+        "zh": "到 1951 年，balisong 生产已经被同期报告明确列入八打雁的社区产业。"
+      },
+      "limit": {
+        "en": "The report does not establish an invention date, origin story, or external form; its process sentence remains excluded from AI and public search.",
+        "zh": "该报告不能确立发明年代、起源叙述或外部形态；其中的工艺句继续排除于 AI 与公共搜索。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "corroborated-1953-taal-local-record",
+      "date": "1953",
+      "status": "corroborated_lead",
+      "statement": {
+        "en": "A paginated transcription of Taal local-history papers contains a History of Balisong Knives section and describes the craft as an established local industry in 1953.",
+        "zh": "带页码的塔阿尔地方史转录稿包含“Balisong 刀具史”章节，并把该工艺描述为 1953 年已经形成的当地产业。"
+      },
+      "evidence": [{
+        "source_id": "batangas-history-taal-transcription-part-3",
+        "source_tier": "D",
+        "locator": "transcribed pp. 13-14; archival family: National Library Historical Data Papers",
+        "relation": "supports"
+      }],
+      "supports": {
+        "en": "The transcription is a strong locator for the mid-century local record and its pre-war memory.",
+        "zh": "这份转录稿为定位 20 世纪中期地方记录及其中的战前记忆提供了强线索。"
+      },
+      "limit": {
+        "en": "The National Library page images have not yet been compared, and the origin story inside the record remains retrospective testimony.",
+        "zh": "尚未与国家图书馆原始页图比对；记录内部的起源故事仍属于回溯性叙述。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "corroborated-1969-national-display",
+      "date": "1969",
+      "status": "corroborated_lead",
+      "statement": {
+        "en": "Institutional metadata confirms a 1969 Nayong Pilipino brochure later scholarship identifies as containing a Batangas-and-balisong display section.",
+        "zh": "机构目录确认了一部 1969 年菲律宾村手册；后期学术研究指出其中包含“八打雁与 balisong”展示章节。"
+      },
+      "evidence": [
+        {
+          "source_id": "ang-nayong-pilipino-brochure-1969",
+          "source_tier": "A",
+          "locator": "CiNii Books record BA59540895",
+          "relation": "contextualizes"
+        },
+        {
+          "source_id": "yasa-nayong-pilipino-2024",
+          "source_tier": "B",
+          "locator": "PDF pp. 90 and 112; thesis pagination 75 and 97",
+          "relation": "supports"
+        }
+      ],
+      "supports": {
+        "en": "Balisong was included in a national cultural-display frame by 1969, according to a traceable brochure citation chain.",
+        "zh": "根据可追踪的手册引用链，balisong 到 1969 年已经进入国家文化展示框架。"
+      },
+      "limit": {
+        "en": "The original brochure has not been inspected locally, so its exact wording and imagery are not accepted evidence yet.",
+        "zh": "项目尚未在本地检查原始手册，因此其中的准确措辞与图像还不是已接受证据。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "verified-1971-customs-record",
+      "date": "1971-05-21",
+      "status": "verified_record",
+      "statement": {
+        "en": "A United States Customs notice used the term Balisong and described the object's broad two-guard folding appearance in 1971.",
+        "zh": "美国海关的一份通知在 1971 年使用 Balisong 一词，并描述了其宽泛的双护片折叠外观。"
+      },
+      "evidence": [{
+        "source_id": "us-customs-imported-balisong-knives-1971",
+        "source_tier": "A",
+        "locator": "Federal Register 36 FR 9263",
+        "relation": "supports"
+      }],
+      "supports": {
+        "en": "The term and broad form were present in a dated federal record by 1971.",
+        "zh": "到 1971 年，这一术语与宽泛形态已经出现在有明确日期的联邦记录中。"
+      },
+      "limit": {
+        "en": "The notice's claim that the design was native to the Philippines is an agency statement, not provenance proof.",
+        "zh": "通知关于该设计源自菲律宾的说法是机构陈述，不是来源链证明。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "verified-1987-philippine-legal-vocabulary",
+      "date": "1987-07-07",
+      "status": "verified_record",
+      "statement": {
+        "en": "A Philippine Supreme Court decision reproduces regulation vocabulary that lists both fanknife and balisong.",
+        "zh": "菲律宾最高法院的一份判决转录了同时列出 fanknife 与 balisong 的监管术语。"
+      },
+      "evidence": [{
+        "source_id": "people-v-lasanas-1987-lawphil",
+        "source_tier": "A",
+        "locator": "G.R. Nos. L-48879-82, regulation-context passage",
+        "relation": "supports"
+      }],
+      "supports": {
+        "en": "The term was present in official Philippine legal vocabulary by 1987.",
+        "zh": "到 1987 年，该术语已进入菲律宾官方法律文本。"
+      },
+      "limit": {
+        "en": "The decision contributes no design chronology or visual-form evidence.",
+        "zh": "该判决不提供设计年代序列或视觉形态证据。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "verified-1994-craft-reference",
+      "date": "1994",
+      "status": "verified_record",
+      "statement": {
+        "en": "A Philippine cultural reference explicitly treats balisong as Batangas metalcraft and records several named external appearance categories.",
+        "zh": "一份菲律宾文化参考资料明确把 balisong 作为八打雁金属工艺，并记录了若干有名称的外部外观类别。"
+      },
+      "evidence": [{
+        "source_id": "ccp-encyclopedia-metalcraft-1994",
+        "source_tier": "B",
+        "locator": "PDF pp. 4-5",
+        "relation": "supports"
+      }],
+      "supports": {
+        "en": "The 1994 publication can support cultural classification and broad visible-form vocabulary after human claim review.",
+        "zh": "完成主张人工审核后，这份 1994 年出版物可支持文化分类与宽泛可见形态术语。"
+      },
+      "limit": {
+        "en": "Its earlier-date and transmission statements are retrospective editorial claims; controlled process passages remain excluded.",
+        "zh": "其中关于早期年代与传播的陈述属于回溯性编辑主张；受控工艺段落继续排除。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "verified-2016-cultural-thesis-record",
+      "date": "2016",
+      "status": "verified_record",
+      "statement": {
+        "en": "De La Salle University records a 2016 thesis focused on balisong as a cultural symbol in Barangay Balisong, Taal.",
+        "zh": "德拉萨大学记录了一篇 2016 年论文，研究塔阿尔 Balisong 村中 balisong 的文化象征意义。"
+      },
+      "evidence": [{
+        "source_id": "galvan-2016-dlsu-thesis",
+        "source_tier": "B",
+        "locator": "institutional record and abstract, accession TU19415",
+        "relation": "supports"
+      }],
+      "supports": {
+        "en": "The institutional record verifies the study's identity, scope, and abstract-level cultural findings.",
+        "zh": "机构记录核验了研究身份、范围和摘要层面的文化研究结果。"
+      },
+      "limit": {
+        "en": "The full thesis is unavailable online; process and measurement content in the abstract remains excluded from structured data and AI.",
+        "zh": "论文全文目前无法在线获取；摘要中的工艺和测量内容继续排除于结构化数据与 AI。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "unresolved-1771-perret-relevance",
+      "date": "1771",
+      "status": "unresolved",
+      "statement": {
+        "en": "Perret's dated cutlery book is real, but no reviewed plate currently identifies a balisong or establishes a connection to the Philippine craft.",
+        "zh": "佩雷这部有明确日期的刀具书确实存在，但目前没有经过审核的图版能够识别 balisong 或建立其与菲律宾工艺的联系。"
+      },
+      "evidence": [{
+        "source_id": "perret-art-du-coutelier-1771",
+        "source_tier": "A",
+        "locator": "BnF record FRBNF31085475",
+        "relation": "contextualizes"
+      }],
+      "supports": {
+        "en": "Only the book's date, authorship, and cutlery subject are verified.",
+        "zh": "目前只核验了书籍日期、作者与刀具主题。"
+      },
+      "limit": {
+        "en": "Do not use it as an origin date or object-form source without exact plate identification and curator review.",
+        "zh": "没有具体图版识别与馆员审核时，不得把它作为起源年代或物件形态来源。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "unresolved-1895-1919-period-form",
+      "date": "1895-1919",
+      "status": "unresolved",
+      "statement": {
+        "en": "The screened regional books and official catalogues establish Batangas and craft context but do not yet document a period balisong form.",
+        "zh": "已筛选的地区书籍与官方目录能够建立八打雁和工艺背景，但尚未记录同期 balisong 形态。"
+      },
+      "evidence": [
+        {"source_id": "ia-filipinaspequeo01sastgoog", "source_tier": "A", "locator": "targeted review queue", "relation": "contextualizes"},
+        {"source_id": "ia-officialcatalogu00loui_2", "source_tier": "A", "locator": "regional/material term pages", "relation": "contextualizes"}
+      ],
+      "supports": {
+        "en": "The period and region are valid research frames.",
+        "zh": "这一时期与地区是有效研究框架。"
+      },
+      "limit": {
+        "en": "No public period geometry should be labelled observed until a directly identified image or object record is found.",
+        "zh": "在找到直接识别的图像或实物记录前，任何公开时期几何都不能标为直接观察。"
+      },
+      "public_safe": true
+    },
+    {
+      "id": "unresolved-1926-museum-form",
+      "date": "1926",
+      "status": "unresolved",
+      "statement": {
+        "en": "USNM Bulletin 137 is a verified Philippine material-culture catalogue, but the current review has not identified a balisong object within it.",
+        "zh": "美国国家博物馆第 137 号公报是已核验的菲律宾物质文化目录，但当前审核尚未在其中识别出 balisong 实物。"
+      },
+      "evidence": [{
+        "source_id": "krieger-1926-usnm-bulletin-137",
+        "source_tier": "A",
+        "locator": "full catalogue screening and review lead",
+        "relation": "contextualizes"
+      }],
+      "supports": {
+        "en": "The publication can provide museum and regional comparison context.",
+        "zh": "该出版物可提供博物馆与地区比较背景。"
+      },
+      "limit": {
+        "en": "It cannot support a 1926 balisong model without an object-level identification.",
+        "zh": "没有实物级识别时，它不能支持 1926 年 balisong 模型。"
+      },
+      "public_safe": true
+    }
+  ]
+}
