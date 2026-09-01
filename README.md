@@ -214,6 +214,10 @@ The public viewer offers manual whole-scene rotation, a slow whole-scene turntab
 The kinetic study is a browser-only procedural exhibit and is not emitted by
 `SafeProxyBackend`. It has no download, measurement, export, frame-step, or
 joint-editing interface and does not alter the joined-GLB reconstruction policy.
+Its anchor/blade/free-handle hierarchy was visually checked against
+[DJLO's CC BY-SA 3.0 Wikimedia Commons opening/closing reference](https://commons.wikimedia.org/wiki/File:Opening_and_closing_a_Balisong_aka_Butterfly_Knife.gif);
+the source file is linked and attributed in the interface but is not bundled in
+the repository.
 
 Browser assets cannot receive absolute DRM. “No download button” is an interface/access-control decision, not a promise that a displayed asset can never be saved.
 

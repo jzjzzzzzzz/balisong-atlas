@@ -33,4 +33,11 @@ derived from broad source framing, not exact replicas. The interface provides
 play, pause, restart, and palette selection only; it omits download,
 measurement, frame stepping, export, and editable joint parameters.
 
+The runtime hierarchy uses one anchored handle, a central body revolving from
+that anchor, and a free handle revolving from the second pivot. The pose order
+was visually checked against
+[DJLO's CC BY-SA 3.0 Wikimedia Commons opening/closing reference](https://commons.wikimedia.org/wiki/File:Opening_and_closing_a_Balisong_aka_Butterfly_Knife.gif).
+Only the attribution URL is stored; the GIF is not bundled or treated as
+historical-form evidence.
+
 Release uses short-lived or controlled asset access. A browser-displayed asset cannot receive absolute DRM; no-download UI is an access/control limitation, not a claim that saving is impossible.

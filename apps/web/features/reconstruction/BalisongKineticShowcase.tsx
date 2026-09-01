@@ -67,17 +67,20 @@ const eraPresets: readonly EraPreset[] = [
 
 type Keyframe = readonly [time: number, value: number];
 
-const leftHandleTrack: readonly Keyframe[] = [
-  [0, Math.PI], [0.09, Math.PI], [0.24, 0], [0.38, 0], [0.5, -Math.PI],
-  [0.63, 0], [0.78, 0], [0.92, Math.PI], [1, Math.PI],
+// Pose-to-pose study derived from the broad motion visible in public opening /
+// closing references: one handle is the anchor, the blade-and-free-handle pair
+// first revolves around it, then the free handle settles beside the anchor.
+const bladeTrack: readonly Keyframe[] = [
+  [0, Math.PI], [0.08, Math.PI], [0.31, -0.08], [0.37, 0],
+  [0.58, 0], [0.82, Math.PI + 0.07], [0.9, Math.PI], [1, Math.PI],
 ];
-const rightHandleTrack: readonly Keyframe[] = [
-  [0, -Math.PI], [0.16, -Math.PI], [0.33, 0], [0.5, 0], [0.62, Math.PI],
-  [0.75, 0], [0.84, 0], [0.96, -Math.PI], [1, -Math.PI],
+const freeHandleTrack: readonly Keyframe[] = [
+  [0, Math.PI], [0.3, Math.PI], [0.44, -0.08], [0.5, 0],
+  [0.61, 0], [0.72, Math.PI + 0.08], [0.78, Math.PI], [1, Math.PI],
 ];
-const carrierXTrack: readonly Keyframe[] = [[0, 0.16], [0.24, -0.22], [0.5, 0.25], [0.76, -0.16], [1, 0.16]];
-const carrierYTrack: readonly Keyframe[] = [[0, -0.14], [0.22, 0.24], [0.48, -0.12], [0.72, 0.2], [1, -0.14]];
-const carrierZTrack: readonly Keyframe[] = [[0, -0.16], [0.25, 0.42], [0.5, -0.4], [0.75, 0.34], [1, -0.16]];
+const carrierXTrack: readonly Keyframe[] = [[0, 0.04], [0.3, -0.12], [0.5, 0.08], [0.8, -0.1], [1, 0.04]];
+const carrierYTrack: readonly Keyframe[] = [[0, -0.12], [0.32, 0.16], [0.52, -0.08], [0.8, 0.12], [1, -0.12]];
+const carrierZTrack: readonly Keyframe[] = [[0, -0.08], [0.3, 0.22], [0.5, 0.04], [0.8, -0.2], [1, -0.08]];
 
 function ease(value: number) {
   return value < 0.5 ? 4 * value * value * value : 1 - Math.pow(-2 * value + 2, 3) / 2;
@@ -95,7 +98,7 @@ function sample(track: readonly Keyframe[], time: number) {
   return track.at(-1)?.[1] ?? 0;
 }
 
-function DecorativeHandle({ preset, side }: { preset: EraPreset; side: -1 | 1 }) {
+function DecorativeHandle({ preset, side, withLatch = false }: { preset: EraPreset; side: -1 | 1; withLatch?: boolean }) {
   const markers = [-0.84, -0.58, -0.32] as const;
   return <group position={[0, -0.58, 0]}>
     <RoundedBox args={[0.36, 1.18, 0.16]} radius={0.075} smoothness={6} castShadow>
@@ -111,6 +114,12 @@ function DecorativeHandle({ preset, side }: { preset: EraPreset; side: -1 | 1 })
     <RoundedBox args={[0.055, 0.95, 0.18]} radius={0.02} position={[side * 0.128, 0, 0.002]}>
       <meshStandardMaterial color={preset.accent} metalness={0.75} roughness={0.26} />
     </RoundedBox>
+    {withLatch && <group position={[0, -0.6, 0.015]}>
+      <mesh rotation={[Math.PI / 2, 0, 0]}><cylinderGeometry args={[0.045, 0.045, 0.18, 24]} /><meshStandardMaterial color={preset.accent} metalness={0.84} roughness={0.22} /></mesh>
+      <RoundedBox args={[0.105, 0.2, 0.075]} radius={0.035} position={[0, -0.1, 0]}>
+        <meshStandardMaterial color={preset.accent} metalness={0.82} roughness={0.24} />
+      </RoundedBox>
+    </group>}
   </group>;
 }
 
@@ -149,14 +158,14 @@ function PivotCap({ position, preset }: { position: [number, number, number]; pr
 
 function KineticAssembly({ preset, playing, restartToken }: { preset: EraPreset; playing: boolean; restartToken: number }) {
   const carrier = useRef<Group>(null);
-  const leftHandle = useRef<Group>(null);
-  const rightHandle = useRef<Group>(null);
+  const bladePivot = useRef<Group>(null);
+  const freeHandle = useRef<Group>(null);
   const glow = useRef<Mesh>(null);
   const elapsed = useRef(0);
   const previousRestart = useRef(restartToken);
 
   useFrame((_, delta) => {
-    if (!carrier.current || !leftHandle.current || !rightHandle.current) return;
+    if (!carrier.current || !bladePivot.current || !freeHandle.current) return;
     if (previousRestart.current !== restartToken) {
       elapsed.current = 0;
       previousRestart.current = restartToken;
@@ -164,13 +173,13 @@ function KineticAssembly({ preset, playing, restartToken }: { preset: EraPreset;
     if (playing) elapsed.current += Math.min(delta, 0.05);
     const time = (elapsed.current % 7.2) / 7.2;
 
-    leftHandle.current.rotation.z = sample(leftHandleTrack, time);
-    rightHandle.current.rotation.z = sample(rightHandleTrack, time);
+    bladePivot.current.rotation.z = sample(bladeTrack, time);
+    freeHandle.current.rotation.z = sample(freeHandleTrack, time);
     carrier.current.rotation.x = sample(carrierXTrack, time);
     carrier.current.rotation.y = sample(carrierYTrack, time);
     carrier.current.rotation.z = sample(carrierZTrack, time);
-    carrier.current.position.x = Math.sin(time * Math.PI * 4) * 0.13;
-    carrier.current.position.y = Math.sin(time * Math.PI * 2) * 0.08;
+    carrier.current.position.x = Math.sin(time * Math.PI * 2) * 0.07;
+    carrier.current.position.y = Math.sin(time * Math.PI * 2) * 0.04;
     if (glow.current) glow.current.rotation.z = time * Math.PI * 2;
   });
 
@@ -180,15 +189,17 @@ function KineticAssembly({ preset, playing, restartToken }: { preset: EraPreset;
       <meshBasicMaterial color={preset.accent} transparent opacity={0.16} />
     </mesh>
     <group ref={carrier} position={[0, 0.04, 0]}>
-      <CentralDisplayInsert preset={preset} />
-      <group ref={leftHandle} position={[-0.24, -0.47, 0.105]}>
+      <group position={[-0.24, 0, 0.105]}>
         <DecorativeHandle preset={preset} side={-1} />
       </group>
-      <group ref={rightHandle} position={[0.24, -0.47, -0.105]}>
-        <DecorativeHandle preset={preset} side={1} />
+      <group ref={bladePivot} position={[-0.24, 0, 0]}>
+        <group position={[0.24, 0.47, 0]}><CentralDisplayInsert preset={preset} /></group>
+        <group ref={freeHandle} position={[0.48, 0, -0.105]}>
+          <DecorativeHandle preset={preset} side={1} withLatch />
+        </group>
+        <PivotCap position={[0.48, 0, -0.105]} preset={preset} />
       </group>
-      <PivotCap position={[-0.24, -0.47, 0.105]} preset={preset} />
-      <PivotCap position={[0.24, -0.47, -0.105]} preset={preset} />
+      <PivotCap position={[-0.24, 0, 0.105]} preset={preset} />
     </group>
   </group>;
 }
@@ -207,8 +218,8 @@ export function BalisongKineticShowcase() {
           <div className="flex items-center gap-2 font-mono text-[9px] font-bold uppercase tracking-[.11em] text-amber-200"><Sparkles size={14} aria-hidden="true" />{locale === "zh" ? "3D 连续动态展览" : "Continuous 3D kinetic exhibit"}</div>
           <h2 className="mt-3 font-display text-3xl">{locale === "zh" ? "蝴蝶刀动态视觉研究" : "Balisong kinetic visual study"}</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-fog">{locale === "zh"
-            ? "双柄围绕中央展示插片进行连续展开、回转与收束，场景整体同步翻转，形成流畅循环的浏览器 3D 动画。"
-            : "Two handles continuously unfold, revolve, and return around a central display insert while the full assembly turns through a smooth browser-rendered loop."}</p>
+            ? "重新按照公开视频校正刚体层级：一个柄作为锚点，中央插片与另一柄依次回转、合拢，再反向闭合，形成连续的浏览器 3D 动画。"
+            : "The rigid-body hierarchy is corrected from public motion footage: one handle acts as the anchor while the central insert and free handle revolve, settle, and close in a continuous browser-rendered loop."}</p>
         </div>
         <div className="flex gap-2">
           <button type="button" onClick={() => setRestartToken((value) => value + 1)} className="focus-ring inline-flex items-center gap-2 border border-white/25 px-3 py-3 font-mono text-[9px] font-bold uppercase tracking-[.1em] hover:bg-white/10"><RotateCcw size={15} aria-hidden="true" />{locale === "zh" ? "重新播放" : "Restart"}</button>
@@ -253,6 +264,13 @@ export function BalisongKineticShowcase() {
         { en: "Five research-era palettes", zh: "五种研究时期外观" },
         { en: "Real-time browser rendering", zh: "浏览器实时渲染" },
       ].map((item) => <div key={item.en} className="bg-paper px-4 py-4 font-mono text-[9px] font-bold uppercase tracking-[.09em] text-quiet">{item[locale]}</div>)}
+    </section>
+    <section className="grid gap-5 border-y border-ink/20 py-5 text-sm leading-6 md:grid-cols-[180px_1fr_auto] md:items-center">
+      <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-ochre">{locale === "zh" ? "运动视频参考" : "Motion video reference"}</p>
+      <p className="text-quiet">{locale === "zh"
+        ? "使用 Wikimedia Commons 的 123 帧开放／闭合视频校正锚定柄、中央部分与自由柄的先后关系；原视频没有打包进项目。"
+        : "A 123-frame opening/closing video on Wikimedia Commons was used to correct the relationship between the anchor handle, central body, and free handle. The source video is not bundled."}</p>
+      <a href="https://commons.wikimedia.org/wiki/File:Opening_and_closing_a_Balisong_aka_Butterfly_Knife.gif" target="_blank" rel="noreferrer" className="focus-ring font-mono text-[9px] font-bold uppercase tracking-[.1em] underline underline-offset-4">{locale === "zh" ? "查看 CC BY-SA 3.0 视频" : "View CC BY-SA 3.0 video"}</a>
     </section>
   </div>;
 }

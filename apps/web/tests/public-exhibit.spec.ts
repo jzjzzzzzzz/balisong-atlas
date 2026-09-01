@@ -114,4 +114,5 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByRole("button", { name: /download/i })).toHaveCount(0);
   await expect(page.getByRole("button", { name: /measure/i })).toHaveCount(0);
   await expect(page.getByRole("button", { name: /export/i })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "View CC BY-SA 3.0 video" })).toHaveAttribute("href", /commons\.wikimedia\.org/);
 });
