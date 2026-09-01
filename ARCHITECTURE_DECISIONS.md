@@ -42,20 +42,20 @@ claims, accepted observations, approved public-safe features, and an approved
 Reconstruction Brief exist. The fictional A-01 demonstrator is isolated from
 all real periods.
 
-## ADR-010 — 3D presentation motion never models operation
+## ADR-010 — Kinetic exhibit and reconstruction assets stay separate
 
-The browser may rotate the camera around the single joined proxy manually or as
-a slow turntable. It does not animate parts, reproduce a manipulation sequence,
-or expose joint, grip, angle, speed, measurement, or frame-step controls. Media
-and performance history is represented through reviewed records and still-image
-observations rather than operational motion simulation.
+The joined GLB reconstruction pipeline remains static, unitless, and
+nonfunctional. The performance/media page may additionally render a procedural
+browser-only kinetic study with two animated handles and a rounded central
+display insert. The scene is not exported, stored as a ReconstructionVersion,
+or presented as an exact historical mechanism. It exposes play, pause, restart,
+and appearance-preset selection, but no download, measurement, frame-step,
+export, or editable joint parameters.
 
-## ADR-011 — Literary movement becomes a narrative cue, not object kinematics
+## ADR-011 — Period palettes are appearance hypotheses
 
-Fiction, film, oral history, and other media may support reviewed claims about
-representation and cultural imagination. A `NarrativeMotionStudyV1` can render
-camera movement or detached abstract cues for circulation, attention, and
-uncertainty. It cannot derive or store object-part motion, joint motion,
-operational sequences, frame breakdowns, grip, angle, or speed. Until a media
-record has locatable accepted observations, every real-period motion proxy stays
-locked; the animated A-01 scene is explicitly fictional.
+The same kinetic loop can be rendered with five period-framed material palettes.
+Each palette names its broad research source and remains interpretive. Source
+framing can influence colour, surface finish, and decorative mood without
+turning a comparative book, regional record, museum catalogue, later craft
+publication, or media record into an unsupported exact reconstruction.

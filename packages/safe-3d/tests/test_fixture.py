@@ -21,24 +21,3 @@ def test_demo_glb_is_valid_single_mesh_fixture() -> None:
     assert extras["noMovingParts"] is True
     assert extras["neutralCentralInsert"] is True
     assert "animations" not in document
-
-
-def test_narrative_motion_fixture_enforces_scene_only_motion() -> None:
-    root = Path(__file__).parents[1]
-    fixture = json.loads((root / "fixtures/demo-narrative-motion-study.json").read_text())
-    schema = json.loads((root / "schemas/narrative-motion-study-v1.schema.json").read_text())
-
-    assert fixture["evidence_state"] == "proposed"
-    assert fixture["interpretation_scope"] == "media_representation"
-    assert fixture["source_record_ids"]
-    assert all(cue["evidence_ids"] for cue in fixture["visual_cues"])
-    assert all(fixture["safety_constraints"].values())
-
-    constraint_properties = schema["properties"]["safety_constraints"]["properties"]
-    assert constraint_properties
-    assert all(definition == {"const": True} for definition in constraint_properties.values())
-    assert {cue["cue_type"] for cue in fixture["visual_cues"]} <= {
-        "circulation",
-        "attention",
-        "uncertainty",
-    }

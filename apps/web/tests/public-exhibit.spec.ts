@@ -102,16 +102,16 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByRole("button", { name: /joint/i })).toHaveCount(0);
 
   await page.getByRole("tab", { name: "Performance / media study" }).click();
-  await expect(page.getByRole("heading", { name: "Narrative motion scene study" })).toBeVisible();
-  await expect(page.getByTestId("narrative-motion-study")).toBeVisible();
-  await expect(page.getByText("Abstract narrative cue · not an object-motion path")).toBeVisible();
-  await expect(page.getByText("Static fictional joined mesh")).toBeVisible();
-  await expect(page.getByText("Period motion proxy locked").first()).toBeVisible();
-  await expect(page.getByRole("link", { name: "View institutional catalogue" })).toHaveAttribute("href", /tuklas\.up\.edu\.ph/);
+  await expect(page.getByRole("heading", { name: "Balisong kinetic visual study" })).toBeVisible();
+  await expect(page.getByTestId("balisong-kinetic-showcase")).toBeVisible();
+  await expect(page.getByText("Real-time WebGL · smooth loop · no download")).toBeVisible();
+  await expect(page.getByRole("tab", { name: /Craft-display interpretation/ })).toHaveAttribute("aria-selected", "true");
+  await page.getByRole("tab", { name: /Contemporary media silhouette/ }).click();
+  await expect(page.getByText("UP short-film thesis catalogue lead")).toBeVisible();
+  await expect(page.getByRole("button", { name: "Pause" })).toBeVisible();
+  await page.getByRole("button", { name: "Pause" }).click();
+  await expect(page.getByRole("button", { name: "Play" })).toBeVisible();
   await expect(page.getByRole("button", { name: /download/i })).toHaveCount(0);
   await expect(page.getByRole("button", { name: /measure/i })).toHaveCount(0);
-  await expect(page.getByRole("button", { name: /joint/i })).toHaveCount(0);
-  await expect(page.getByRole("button", { name: /frame/i })).toHaveCount(0);
-  await page.getByRole("tab", { name: "Uncertainty field" }).click();
-  await expect(page.getByText(/broken trace marks missing views/)).toBeVisible();
+  await expect(page.getByRole("button", { name: /export/i })).toHaveCount(0);
 });

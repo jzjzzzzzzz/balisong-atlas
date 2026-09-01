@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/components/Providers";
-import { NarrativeMotionStudy } from "@/features/reconstruction/NarrativeMotionStudy";
+import { BalisongKineticShowcase } from "@/features/reconstruction/BalisongKineticShowcase";
 import { SafeProxyViewer } from "@/features/reconstruction/SafeProxyViewer";
 import { researchLibrary } from "@/lib/research-library";
 
@@ -163,7 +163,7 @@ export function EvidenceEraTimeline() {
       <p className="max-w-xl text-right text-xs leading-5 text-quiet">{locale === "zh" ? "时间区间是研究框架，不是已经接受的历史结论。" : "Date ranges are research frames, not accepted historical conclusions."}</p>
     </div>
 
-    {layer === "performance" ? <NarrativeMotionStudy /> : <>
+    {layer === "performance" ? <BalisongKineticShowcase /> : <>
       <div className="overflow-x-auto pb-3">
         <ol className="relative grid min-w-[980px] grid-cols-5 before:absolute before:left-[10%] before:right-[10%] before:top-5 before:h-px before:bg-ink/25">
           {periods.map((period, index) => {

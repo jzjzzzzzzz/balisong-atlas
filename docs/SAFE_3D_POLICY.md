@@ -22,15 +22,15 @@ proxy; it is not object operation or part motion. The viewer omits download,
 measurement, section, exploded view, per-part visibility, joint control,
 part/operation animation, export, conversion, and real units.
 
-## Narrative and media motion studies
+## Browser kinetic exhibit
 
-`NarrativeMotionStudyV1` is not an object-motion format. It translates reviewed
-media or literary interpretation into scene-level curatorial cues such as
-circulation, viewer attention, and uncertainty. The proxy remains a static
-joined mesh. Only the camera or a detached abstract marker may move. The schema
-requires source/evidence identifiers and permanently enables prohibitions on
-part motion, joint motion, operational sequence, frame breakdown, angles/speed,
-and grip guidance. Fiction can support a proposed media-representation claim;
-it cannot prove historical form or become a reproducible manipulation path.
+The performance/media page contains a separate, procedural React Three Fiber
+scene. It animates two stylized handles around a rounded central display insert
+and turns the complete assembly through a smooth loop. This runtime scene is not
+a `ReconstructionVersion`, is not exported to GLB, and does not change the
+single-mesh invariants above. Its five era palettes are appearance hypotheses
+derived from broad source framing, not exact replicas. The interface provides
+play, pause, restart, and palette selection only; it omits download,
+measurement, frame stepping, export, and editable joint parameters.
 
 Release uses short-lived or controlled asset access. A browser-displayed asset cannot receive absolute DRM; no-download UI is an access/control limitation, not a claim that saving is impossible.

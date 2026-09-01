@@ -6,7 +6,7 @@
 - **Secondary source:** peer-reviewed scholarship, academic monograph, or formal research publication interpreting primary material.
 - **Oral tradition:** culturally significant testimony preserved with speaker/context/provenance and uncertainty; not silently converted into documentary fact.
 - **Unverified narrative:** a report whose origin or chain cannot presently be established. It remains searchable for researchers only when rights/policy allow, but is labelled and cannot independently justify certainty.
-- **Fiction and media narrative:** evidence for cultural imagination, terminology, or media representation only. Described movement may become a proposed curatorial cue, but never historical-form evidence or an operational trajectory.
+- **Fiction and media narrative:** evidence for cultural imagination, terminology, appearance, or media representation. It does not independently prove a historical form or date.
 
 ## Claim lifecycle
 
@@ -22,7 +22,8 @@ AI output begins `proposed`. A human checks spans, page/region, source identity/
 
 AI is not a source. A summary is not evidence. Generated/missing views are not evidence. Timeline nodes use accepted claims only. Reconstruction is an interpretive hypothesis, not certainty.
 
-Scene-level narrative motion keeps the reconstructed proxy static. Camera paths
-and detached abstract traces may communicate circulation, attention, or missing
-evidence. They are labelled interpretation and remain separate from object
-operation, frame sequences, joint movement, and period design claims.
+The kinetic browser study separates motion from historical appearance. Its
+continuous procedural loop is a display animation, while every era palette is
+labelled as an interpretive hypothesis and names the source frame that informed
+its visual mood. No palette becomes an accepted period reconstruction without
+reviewed claims and observations.
