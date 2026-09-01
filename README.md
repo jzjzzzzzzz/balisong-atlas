@@ -178,6 +178,7 @@ The research register deliberately ranks archives and books ahead of papers, and
 ```bash
 make collect-literature
 make screen-literature
+make source-thumbnails
 ```
 
 The command builds `data/research/bibliography.json`, downloads only explicitly allow-listed research files, records actual hashes and failures in `data/research/download-report.json`, and writes originals into ignored content-addressed storage under `data/storage/research/sha256/`. Every new research copy is private and excluded from AI, embeddings, public search, and publication until rights and sensitive-content review are complete. Loan-only and unavailable works remain metadata records; the collector does not bypass access controls.
@@ -185,6 +186,10 @@ The command builds `data/research/bibliography.json`, downloads only explicitly 
 The screening command performs a local, deterministic relevance pass over the
 private PDFs. It stores aggregate term-group counts and page numbers only—not
 source text or excerpts—and its ranking is a review queue rather than evidence.
+The current register contains 93 catalogued records, 77 private PDF research
+copies, and 24 public-safe metadata records prioritized for review. The
+thumbnail command renders only three public-domain title pages for
+bibliographic navigation; it does not expose private PDFs or technical plates.
 
 The public design-evolution timeline groups sources into explicit **research
 frames**, not asserted historical periods. Selecting a frame shows its sources,
@@ -194,8 +199,10 @@ reviewer. The fictional A-01 proxy is available only as a clearly separated
 method demonstrator. A separate performance/media layer renders a smooth,
 procedural **balisong kinetic visual study** in React Three Fiber. Two stylized
 handles move around a rounded central display insert while the assembly turns in
-a continuous loop. Five research-era presets change appearance and material
-palette; they are interpretive display studies rather than exact period replicas.
+a continuous loop. Five research frames now select five separate external
+geometry families—not recolors—and show an evidence dossier, observed/inferred/
+unknown state, source path, and public-domain bibliographic folios. They remain
+interpretive display studies rather than exact period replicas.
 
 See [docs/LITERATURE_REVIEW.md](docs/LITERATURE_REVIEW.md) for the ranked register, evaluation notes, and open research gaps.
 

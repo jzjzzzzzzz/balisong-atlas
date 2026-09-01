@@ -1,8 +1,9 @@
 "use client";
 
-import { RoundedBox } from "@react-three/drei";
+import { ContactShadows, RoundedBox } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { CirclePause, CirclePlay, RotateCcw, Sparkles } from "lucide-react";
+import { ArrowUpRight, CirclePause, CirclePlay, RotateCcw } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PerspectiveCamera, Shape, type Group } from "three";
 import { useLanguage } from "@/components/Providers";
@@ -10,6 +11,7 @@ import { useLanguage } from "@/components/Providers";
 type EraPresetId = "comparative" | "regional" | "museum" | "craft" | "contemporary";
 type HandleStyle = "segmented-scale" | "horn-and-bolster" | "pinned-slab" | "skeletonized-metal" | "milled-channel";
 type InsertStyle = "comparative-leaf" | "regional-spear" | "catalogue-straight" | "industrial-clip" | "contemporary-drop";
+type EvidenceState = "observed" | "inferred" | "unknown";
 
 type EraPreset = {
   id: EraPresetId;
@@ -28,6 +30,7 @@ type EraPreset = {
   handleLength: number;
   pivotSpread: number;
   hasLatch: boolean;
+  evidenceState: EvidenceState;
   structureCue: { en: string; zh: string };
   insertCue: { en: string; zh: string };
   evidenceCue: { en: string; zh: string };
@@ -37,11 +40,11 @@ const eraPresets: readonly EraPreset[] = [
   {
     id: "comparative",
     period: { en: "1771 comparative frame", zh: "1771 比较框架" },
-    title: { en: "European cutlery-book palette", zh: "欧洲刀具图录色调" },
-    note: { en: "A comparative visual mood, not an origin claim or period replica.", zh: "仅采用比较研究的视觉气氛，不构成起源主张或时期复制品。" },
-    source: { en: "Perret, L’art du coutelier — metadata review", zh: "佩雷《刀匠技艺》——元数据审核" },
+    title: { en: "European comparison — form unverified", zh: "欧洲比较对象——形态未验证" },
+    note: { en: "Perret’s dated book is retained to test a recurring comparison. No reviewed plate currently identifies a balisong.", zh: "保留佩雷这部有明确年代的书，是为了检验反复出现的比较叙述。目前没有经过审核的图版能够识别出 balisong。" },
+    source: { en: "Perret, L’art du coutelier — bibliographic record only", zh: "佩雷《刀匠技艺》——目前仅有书目记录" },
     handle: "#4b4640", inset: "#17191a", metal: "#b9b8b2", accent: "#8e7654", background: "#0c1012",
-    handleStyle: "segmented-scale", insertStyle: "comparative-leaf", handleWidth: 0.29, handleLength: 1.38, pivotSpread: 0.36, hasLatch: true,
+    handleStyle: "segmented-scale", insertStyle: "comparative-leaf", handleWidth: 0.29, handleLength: 1.38, pivotSpread: 0.36, hasLatch: true, evidenceState: "unknown",
     structureCue: { en: "Segmented scale-and-collar comparison", zh: "分段贴片与金属套箍的比较结构" },
     insertCue: { en: "Symmetrical leaf comparison silhouette", zh: "对称叶形比较轮廓" },
     evidenceCue: { en: "Unknown: the 1771 record does not verify a balisong form.", zh: "未知：1771 年书目记录不能验证蝴蝶刀形态。" },
@@ -49,11 +52,11 @@ const eraPresets: readonly EraPreset[] = [
   {
     id: "regional",
     period: { en: "1895–1919 regional frame", zh: "1895—1919 地区框架" },
-    title: { en: "Batangas craft palette", zh: "八打雁工艺色调" },
-    note: { en: "Wood, dark metal, and warm brass are interpretive appearance cues only.", zh: "木色、深色金属与暖黄铜仅作为解释性外观提示。" },
-    source: { en: "Regional books and exposition catalogues", zh: "地区书籍与博览会目录" },
+    title: { en: "Batangas craft-description hypothesis", zh: "八打雁工艺描述假设" },
+    note: { en: "Sastrón and exposition catalogues establish regional context, while later craft writing supplies appearance cues. No period object image confirms this assembly.", zh: "萨斯特龙著作与博览会目录提供地区背景，较晚的工艺文献提供外观线索；目前没有同期实物图像确认这一组合。" },
+    source: { en: "1895 regional book + 1904 catalogues + later craft description", zh: "1895 地区书籍＋1904 目录＋后期工艺描述" },
     handle: "#59433a", inset: "#171718", metal: "#c2bbae", accent: "#9f7d4d", background: "#0c1112",
-    handleStyle: "horn-and-bolster", insertStyle: "regional-spear", handleWidth: 0.3, handleLength: 1.46, pivotSpread: 0.38, hasLatch: true,
+    handleStyle: "horn-and-bolster", insertStyle: "regional-spear", handleWidth: 0.3, handleLength: 1.46, pivotSpread: 0.38, hasLatch: true, evidenceState: "inferred",
     structureCue: { en: "Horn-appearance scales, brass-appearance bolsters, visible pins", zh: "角质外观贴片、黄铜外观箍件与可见铆钉" },
     insertCue: { en: "Spear/leaf-form regional hypothesis", zh: "矛叶形地区视觉假设" },
     evidenceCue: { en: "Inferred from later Philippine craft descriptions; not a period object record.", zh: "依据后期菲律宾工艺文献推测，并非同期实物记录。" },
@@ -61,11 +64,11 @@ const eraPresets: readonly EraPreset[] = [
   {
     id: "museum",
     period: { en: "1926–1951 museum frame", zh: "1926—1951 博物馆框架" },
-    title: { en: "Museum-catalogue study", zh: "博物馆目录研究色调" },
-    note: { en: "A restrained archival finish; no catalogue dimension or mechanism is reproduced.", zh: "采用克制的档案外观，不复现目录中的尺寸或机械结构。" },
-    source: { en: "USNM Bulletin 137 and Batangas archive leads", zh: "美国国家博物馆第 137 号公报与八打雁档案线索" },
+    title: { en: "Museum comparison hypothesis", zh: "博物馆比较假设" },
+    note: { en: "USNM Bulletin 137 and Batangas local-history holdings are comparison leads. This restrained form is not presented as a documented period object.", zh: "美国国家博物馆第 137 号公报与八打雁地方史馆藏只提供比较线索；这一克制形态不被表述为有同期记录的实物。" },
+    source: { en: "USNM Bulletin 137 + National Library local-history holdings", zh: "美国国家博物馆第 137 号公报＋国家图书馆地方史馆藏" },
     handle: "#353a3d", inset: "#121517", metal: "#c6c8c6", accent: "#858b8c", background: "#0a0f12",
-    handleStyle: "pinned-slab", insertStyle: "catalogue-straight", handleWidth: 0.27, handleLength: 1.44, pivotSpread: 0.34, hasLatch: true,
+    handleStyle: "pinned-slab", insertStyle: "catalogue-straight", handleWidth: 0.27, handleLength: 1.44, pivotSpread: 0.34, hasLatch: true, evidenceState: "inferred",
     structureCue: { en: "Plain slab scales with repeated visible pin pattern", zh: "平直贴片柄与重复可见铆钉纹样" },
     insertCue: { en: "Straight-back catalogue study silhouette", zh: "直背式博物馆目录研究轮廓" },
     evidenceCue: { en: "Inferred: museum and archive leads still need object-level confirmation.", zh: "推测：博物馆与档案线索仍需实物级确认。" },
@@ -73,11 +76,11 @@ const eraPresets: readonly EraPreset[] = [
   {
     id: "craft",
     period: { en: "1979–1994 industrial frame", zh: "1979—1994 工业化框架" },
-    title: { en: "Industrial catalogue transition", zh: "工业目录转型形态" },
-    note: { en: "Period catalogue scans show a transition toward exposed all-metal and skeletonized handle treatments.", zh: "同期目录扫描显示外露全金属与镂空柄视觉逐步出现。" },
+    title: { en: "Industrial catalogue geometry", zh: "工业目录几何形态" },
+    note: { en: "Collector-hosted period scans visibly show scale-clad and exposed all-metal, skeletonized handle families. The proxy does not copy a named model.", zh: "收藏者托管的同期扫描中，可以直接看到贴片柄与外露全金属镂空柄两类外观；视觉代理不复制任何具体型号。" },
     source: { en: "Bali-Song / Pacific Cutlery / Benchmade catalogue scans", zh: "Bali-Song、Pacific Cutlery 与 Benchmade 目录扫描" },
     handle: "#9da3a4", inset: "#15191a", metal: "#c8ccca", accent: "#d7d9d7", background: "#0b0e10",
-    handleStyle: "skeletonized-metal", insertStyle: "industrial-clip", handleWidth: 0.29, handleLength: 1.5, pivotSpread: 0.35, hasLatch: true,
+    handleStyle: "skeletonized-metal", insertStyle: "industrial-clip", handleWidth: 0.29, handleLength: 1.5, pivotSpread: 0.35, hasLatch: true, evidenceState: "observed",
     structureCue: { en: "All-metal skeletonized handle appearance", zh: "全金属镂空柄外观" },
     insertCue: { en: "Angular clip-form catalogue silhouette", zh: "折角削背式目录轮廓" },
     evidenceCue: { en: "Observed in period catalogue scans; model identity is not reproduced.", zh: "可见于同期目录扫描，但不复刻具体产品型号。" },
@@ -85,11 +88,11 @@ const eraPresets: readonly EraPreset[] = [
   {
     id: "contemporary",
     period: { en: "1995–present media frame", zh: "1995—至今媒体框架" },
-    title: { en: "Contemporary media silhouette", zh: "当代媒体轮廓" },
-    note: { en: "A cleaner graphic finish for media-history display, not a commercial product model.", zh: "采用适合媒体史展示的简洁图形外观，不是商业产品模型。" },
-    source: { en: "Public manufacturer anatomy imagery + UP media lead", zh: "制造商公开结构图像与菲律宾大学媒体研究线索" },
+    title: { en: "Contemporary channel-form study", zh: "当代通道式形态研究" },
+    note: { en: "Public anatomy imagery supports contemporary channel-style vocabulary and visible hardware placement. The display remains a generic, noncommercial visual proxy.", zh: "公开结构图像支持当代通道式刀柄术语与可见硬件位置；这里仍是通用、非商业的视觉代理。" },
+    source: { en: "Public anatomy reference + UP media-research lead", zh: "公开结构参考＋菲律宾大学媒体研究线索" },
     handle: "#1b8fa8", inset: "#10191c", metal: "#c9cecf", accent: "#e0e5e5", background: "#071014",
-    handleStyle: "milled-channel", insertStyle: "contemporary-drop", handleWidth: 0.225, handleLength: 1.5, pivotSpread: 0.28, hasLatch: false,
+    handleStyle: "milled-channel", insertStyle: "contemporary-drop", handleWidth: 0.225, handleLength: 1.5, pivotSpread: 0.28, hasLatch: false, evidenceState: "observed",
     structureCue: { en: "Narrow channel-style handle with milled recesses", zh: "带机加工凹槽的窄通道式柄" },
     insertCue: { en: "Slender drop-form neutral display insert", zh: "细长水滴形中性展示插片" },
     evidenceCue: { en: "Observed as broad contemporary design language; not a copied product.", zh: "作为当代通用设计语言直接观察，并非复制具体产品。" },
@@ -310,7 +313,7 @@ function KineticAssembly({ preset, playing, restartToken }: { preset: EraPreset;
     carrier.current.position.y = Math.sin(time * Math.PI * 2) * 0.04;
   });
 
-  return <group scale={0.86}>
+  return <group scale={0.92}>
     <mesh position={[0, 0, -0.42]}>
       <circleGeometry args={[1.46, 96]} />
       <meshBasicMaterial color="#0b1113" transparent opacity={0.42} />
@@ -336,13 +339,52 @@ function ResponsiveCamera() {
 
   useEffect(() => {
     if (!(camera instanceof PerspectiveCamera)) return;
-    camera.position.set(0, 0.04, size.width < 640 ? 8.2 : 5.7);
+    camera.position.set(0, 0.02, size.width < 640 ? 8.2 : 6.3);
     camera.fov = 31;
     camera.updateProjectionMatrix();
   }, [camera, size.width]);
 
   return null;
 }
+
+const evidenceStateCopy: Record<EvidenceState, { en: string; zh: string }> = {
+  observed: { en: "Observed", zh: "直接观察" },
+  inferred: { en: "Inferred", zh: "证据推测" },
+  unknown: { en: "Unknown", zh: "当前未知" },
+};
+
+const evidenceStateStyles: Record<EvidenceState, string> = {
+  observed: "border-[#79935f] text-[#b9d599]",
+  inferred: "border-amber-300 text-amber-200",
+  unknown: "border-white/35 text-fog",
+};
+
+const sourceFolios = [
+  {
+    image: "/research/sastron-batangas-1895.webp",
+    year: "1895",
+    title: { en: "Batangas and its province", zh: "《八打雁及其省份》" },
+    creator: { en: "Manuel Sastrón", zh: "曼努埃尔·萨斯特龙" },
+    note: { en: "Regional context; targeted Spanish-language review still required.", zh: "提供地区背景；仍需西班牙语定向审核。" },
+    href: "https://archive.org/details/filipinaspequeo01sastgoog",
+  },
+  {
+    image: "/research/philippine-exhibits-1904.webp",
+    year: "1904",
+    title: { en: "Official catalogue of Philippine exhibits", zh: "《菲律宾展品官方目录》" },
+    creator: { en: "Louisiana Purchase Exposition", zh: "路易斯安那购地博览会" },
+    note: { en: "Period exhibition frame; catalogue categories are not neutral descriptions.", zh: "提供同期博览会框架；目录分类并非中立描述。" },
+    href: "https://archive.org/details/officialcatalogu00loui_2",
+  },
+  {
+    image: "/research/usnm-bulletin-137-1926.webp",
+    year: "1926",
+    title: { en: "USNM Bulletin 137", zh: "美国国家博物馆第 137 号公报" },
+    creator: { en: "Herbert W. Krieger", zh: "赫伯特·W·克里格" },
+    note: { en: "Museum comparison context; not a documented balisong record.", zh: "博物馆比较背景；不是有记录的 balisong 实物。" },
+    href: "https://doi.org/10.5479/si.03629236.137.1",
+  },
+] as const;
 
 export function BalisongKineticShowcase() {
   const { locale } = useLanguage();
@@ -351,15 +393,14 @@ export function BalisongKineticShowcase() {
   const [restartToken, setRestartToken] = useState(0);
   const preset = eraPresets.find((item) => item.id === presetId) ?? eraPresets[4];
 
-  return <div className="space-y-6" data-testid="balisong-kinetic-showcase">
+  return <div className="space-y-8" data-testid="balisong-kinetic-showcase">
     <section className="overflow-hidden border border-ink/25 bg-night text-white">
-      <header className="grid gap-4 border-b border-white/15 px-5 py-5 lg:grid-cols-[1fr_auto] lg:items-end">
+      <header className="grid gap-5 border-b border-white/15 px-5 py-6 lg:grid-cols-[1fr_auto] lg:items-end lg:px-7">
         <div>
-          <div className="flex items-center gap-2 font-mono text-[9px] font-bold uppercase tracking-[.11em] text-amber-200"><Sparkles size={14} aria-hidden="true" />{locale === "zh" ? "3D 连续动态展览" : "Continuous 3D kinetic exhibit"}</div>
-          <h2 className="mt-3 font-display text-3xl">{locale === "zh" ? "蝴蝶刀动态视觉研究" : "Balisong kinetic visual study"}</h2>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-fog">{locale === "zh"
-            ? "刀刃形中央展示插片与双柄使用清晰分离的轮廓；一个柄作为锚点，中央部分与另一柄依次回转、合拢，再反向闭合。选择时期会同时更换刃形与柄部外部结构，而不只是换色。"
-            : "The blade-form display insert and paired handles use clearly separated silhouettes. One handle anchors the motion while the central body and free handle revolve, settle, and close; changing period replaces blade and handle geometry, not only color."}</p>
+          <h2 className="font-display text-3xl leading-tight lg:text-4xl">{locale === "zh" ? "时期形态与动态视觉研究" : "Period form and kinetic study"}</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-fog">{locale === "zh"
+            ? "五个研究框架使用五套不同的刃形展示插片与刀柄外部几何。切换时期会重建轮廓、开孔、贴片、箍件和闩锁外观；证据不足的部分继续标记为推测或未知。"
+            : "Five research frames use five distinct blade-form display inserts and handle geometries. Switching period rebuilds silhouettes, openings, scales, bolsters, and latch appearance; unsupported details remain inferred or unknown."}</p>
         </div>
         <div className="flex gap-2">
           <button type="button" onClick={() => setRestartToken((value) => value + 1)} className="focus-ring inline-flex items-center gap-2 border border-white/25 px-3 py-3 font-mono text-[9px] font-bold uppercase tracking-[.1em] hover:bg-white/10"><RotateCcw size={15} aria-hidden="true" />{locale === "zh" ? "重新播放" : "Restart"}</button>
@@ -370,85 +411,123 @@ export function BalisongKineticShowcase() {
         </div>
       </header>
 
-      <div className="grid lg:grid-cols-[minmax(0,1.55fr)_minmax(310px,.45fr)]">
+      <div className="grid lg:grid-cols-[minmax(0,1.7fr)_minmax(320px,.62fr)]">
         <div
-          className="relative h-[520px] border-b border-white/15 lg:h-[620px] lg:border-b-0 lg:border-r"
+          className="relative h-[500px] border-b border-white/15 lg:h-[650px] lg:border-b-0 lg:border-r"
           data-testid="kinetic-geometry-stage"
           data-handle-style={preset.handleStyle}
           data-insert-style={preset.insertStyle}
+          data-evidence-state={preset.evidenceState}
         >
-          <Canvas camera={{ position: [0, 0.04, 5.7], fov: 31 }} dpr={[1, 1.7]} shadows>
+          <Canvas camera={{ position: [0, 0.02, 6.3], fov: 31 }} dpr={[1, 1.8]} shadows>
             <ResponsiveCamera />
             <color attach="background" args={[preset.background]} />
-            <ambientLight intensity={0.62} />
-            <hemisphereLight args={["#dce9ed", "#071014", 1.5]} />
-            <directionalLight position={[-3.6, 3.8, 5]} intensity={4.4} castShadow />
-            <spotLight position={[3.2, 1.2, 4.5]} intensity={3.1} angle={0.52} penumbra={0.82} color="#b8e4ef" />
-            <pointLight position={[-2.5, -1.8, 2.6]} intensity={1.15} color={preset.accent} />
+            <ambientLight intensity={0.56} />
+            <hemisphereLight args={["#e6f0ee", "#071014", 1.7]} />
+            <directionalLight position={[-3.8, 4.2, 5.2]} intensity={4.8} castShadow />
+            <spotLight position={[3.4, 1.5, 4.8]} intensity={3.4} angle={0.5} penumbra={0.86} color="#c9e9ed" />
+            <pointLight position={[-2.7, -2, 2.8]} intensity={1.3} color={preset.accent} />
             <KineticAssembly preset={preset} playing={playing} restartToken={restartToken} />
+            <ContactShadows position={[0, 0, -0.56]} rotation={[Math.PI / 2, 0, 0]} scale={5.4} opacity={0.38} blur={2.8} far={2.6} color="#000000" />
           </Canvas>
-          <div className="pointer-events-none absolute bottom-4 left-4 border border-white/25 bg-night/85 px-3 py-2 font-mono text-[8px] uppercase tracking-[.1em] text-fog">{locale === "zh" ? "实时 WebGL · 流畅循环 · 无下载" : "Real-time WebGL · smooth loop · no download"}</div>
+          <div className="pointer-events-none absolute left-4 top-4 max-w-[74%] border-l border-white/35 bg-night/70 px-3 py-2 backdrop-blur-sm">
+            <p className="font-mono text-[8px] font-bold uppercase tracking-[.12em] text-fog">{preset.period[locale]}</p>
+            <p className="mt-1 font-display text-lg leading-tight text-white">{preset.title[locale]}</p>
+          </div>
+          <div className="pointer-events-none absolute bottom-4 left-4 border border-white/25 bg-night/85 px-3 py-2 font-mono text-[8px] uppercase tracking-[.1em] text-fog">{locale === "zh" ? "实时 WebGL · 单一视觉代理 · 无下载" : "Real-time WebGL · single visual proxy · no download"}</div>
         </div>
 
-        <aside className="p-5">
-          <p className="font-mono text-[9px] uppercase tracking-[.12em] text-fog">{locale === "zh" ? "时期外观预设" : "Period appearance preset"}</p>
-          <div className="mt-3 grid gap-2" role="tablist" aria-label={locale === "zh" ? "时期外观预设" : "Period appearance preset"}>
-            {eraPresets.map((item) => <button key={item.id} type="button" role="tab" aria-selected={presetId === item.id} onClick={() => setPresetId(item.id)} className={`focus-ring border px-3 py-3 text-left ${presetId === item.id ? "border-amber-200 bg-white/10" : "border-white/15 hover:bg-white/5"}`}>
-              <span className="block font-mono text-[8px] font-bold uppercase tracking-[.1em] text-fog">{item.period[locale]}</span>
-              <span className="mt-1 block font-display text-lg">{item.title[locale]}</span>
-            </button>)}
+        <aside className="flex flex-col p-5 lg:p-6">
+          <div className="flex items-center justify-between gap-4 border-b border-white/15 pb-4">
+            <p className="font-mono text-[9px] uppercase tracking-[.12em] text-fog">{locale === "zh" ? "当前证据档案" : "Current evidence dossier"}</p>
+            <span className={`border-l-2 pl-2 font-mono text-[9px] font-bold uppercase tracking-[.09em] ${evidenceStateStyles[preset.evidenceState]}`}>{evidenceStateCopy[preset.evidenceState][locale]}</span>
           </div>
-          <div className="mt-5 border-l-2 border-amber-300 pl-4">
-            <p className="text-xs leading-5 text-fog">{preset.note[locale]}</p>
-            <p className="mt-3 font-mono text-[8px] uppercase leading-4 tracking-[.08em] text-amber-200">{preset.source[locale]}</p>
-          </div>
-          <dl className="mt-5 grid gap-px border border-white/15 bg-white/15 text-xs">
-            <div className="bg-night px-3 py-3">
-              <dt className="font-mono text-[8px] font-bold uppercase tracking-[.1em] text-fog">{locale === "zh" ? "刀柄外部结构" : "Handle construction cue"}</dt>
-              <dd className="mt-1.5 leading-5 text-white">{preset.structureCue[locale]}</dd>
+
+          <h3 className="mt-5 font-display text-2xl leading-tight">{preset.title[locale]}</h3>
+          <p className="mt-3 text-sm leading-6 text-fog">{preset.note[locale]}</p>
+
+          <dl className="mt-6 border-y border-white/15 text-xs">
+            <div className="border-b border-white/10 py-4">
+              <dt className="font-mono text-[8px] font-bold uppercase tracking-[.11em] text-fog">{locale === "zh" ? "刀柄外部结构" : "Visible handle structure"}</dt>
+              <dd className="mt-2 leading-5 text-white">{preset.structureCue[locale]}</dd>
             </div>
-            <div className="bg-night px-3 py-3">
-              <dt className="font-mono text-[8px] font-bold uppercase tracking-[.1em] text-fog">{locale === "zh" ? "刃形展示轮廓" : "Blade-form display cue"}</dt>
-              <dd className="mt-1.5 leading-5 text-white">{preset.insertCue[locale]}</dd>
+            <div className="border-b border-white/10 py-4">
+              <dt className="font-mono text-[8px] font-bold uppercase tracking-[.11em] text-fog">{locale === "zh" ? "刃形展示轮廓" : "Blade-form display silhouette"}</dt>
+              <dd className="mt-2 leading-5 text-white">{preset.insertCue[locale]}</dd>
             </div>
-            <div className="bg-night px-3 py-3">
-              <dt className="font-mono text-[8px] font-bold uppercase tracking-[.1em] text-fog">{locale === "zh" ? "证据状态" : "Evidence state"}</dt>
-              <dd className="mt-1.5 leading-5 text-fog">{preset.evidenceCue[locale]}</dd>
+            <div className="py-4">
+              <dt className="font-mono text-[8px] font-bold uppercase tracking-[.11em] text-fog">{locale === "zh" ? "证据说明" : "Evidence note"}</dt>
+              <dd className="mt-2 leading-5 text-fog">{preset.evidenceCue[locale]}</dd>
             </div>
           </dl>
+
+          <div className="mt-5 border-l-2 border-amber-300 pl-4">
+            <p className="font-mono text-[8px] font-bold uppercase leading-4 tracking-[.09em] text-amber-200">{locale === "zh" ? "主要来源路径" : "Primary source path"}</p>
+            <p className="mt-2 text-xs leading-5 text-fog">{preset.source[locale]}</p>
+          </div>
+
+          <div className="mt-auto grid grid-cols-3 gap-3 border-t border-white/15 pt-6">
+            {(["observed", "inferred", "unknown"] as const).map((state) => <div key={state} className="min-w-0">
+              <span className={`block border-t-2 pt-2 font-mono text-[8px] font-bold uppercase tracking-[.06em] ${evidenceStateStyles[state]}`}>{evidenceStateCopy[state][locale]}</span>
+            </div>)}
+          </div>
         </aside>
+      </div>
+
+      <div className="border-t border-white/15" role="tablist" aria-label={locale === "zh" ? "时期结构预设" : "Period geometry presets"}>
+        <div className="grid min-w-[860px] grid-cols-5 overflow-x-auto lg:min-w-0">
+          {eraPresets.map((item, index) => <button key={item.id} type="button" role="tab" aria-selected={presetId === item.id} onClick={() => setPresetId(item.id)} className={`focus-ring relative min-h-[116px] border-r border-white/15 px-4 py-4 text-left last:border-r-0 ${presetId === item.id ? "bg-white/10" : "hover:bg-white/5"}`}>
+            <span className={`absolute inset-x-0 top-0 h-0.5 ${presetId === item.id ? "bg-amber-200" : "bg-transparent"}`} />
+            <span className="font-display text-xl text-white/45">0{index + 1}</span>
+            <span className="ml-3 font-mono text-[8px] font-bold uppercase tracking-[.1em] text-fog">{item.period[locale]}</span>
+            <span className="mt-2 block font-display text-base leading-5 text-white">{item.title[locale]}</span>
+          </button>)}
+        </div>
       </div>
     </section>
 
-    <section className="grid gap-px border border-ink/20 bg-ink/20 sm:grid-cols-3">
-      {[
-        { en: "Distinct blade / handle silhouettes", zh: "刀刃与刀柄清晰分离" },
-        { en: "Five geometry families, not recolors", zh: "五套不同结构，而非换色" },
-        { en: "Real-time browser rendering", zh: "浏览器实时渲染" },
-      ].map((item) => <div key={item.en} className="bg-paper px-4 py-4 font-mono text-[9px] font-bold uppercase tracking-[.09em] text-quiet">{item[locale]}</div>)}
+    <section aria-labelledby="source-folios-heading" className="border-y border-ink/25 py-7">
+      <div className="grid gap-5 lg:grid-cols-[260px_1fr] lg:items-end">
+        <div>
+          <h2 id="source-folios-heading" className="font-display text-3xl">{locale === "zh" ? "档案书目图像" : "Archival source folios"}</h2>
+          <p className="mt-2 text-xs leading-5 text-quiet">{locale === "zh" ? "以下均为公版来源的封面或题名页，仅用于书目导航，不是物件形态证据。" : "Public-domain covers and title pages for bibliographic navigation only; they are not object-form evidence."}</p>
+        </div>
+        <p className="max-w-2xl text-sm leading-6 text-quiet">{locale === "zh" ? "新增的文献筛选把地区史、博览会目录与博物馆目录分开处理。年代早不等于结论更可靠；每一条形态主张仍需绑定具体页面或图像区域。" : "The expanded literature pass separates regional history, exposition catalogues, and museum catalogues. Earlier publication does not mean greater certainty; every form claim still needs a page or image-region citation."}</p>
+      </div>
+      <div className="mt-7 grid gap-0 border-t border-ink/20 md:grid-cols-3">
+        {sourceFolios.map((folio) => <article key={folio.year} className="grid grid-cols-[96px_1fr] gap-4 border-b border-ink/20 py-5 md:grid-cols-1 md:border-r md:px-5 md:first:pl-0 md:last:border-r-0 md:last:pr-0 xl:grid-cols-[112px_1fr]">
+          <div className="relative aspect-[3/4] overflow-hidden border border-ink/20 bg-[#e7decc]">
+            <Image src={folio.image} alt={locale === "zh" ? `${folio.title.zh}题名页` : `${folio.title.en} title page`} fill sizes="(max-width: 768px) 96px, 180px" className="object-cover grayscale-[18%]" />
+          </div>
+          <div className="flex min-w-0 flex-col">
+            <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-redline">{folio.year}</p>
+            <h3 className="mt-2 font-display text-xl leading-6">{folio.title[locale]}</h3>
+            <p className="mt-1 text-xs leading-5 text-quiet">{folio.creator[locale]}</p>
+            <p className="mt-4 text-xs leading-5 text-quiet">{folio.note[locale]}</p>
+            <a href={folio.href} target="_blank" rel="noreferrer" className="focus-ring mt-auto inline-flex items-center gap-1 self-start pt-4 font-mono text-[9px] font-bold uppercase tracking-[.09em] underline underline-offset-4">{locale === "zh" ? "来源记录" : "Source record"}<ArrowUpRight size={12} aria-hidden="true" /></a>
+          </div>
+        </article>)}
+      </div>
     </section>
-    <section className="grid gap-5 border-y border-ink/20 py-5 text-sm leading-6 md:grid-cols-[180px_1fr_auto] md:items-center">
-      <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-ochre">{locale === "zh" ? "运动视频参考" : "Motion video reference"}</p>
-      <p className="text-quiet">{locale === "zh"
-        ? "使用 Wikimedia Commons 的 123 帧开放／闭合视频校正锚定柄、中央部分与自由柄的先后关系；原视频没有打包进项目。"
-        : "A 123-frame opening/closing video on Wikimedia Commons was used to correct the relationship between the anchor handle, central body, and free handle. The source video is not bundled."}</p>
-      <a href="https://commons.wikimedia.org/wiki/File:Opening_and_closing_a_Balisong_aka_Butterfly_Knife.gif" target="_blank" rel="noreferrer" className="focus-ring font-mono text-[9px] font-bold uppercase tracking-[.1em] underline underline-offset-4">{locale === "zh" ? "查看 CC BY-SA 3.0 视频" : "View CC BY-SA 3.0 video"}</a>
-    </section>
-    <section className="grid gap-5 border-b border-ink/20 pb-5 text-sm leading-6 md:grid-cols-[180px_1fr_auto] md:items-center">
-      <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-ochre">{locale === "zh" ? "当代外观参考" : "Contemporary form reference"}</p>
-      <p className="text-quiet">{locale === "zh"
-        ? "根据制造商公开结构图像提取细长轮廓、通道式双柄、表面开槽、可见枢轴硬件与克制的阳极氧化／石洗金属观感；没有复制具体商业型号。"
-        : "Public manufacturer anatomy imagery informed the slender silhouette, channel-style handles, surface slots, visible pivot hardware, and restrained anodized/stonewashed metal appearance. No commercial model is copied."}</p>
-      <a href="https://www.squidindustries.co/blogs/education-squid-industries/balisong-anatomy" target="_blank" rel="noreferrer" className="focus-ring font-mono text-[9px] font-bold uppercase tracking-[.1em] underline underline-offset-4">{locale === "zh" ? "查看公开结构图" : "View public anatomy reference"}</a>
-    </section>
-    <section className="grid gap-5 border-b border-ink/20 pb-5 text-sm leading-6 md:grid-cols-[180px_1fr_auto] md:items-center">
-      <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-ochre">{locale === "zh" ? "历史结构参考" : "Historical structure references"}</p>
-      <p className="text-quiet">{locale === "zh"
-        ? "菲律宾文化中心 1994 年《金属工艺》条目支持角质外观、金属钉饰与多种外部刃形；1979—1994 年目录扫描支持贴片柄向全金属镂空柄的可见变化。较早时期证据不足的形态继续标注为推测或未知。"
-        : "The CCP’s 1994 Metalcraft entry supports horn appearance, metal nail decoration, and multiple external blade forms; 1979–1994 catalogue scans support a visible shift from scale-clad to all-metal skeletonized handles. Earlier forms remain marked inferred or unknown where evidence is insufficient."}</p>
-      <div className="flex flex-col items-start gap-2 font-mono text-[9px] font-bold uppercase tracking-[.1em]">
-        <a href="https://nlpdl.nlp.gov.ph/CC01/monographs/1994/NLP00VM052mcd/v3/v17.pdf" target="_blank" rel="noreferrer" className="focus-ring underline underline-offset-4">{locale === "zh" ? "查看 1994 工艺条目" : "View 1994 craft entry"}</a>
-        <a href="https://www.pbase.com/balisong/balisong_catalogs" target="_blank" rel="noreferrer" className="focus-ring underline underline-offset-4">{locale === "zh" ? "查看历史目录扫描" : "View period catalogue scans"}</a>
+
+    <section className="divide-y divide-ink/15 border-b border-ink/20 text-sm leading-6">
+      <div className="grid gap-4 py-5 md:grid-cols-[180px_1fr_auto] md:items-center">
+        <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-ochre">{locale === "zh" ? "运动关系参考" : "Motion relationship"}</p>
+        <p className="text-quiet">{locale === "zh" ? "Wikimedia Commons 的 123 帧开放／闭合记录只用于校正三个外部部分的先后关系；不逐帧展示，也不转化为动作教学。" : "A 123-frame Wikimedia Commons opening/closing record is used only to check the sequence of three external bodies; it is neither shown frame-by-frame nor converted into instruction."}</p>
+        <a href="https://commons.wikimedia.org/wiki/File:Opening_and_closing_a_Balisong_aka_Butterfly_Knife.gif" target="_blank" rel="noreferrer" className="focus-ring font-mono text-[9px] font-bold uppercase tracking-[.1em] underline underline-offset-4">{locale === "zh" ? "CC BY-SA 3.0 来源" : "CC BY-SA 3.0 source"}</a>
+      </div>
+      <div className="grid gap-4 py-5 md:grid-cols-[180px_1fr_auto] md:items-center">
+        <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-ochre">{locale === "zh" ? "结构与外观参考" : "Structure and appearance"}</p>
+        <p className="text-quiet">{locale === "zh" ? "1994 年《金属工艺》条目支持角质外观、金属钉饰与多种外部轮廓；1979—1994 目录扫描支持贴片柄与全金属镂空柄两类可见形态。更早的组合继续标为推测或未知。" : "The 1994 Metalcraft entry supports horn appearance, metal nail decoration, and multiple external silhouettes; 1979–1994 scans support visible scale-clad and all-metal skeletonized handle families. Earlier assemblies remain inferred or unknown."}</p>
+        <div className="flex flex-col items-start gap-2 font-mono text-[9px] font-bold uppercase tracking-[.1em]">
+          <a href="https://nlpdl.nlp.gov.ph/CC01/monographs/1994/NLP00VM052mcd/v3/v17.pdf" target="_blank" rel="noreferrer" className="focus-ring underline underline-offset-4">{locale === "zh" ? "查看 1994 工艺条目" : "View 1994 craft entry"}</a>
+          <a href="https://www.pbase.com/balisong/balisong_catalogs" target="_blank" rel="noreferrer" className="focus-ring underline underline-offset-4">{locale === "zh" ? "查看历史目录扫描" : "View period catalogue scans"}</a>
+        </div>
+      </div>
+      <div className="grid gap-4 py-5 md:grid-cols-[180px_1fr_auto] md:items-center">
+        <p className="font-mono text-[9px] font-bold uppercase tracking-[.11em] text-ochre">{locale === "zh" ? "当代术语参考" : "Contemporary terminology"}</p>
+        <p className="text-quiet">{locale === "zh" ? "公开结构页面仅用于核对当代通道式／夹层式刀柄、可见枢轴与闩锁等外部术语。没有复制商业型号，也没有读取尺寸。" : "A public anatomy page is used only to check contemporary channel/sandwich handle, visible pivot, and latch terminology. No commercial model or dimension is copied."}</p>
+        <a href="https://www.squidindustries.co/blogs/education-squid-industries/balisong-anatomy" target="_blank" rel="noreferrer" className="focus-ring font-mono text-[9px] font-bold uppercase tracking-[.1em] underline underline-offset-4">{locale === "zh" ? "查看公开结构参考" : "View public anatomy reference"}</a>
       </div>
     </section>
   </div>;

@@ -38,10 +38,15 @@ one dependent source family.
 | 1912 | *Philippine Craftsman* (22 digitized issues) | Private research copies | Contemporary craft/industry periodical sequence, retained for issue-level search and review. |
 | 1913 | Fay-Cooper Cole, *The Wild Tribes of Davao District, Mindanao* | Private research copy | Regional ethnographic context; not direct balisong evidence. |
 | 1914 | Dean C. Worcester, *The Philippines Past and Present* | Private research copy | Broad historical context with significant authorial/colonial bias to evaluate. |
-| 1926 | Herbert W. Krieger, *The Collection of Primitive Weapons and Armor of the Philippine Islands in the United States National Museum* | Private research copy requested | Museum monograph. It contains controlled measurements and technical description and remains excluded from AI/public search. |
+| 1926 | Herbert W. Krieger, *The Collection of Primitive Weapons and Armor of the Philippine Islands in the United States National Museum* | Private public-domain research copy | Museum monograph. It contains controlled measurements and technical description and remains excluded from AI/public search. |
 | 1946–1951 | *Historical data for the province of Batangas* | Institutional catalogue metadata | Retrospective local-history compilation. It cannot be treated as contemporary evidence for earlier dates. |
+| 1953 | *History and Cultural Life of Balisong, Bauan, Batangas* | Web transcription lead; archival original not yet compared | Specific place-name lead. It concerns Balisong in Bauan, not the Taal craft, and the transcription is not independent from the National Library holding. |
+| 1955 | *Balisong*, directed by Conrado Conde | Legacy Sampaguita Pictures archive-inventory metadata | Dated media-history checkpoint only. No frame or publicity image is cached, and a viewing copy is required before visual observation. |
+| 1987 | *People of the Philippines v. Rogelio Lasanas, et al.* | Public legal record | Primary regulation-language context. It supplies no design, construction, or motion evidence. |
 | 1994 | “Metalcraft,” *CCP Encyclopedia of Philippine Art, Visual Arts* | Private restricted research copy | Direct craft context and bibliography; copyright and controlled-content flags are pending review. |
 | 2002 | Ramon N. Villegas, ed., *Batangas: Forged in Fire* | Catalogue metadata | Regional secondary-source lead; no digital copy was offered by the catalogue. |
+| 2013 | Municipality of Taal, “Balisong, the Folding Pocket Knife is Taal's Pride” | Institutional web metadata | Useful for municipal public-cultural framing, not independent evidence for origin or chronology. Site images are not cached. |
+| 2015 | Braham Noe D. Cabanding, *Status, Problems and Prospects of Agricultural Cutting Tools…* | Institutional thesis metadata | Regional livelihood and intergenerational craft-transmission lead. Restricted process passages remain excluded from AI/search. |
 | 2016 | Daniel John Felix G. Galvan, *Ang balisong bilang sagisag-kultura…* | Institutional thesis metadata | Direct cultural-research lead. Full text was not publicly downloadable. |
 | 2024 | Mary Vincelle C. Yasa, *Transcending Diversity Through Aesthetics…* | Private institutional-repository research copy | Later scholarship on Nayong Pilipino. Deterministic screening found two direct-term page leads; period publications and the author's analysis must be reviewed separately. |
 | Undated record | Leo Joseph S. Mercado, *Balisong* short-film thesis | UP Libraries catalogue metadata | Direct media-representation lead. An authorized viewing copy and locatable review are required before any visual cue is proposed. |
@@ -101,7 +106,10 @@ page text or excerpts, extract measurements, send content to AI, or create
 evidence. The current pass screened all 77 PDFs without failures: two files
 surfaced direct-term leads, six surfaced regional/material co-occurrence
 leads, and 76 contained at least some searchable text. Nineteen records were
-then prioritized in the public-safe reading-room interface for human review.
+initially prioritized in the public-safe reading-room interface for human review.
+Five newly catalogued legal, film, municipal, local-history, and thesis leads
+bring the current curated review register to 24 records; these metadata-only
+additions do not change the PDF screening totals.
 
 Every collected file starts with:
 
@@ -117,7 +125,7 @@ recorded actions.
 
 ### Actual collection snapshot
 
-The 2026-09-01 expanded run catalogued **88 records** and placed **77 PDF
+The 2026-09-01 expanded run catalogued **93 records** and placed **77 PDF
 research copies** in private CAS storage, totalling **1,797,956,296 bytes**
 (about 1.67 GiB). The corpus is weighted toward old books, official records,
 and historical periodicals rather than web posts. The tracked
@@ -146,3 +154,5 @@ use unauthorized mirrors or evade institutional access controls.
 4. Screen and search the 22 *Philippine Craftsman* issues and ten selected
    *Philippine Journal of Science* volumes at page level.
 5. Audit the citation lineage of recurring origin dates before proposing any chronology claim.
+6. Locate an authorized viewing copy of the 1955 *Balisong* film and keep any
+   resulting media observation separate from object-history evidence.

@@ -13,6 +13,27 @@ IIIF imports preserve provider, `requiredStatement`, and rights. If rights are u
 
 Code is MIT. Archive data, images, exhibition writing, and third-party metadata retain separate licenses and attribution.
 
+## Public-domain source folios
+
+The timeline bundles three reduced title-page images for bibliographic
+navigation. They are rendered from the private content-addressed research
+copies by `scripts/generate_source_thumbnails.py`; no interior technical plate
+or measurement page is published.
+
+- Manuel Sastrón, *Filipinas: pequeños estudios; Batangas y su provincia*
+  (1895), University of Michigan scan via
+  [Internet Archive](https://archive.org/details/filipinaspequeo01sastgoog),
+  public-domain historical scan.
+- *Official catalogue Philippine exhibits: Universal Exposition, St. Louis*
+  (1904), Boston Public Library scan via
+  [Internet Archive](https://archive.org/details/officialcatalogu00loui_2),
+  public-domain historical scan.
+- Herbert W. Krieger, *USNM Bulletin 137* (1926), Smithsonian Institution,
+  [No Copyright — United States](https://doi.org/10.5479/si.03629236.137.1).
+
+These title pages are not object-form evidence. Their public cards link to the
+institutional or contributing-library record and state the limits of use.
+
 ## Motion reference
 
 The browser kinetic exhibit was visually checked against DJLO,

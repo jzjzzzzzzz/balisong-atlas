@@ -313,6 +313,29 @@
       "excluded_from_public_search": true
     },
     {
+      "id": "people-v-lasanas-1987-lawphil",
+      "title": "People of the Philippines v. Rogelio Lasanas, et al., G.R. Nos. L-48879-82",
+      "creator": "Supreme Court of the Philippines",
+      "year": "1987",
+      "source_kind": "judicial_decision",
+      "priority_class": "archive",
+      "source_tier": "A",
+      "institution": "Supreme Court of the Philippines / Lawphil",
+      "canonical_url": "https://lawphil.net/judjuris/juri1987/jul1987/gr_l-48879_1987.html",
+      "rights_status": "public_domain",
+      "rights_note": "Public legal record. Public excerpts remain short and limited to regulation-context claims.",
+      "relevance": "Primary legal-language record for late-20th-century regulation context; it contributes no design or movement evidence.",
+      "safety_flags": [
+        "operational_instruction"
+      ],
+      "public_display_allowed": false,
+      "research_copy_only": true,
+      "sensitive_review_status": "pending",
+      "excluded_from_ai": true,
+      "excluded_from_embeddings": true,
+      "excluded_from_public_search": true
+    },
+    {
       "id": "met-luzon-knife-317185",
       "title": "Knife, Luzon, late 19th–early 20th century",
       "creator": "Unrecorded maker",
@@ -2366,6 +2389,31 @@
       "excluded_from_public_search": true
     },
     {
+      "id": "cabanding-taal-cutting-tools-2015",
+      "title": "Status, Problems and Prospects of Agricultural Cutting Tools Manufacturing and Trading in Selected Areas in Taal, Batangas",
+      "creator": "Braham Noe D. Cabanding",
+      "year": "2015",
+      "source_kind": "undergraduate_thesis",
+      "priority_class": "paper",
+      "source_tier": "B",
+      "institution": "University of the Philippines Los Baños",
+      "canonical_url": "https://www.ukdr.uplb.edu.ph/etd-undergrad/12244/",
+      "rights_status": "metadata_only",
+      "rights_note": "Institutional metadata is public; full-text access is restricted to authorized university accounts.",
+      "relevance": "Regional livelihood and craft-transmission context. Process passages remain excluded from AI, embeddings, and public search.",
+      "safety_flags": [
+        "manufacturing",
+        "operational_instruction",
+        "copyright_risk"
+      ],
+      "public_display_allowed": false,
+      "research_copy_only": true,
+      "sensitive_review_status": "pending",
+      "excluded_from_ai": true,
+      "excluded_from_embeddings": true,
+      "excluded_from_public_search": true
+    },
+    {
       "id": "galvan-2016-dlsu-thesis",
       "title": "Ang balisong bilang sagisag-kultura ng Barangay Balisong, Taal, Batangas City",
       "creator": "Daniel John Felix G. Galvan",
@@ -2439,6 +2487,30 @@
       "excluded_from_public_search": true
     },
     {
+      "id": "taal-government-balisong-craft-2013",
+      "title": "Balisong, the Folding Pocket Knife is Taal's Pride",
+      "creator": "Municipality of Taal",
+      "year": "2013",
+      "source_kind": "institutional_web_record",
+      "priority_class": "institutional_web",
+      "source_tier": "C",
+      "institution": "Municipal Government of Taal",
+      "canonical_url": "https://news.taal.gov.ph/balisong-the-folding-pocket-knife-is-taals-pride/",
+      "rights_status": "metadata_only",
+      "rights_note": "Municipal web record; images are not cached and remain subject to site rights.",
+      "relevance": "Institutional record of the craft in Taal's public cultural framing; not an independent origin source.",
+      "safety_flags": [
+        "purchasing_information",
+        "copyright_risk"
+      ],
+      "public_display_allowed": false,
+      "research_copy_only": true,
+      "sensitive_review_status": "pending",
+      "excluded_from_ai": true,
+      "excluded_from_embeddings": true,
+      "excluded_from_public_search": true
+    },
+    {
       "id": "thiers-museum-cutlery",
       "title": "Musée de la Coutellerie, Thiers",
       "creator": "Ville de Thiers",
@@ -2452,6 +2524,53 @@
       "rights_note": "Institution metadata only.",
       "relevance": "Contact and collection lead for testing unverified French-origin narratives.",
       "safety_flags": [],
+      "public_display_allowed": false,
+      "research_copy_only": true,
+      "sensitive_review_status": "pending",
+      "excluded_from_ai": true,
+      "excluded_from_embeddings": true,
+      "excluded_from_public_search": true
+    },
+    {
+      "id": "balisong-bauan-historical-data-1953-transcription",
+      "title": "History and Cultural Life of Balisong, Bauan, Batangas (1953 record; web transcription)",
+      "creator": "Juana T. Magbuhat; transcribed by Batangas History, Culture and Folklore",
+      "year": "1953 record / 2018 transcription",
+      "source_kind": "archival_transcription",
+      "priority_class": "web_post",
+      "source_tier": "D",
+      "institution": "National Library of the Philippines holding / independent transcription",
+      "canonical_url": "https://www.batangashistory.date/2019/08/balisong-bauan-batangas-historical-data_15.html",
+      "rights_status": "metadata_only",
+      "rights_note": "Discovery transcription only. Cite the National Library original after image-level comparison; do not count both as independent sources.",
+      "relevance": "Specific local-history lead for the place name Balisong in Bauan. It is not a record of the Taal craft and does not establish object chronology.",
+      "safety_flags": [
+        "copyright_risk"
+      ],
+      "public_display_allowed": false,
+      "research_copy_only": true,
+      "sensitive_review_status": "pending",
+      "excluded_from_ai": true,
+      "excluded_from_embeddings": true,
+      "excluded_from_public_search": true
+    },
+    {
+      "id": "sampaguita-balisong-film-1955-archive-listing",
+      "title": "Balisong (1955) — Sampaguita Pictures archive inventory lead",
+      "creator": "Conrado Conde (director); Sampaguita Pictures",
+      "year": "1955",
+      "source_kind": "film_archive_inventory",
+      "priority_class": "web_post",
+      "source_tier": "D",
+      "institution": "Legacy copy of the Sampaguita Pictures archive list",
+      "canonical_url": "https://www.geocities.ws/sampaguita_pictures/p3.html",
+      "rights_status": "metadata_only",
+      "rights_note": "Legacy inventory metadata only; no film frames or publicity images are cached.",
+      "relevance": "Dated media-history lead documenting the title in a 1955 studio inventory. A viewing copy is required before proposing visual observations.",
+      "safety_flags": [
+        "operational_instruction",
+        "copyright_risk"
+      ],
       "public_display_allowed": false,
       "research_copy_only": true,
       "sensitive_review_status": "pending",

@@ -78,20 +78,20 @@ const periods: EvidencePeriod[] = [
     sourceRanks: [13, 3],
   },
   {
-    id: "craft-1952-1994",
-    date: "1952–1994",
-    title: { en: "Craft and cultural display", zh: "工艺与文化展示" },
+    id: "craft-1955-1994",
+    date: "1955–1994",
+    title: { en: "Craft, cinema, and catalogue visibility", zh: "工艺、电影与目录可见性" },
     scope: {
-      en: "A Philippine metalcraft reference and later scholarship on national cultural display contain direct page leads awaiting review.",
-      zh: "菲律宾金属工艺参考资料和后来的国家文化展示研究中包含直接页面线索，正在等待审核。",
+      en: "A 1955 studio-inventory title, a Philippine metalcraft reference, and 1979–1994 catalogue scans create separate media, craft, and design-history checkpoints.",
+      zh: "1955 年片厂目录标题、菲律宾金属工艺参考与 1979—1994 年目录扫描，分别建立媒体、工艺和设计史检查点。",
     },
     status: { en: "Direct page leads found", zh: "已发现直接页面线索" },
     gap: {
-      en: "Period publications cited by later scholarship must be separated from the later author's interpretation and reviewed for rights.",
-      zh: "后期研究所引用的时期出版物必须与作者后来的解释分开，并单独完成权利审核。",
+      en: "The film inventory proves only a dated title; a viewing copy is still required. Catalogue scans can support broad external form, but their host and image rights need review.",
+      zh: "电影目录只能证明一个有明确年代的片名，仍需取得可观看副本。目录扫描可支持宽泛的外部形态，但托管方和图像权利需要审核。",
     },
     state: "direct-lead",
-    sourceRanks: [1, 18],
+    sourceRanks: [20, 1, 18, 22],
   },
   {
     id: "contemporary-1995-present",
@@ -99,8 +99,8 @@ const periods: EvidencePeriod[] = [
     dateZh: "1995—至今",
     title: { en: "Contemporary cultural research", zh: "当代文化研究" },
     scope: {
-      en: "Regional books and institutional theses frame cultural identity, terminology, media, and living-craft questions.",
-      zh: "地区书籍和机构论文为文化身份、术语、媒体与活态工艺问题建立研究框架。",
+      en: "Regional books, institutional theses, and a municipal record frame cultural identity, terminology, media, livelihood, and living-craft questions.",
+      zh: "地区书籍、机构论文与市政府记录，共同建立文化身份、术语、媒体、生计与活态工艺研究框架。",
     },
     status: { en: "Access and rights pending", zh: "等待获取与权利确认" },
     gap: {
@@ -108,7 +108,7 @@ const periods: EvidencePeriod[] = [
       zh: "最直接相关的论文目前只有元数据。仍需合法取得研究副本并完成逐页审核。",
     },
     state: "metadata",
-    sourceRanks: [14, 2, 19],
+    sourceRanks: [14, 2, 19, 21, 23],
   },
 ];
 
