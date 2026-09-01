@@ -40,4 +40,10 @@ was visually checked against
 Only the attribution URL is stored; the GIF is not bundled or treated as
 historical-form evidence.
 
+The contemporary browser preset uses modern manufacturer anatomy imagery only
+to calibrate broad visible design language: a slender silhouette, narrow paired
+handles, restrained machined-metal shading, surface recesses, and visible pivot
+caps. It does not reproduce a named commercial model or ingest published
+measurements.
+
 Release uses short-lived or controlled asset access. A browser-displayed asset cannot receive absolute DRM; no-download UI is an access/control limitation, not a claim that saving is impossible.

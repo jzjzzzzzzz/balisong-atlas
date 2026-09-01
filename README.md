@@ -218,6 +218,10 @@ Its anchor/blade/free-handle hierarchy was visually checked against
 [DJLO's CC BY-SA 3.0 Wikimedia Commons opening/closing reference](https://commons.wikimedia.org/wiki/File:Opening_and_closing_a_Balisong_aka_Butterfly_Knife.gif);
 the source file is linked and attributed in the interface but is not bundled in
 the repository.
+The contemporary preset also uses a public manufacturer anatomy article to
+calibrate broad visible design language—slender form, narrow channel-style
+handles, surface slots, pivot caps, and subdued metal finishes—without copying a
+named product or ingesting its measurements.
 
 Browser assets cannot receive absolute DRM. “No download button” is an interface/access-control decision, not a promise that a displayed asset can never be saved.
 

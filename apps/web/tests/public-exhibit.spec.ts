@@ -105,9 +105,8 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByRole("heading", { name: "Balisong kinetic visual study" })).toBeVisible();
   await expect(page.getByTestId("balisong-kinetic-showcase")).toBeVisible();
   await expect(page.getByText("Real-time WebGL · smooth loop · no download")).toBeVisible();
-  await expect(page.getByRole("tab", { name: /Craft-display interpretation/ })).toHaveAttribute("aria-selected", "true");
-  await page.getByRole("tab", { name: /Contemporary media silhouette/ }).click();
-  await expect(page.getByText("UP short-film thesis catalogue lead")).toBeVisible();
+  await expect(page.getByRole("tab", { name: /Contemporary media silhouette/ })).toHaveAttribute("aria-selected", "true");
+  await expect(page.getByText("Public manufacturer anatomy imagery + UP media lead")).toBeVisible();
   await expect(page.getByRole("button", { name: "Pause" })).toBeVisible();
   await page.getByRole("button", { name: "Pause" }).click();
   await expect(page.getByRole("button", { name: "Play" })).toBeVisible();
@@ -115,4 +114,5 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByRole("button", { name: /measure/i })).toHaveCount(0);
   await expect(page.getByRole("button", { name: /export/i })).toHaveCount(0);
   await expect(page.getByRole("link", { name: "View CC BY-SA 3.0 video" })).toHaveAttribute("href", /commons\.wikimedia\.org/);
+  await expect(page.getByRole("link", { name: "View public anatomy reference" })).toHaveAttribute("href", /squidindustries\.co/);
 });

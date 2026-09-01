@@ -20,3 +20,10 @@ The browser kinetic exhibit was visually checked against DJLO,
 26 July 2011, Wikimedia Commons, CC BY-SA 3.0. The 123-frame source was used as
 a pose-order reference only. It is linked from the exhibit but is not copied or
 redistributed in this repository and is not treated as historical-form evidence.
+
+The contemporary appearance preset also uses Squid Industries'
+“[Balisong Anatomy](https://www.squidindustries.co/blogs/education-squid-industries/balisong-anatomy)”
+as a public visual-language reference. Only broad visible cues—slender overall
+form, paired channel-style handles, surface slots, exposed pivot hardware, and
+metal finish categories—were observed. Product imagery is neither bundled nor
+reproduced, and no specific commercial model geometry is copied.
