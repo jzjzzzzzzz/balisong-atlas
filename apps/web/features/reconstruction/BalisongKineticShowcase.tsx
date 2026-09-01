@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PerspectiveCamera, Shape, type Group } from "three";
 import { useLanguage } from "@/components/Providers";
+import { OpenMediaDossier } from "@/features/reconstruction/OpenMediaDossier";
 
 type EraPresetId = "comparative" | "regional" | "museum" | "craft" | "contemporary";
 type HandleStyle = "segmented-scale" | "horn-and-bolster" | "pinned-slab" | "skeletonized-metal" | "milled-channel";
@@ -89,13 +90,13 @@ const eraPresets: readonly EraPreset[] = [
     id: "contemporary",
     period: { en: "1995–present media frame", zh: "1995—至今媒体框架" },
     title: { en: "Contemporary channel-form study", zh: "当代通道式形态研究" },
-    note: { en: "Public anatomy imagery supports contemporary channel-style vocabulary and visible hardware placement. The display remains a generic, noncommercial visual proxy.", zh: "公开结构图像支持当代通道式刀柄术语与可见硬件位置；这里仍是通用、非商业的视觉代理。" },
-    source: { en: "Public anatomy reference + UP media-research lead", zh: "公开结构参考＋菲律宾大学媒体研究线索" },
-    handle: "#1b8fa8", inset: "#10191c", metal: "#c9cecf", accent: "#e0e5e5", background: "#071014",
+    note: { en: "A matched open/closed Commons photo pair supports the dark-handle and pale-metal appearance range; public anatomy imagery supplies contemporary channel-style vocabulary. The display remains a generic, noncommercial visual proxy.", zh: "Wikimedia Commons 的配对开合照片支持深色刀柄与浅色金属的外观范围；公开结构图像则提供当代通道式刀柄术语。这里仍是通用、非商业的视觉代理。" },
+    source: { en: "Ringer matched photographs, 2016 + public anatomy reference", zh: "Ringer 配对照片，2016 年＋公开结构参考" },
+    handle: "#34393b", inset: "#111516", metal: "#c7c4ba", accent: "#788083", background: "#081012",
     handleStyle: "milled-channel", insertStyle: "contemporary-drop", handleWidth: 0.225, handleLength: 1.5, pivotSpread: 0.28, hasLatch: false, evidenceState: "observed",
     structureCue: { en: "Narrow channel-style handle with milled recesses", zh: "带机加工凹槽的窄通道式柄" },
     insertCue: { en: "Slender drop-form neutral display insert", zh: "细长水滴形中性展示插片" },
-    evidenceCue: { en: "Observed as broad contemporary design language; not a copied product.", zh: "作为当代通用设计语言直接观察，并非复制具体产品。" },
+    evidenceCue: { en: "Dark handle and pale metal appearance are observed in matched contemporary photographs; channel geometry remains a broad design-language study, not a copied product.", zh: "深色刀柄与浅色金属外观可在配对当代照片中直接观察；通道式几何仍是宽泛设计语言研究，并非复制具体产品。" },
   },
 ] as const;
 
@@ -104,7 +105,7 @@ type Keyframe = readonly [time: number, value: number];
 // Pose-to-pose study derived from the broad motion visible in public opening /
 // closing references: one handle is the anchor, the blade-and-free-handle pair
 // first revolves around it, then the free handle settles beside the anchor.
-const bladeTrack: readonly Keyframe[] = [
+const insertTrack: readonly Keyframe[] = [
   [0, Math.PI], [0.08, Math.PI], [0.31, -0.08], [0.37, 0],
   [0.58, 0], [0.82, Math.PI + 0.07], [0.9, Math.PI], [1, Math.PI],
 ];
@@ -112,9 +113,11 @@ const freeHandleTrack: readonly Keyframe[] = [
   [0, Math.PI], [0.3, Math.PI], [0.44, -0.08], [0.5, 0],
   [0.61, 0], [0.72, Math.PI + 0.08], [0.78, Math.PI], [1, Math.PI],
 ];
-const carrierXTrack: readonly Keyframe[] = [[0, 0.04], [0.3, -0.12], [0.5, 0.08], [0.8, -0.1], [1, 0.04]];
-const carrierYTrack: readonly Keyframe[] = [[0, -0.12], [0.32, 0.16], [0.52, -0.08], [0.8, 0.12], [1, -0.12]];
-const carrierZTrack: readonly Keyframe[] = [[0, -0.08], [0.3, 0.22], [0.5, 0.04], [0.8, -0.2], [1, -0.08]];
+const carrierXTrack: readonly Keyframe[] = [[0, 0.08], [0.16, -0.14], [0.34, 0.1], [0.54, -0.06], [0.72, 0.12], [0.9, -0.1], [1, 0.08]];
+const carrierYTrack: readonly Keyframe[] = [[0, -0.18], [0.16, 0.14], [0.34, -0.09], [0.54, 0.16], [0.72, -0.12], [0.9, 0.1], [1, -0.18]];
+const carrierZTrack: readonly Keyframe[] = [[0, -0.1], [0.16, 0.24], [0.34, -0.08], [0.54, 0.18], [0.72, -0.21], [0.9, 0.14], [1, -0.1]];
+const positionXTrack: readonly Keyframe[] = [[0, -0.04], [0.18, 0.1], [0.38, -0.08], [0.58, 0.07], [0.78, -0.09], [1, -0.04]];
+const positionYTrack: readonly Keyframe[] = [[0, -0.03], [0.18, 0.07], [0.38, -0.02], [0.58, 0.08], [0.78, -0.05], [1, -0.03]];
 
 function ease(value: number) {
   return value < 0.5 ? 4 * value * value * value : 1 - Math.pow(-2 * value + 2, 3) / 2;
@@ -127,6 +130,27 @@ function sample(track: readonly Keyframe[], time: number) {
     if (time >= current[0] && time <= next[0]) {
       const progress = ease((time - current[0]) / (next[0] - current[0]));
       return current[1] + (next[1] - current[1]) * progress;
+    }
+  }
+  return track.at(-1)?.[1] ?? 0;
+}
+
+function sampleContinuous(track: readonly Keyframe[], time: number) {
+  for (let index = 0; index < track.length - 1; index += 1) {
+    const current = track[index];
+    const next = track[index + 1];
+    if (time >= current[0] && time <= next[0]) {
+      const previous = track[Math.max(0, index - 1)];
+      const following = track[Math.min(track.length - 1, index + 2)];
+      const progress = (time - current[0]) / (next[0] - current[0]);
+      const progress2 = progress * progress;
+      const progress3 = progress2 * progress;
+      const tangentA = (next[1] - previous[1]) * 0.45;
+      const tangentB = (following[1] - current[1]) * 0.45;
+      return (2 * progress3 - 3 * progress2 + 1) * current[1]
+        + (progress3 - 2 * progress2 + progress) * tangentA
+        + (-2 * progress3 + 3 * progress2) * next[1]
+        + (progress3 - progress2) * tangentB;
     }
   }
   return track.at(-1)?.[1] ?? 0;
@@ -289,28 +313,31 @@ function PivotCap({ position, preset }: { position: [number, number, number]; pr
 
 function KineticAssembly({ preset, playing, restartToken }: { preset: EraPreset; playing: boolean; restartToken: number }) {
   const carrier = useRef<Group>(null);
-  const bladePivot = useRef<Group>(null);
+  const insertPivot = useRef<Group>(null);
   const freeHandle = useRef<Group>(null);
   const elapsed = useRef(0);
   const previousRestart = useRef(restartToken);
   const halfSpread = preset.pivotSpread / 2;
 
   useFrame((_, delta) => {
-    if (!carrier.current || !bladePivot.current || !freeHandle.current) return;
+    if (!carrier.current || !insertPivot.current || !freeHandle.current) return;
     if (previousRestart.current !== restartToken) {
       elapsed.current = 0;
       previousRestart.current = restartToken;
     }
     if (playing) elapsed.current += Math.min(delta, 0.05);
-    const time = (elapsed.current % 7.2) / 7.2;
+    // Cadence is a synthetic exhibition loop. It does not reproduce source
+    // timing, and the public UI exposes no angle, speed, or frame-step data.
+    const time = (elapsed.current % 5.8) / 5.8;
 
-    bladePivot.current.rotation.z = sample(bladeTrack, time);
+    insertPivot.current.rotation.z = sample(insertTrack, time);
     freeHandle.current.rotation.z = sample(freeHandleTrack, time);
-    carrier.current.rotation.x = sample(carrierXTrack, time);
-    carrier.current.rotation.y = sample(carrierYTrack, time);
-    carrier.current.rotation.z = sample(carrierZTrack, time);
-    carrier.current.position.x = Math.sin(time * Math.PI * 2) * 0.07;
-    carrier.current.position.y = Math.sin(time * Math.PI * 2) * 0.04;
+    carrier.current.rotation.x = sampleContinuous(carrierXTrack, time);
+    carrier.current.rotation.y = sampleContinuous(carrierYTrack, time);
+    carrier.current.rotation.z = sampleContinuous(carrierZTrack, time);
+    carrier.current.position.x = sampleContinuous(positionXTrack, time);
+    carrier.current.position.y = sampleContinuous(positionYTrack, time);
+    carrier.current.position.z = Math.sin(time * Math.PI * 2) * 0.035;
   });
 
   return <group scale={0.92}>
@@ -322,7 +349,7 @@ function KineticAssembly({ preset, playing, restartToken }: { preset: EraPreset;
       <group position={[-halfSpread, 0, 0.07]}>
         <DecorativeHandle preset={preset} side={-1} />
       </group>
-      <group ref={bladePivot} position={[-halfSpread, 0, 0]}>
+      <group ref={insertPivot} position={[-halfSpread, 0, 0]}>
         <group position={[halfSpread, 0.62, 0]}><CentralDisplayInsert preset={preset} /></group>
         <group ref={freeHandle} position={[preset.pivotSpread, 0, -0.07]}>
           <DecorativeHandle preset={preset} side={1} withLatch={preset.hasLatch} />
@@ -418,6 +445,8 @@ export function BalisongKineticShowcase() {
           data-handle-style={preset.handleStyle}
           data-insert-style={preset.insertStyle}
           data-evidence-state={preset.evidenceState}
+          data-motion-source-families="2"
+          data-motion-track-version="2"
         >
           <Canvas camera={{ position: [0, 0.02, 6.3], fov: 31 }} dpr={[1, 1.8]} shadows>
             <ResponsiveCamera />
@@ -433,6 +462,10 @@ export function BalisongKineticShowcase() {
           <div className="pointer-events-none absolute left-4 top-4 max-w-[74%] border-l border-white/35 bg-night/70 px-3 py-2 backdrop-blur-sm">
             <p className="font-mono text-[8px] font-bold uppercase tracking-[.12em] text-fog">{preset.period[locale]}</p>
             <p className="mt-1 font-display text-lg leading-tight text-white">{preset.title[locale]}</p>
+          </div>
+          <div className="pointer-events-none absolute right-4 top-4 border-r border-amber-200/70 bg-night/70 px-3 py-2 text-right backdrop-blur-sm">
+            <p className="font-mono text-[8px] font-bold uppercase tracking-[.1em] text-amber-100">{locale === "zh" ? "2 个来源家族" : "2 source families"}</p>
+            <p className="mt-1 font-mono text-[7px] uppercase tracking-[.08em] text-fog">{locale === "zh" ? "合成节奏 · 非原片速度" : "Synthetic cadence · not source timing"}</p>
           </div>
           <div className="pointer-events-none absolute bottom-4 left-4 border border-white/25 bg-night/85 px-3 py-2 font-mono text-[8px] uppercase tracking-[.1em] text-fog">{locale === "zh" ? "实时 WebGL · 单一视觉代理 · 无下载" : "Real-time WebGL · single visual proxy · no download"}</div>
         </div>
@@ -452,7 +485,7 @@ export function BalisongKineticShowcase() {
               <dd className="mt-2 leading-5 text-white">{preset.structureCue[locale]}</dd>
             </div>
             <div className="border-b border-white/10 py-4">
-              <dt className="font-mono text-[8px] font-bold uppercase tracking-[.11em] text-fog">{locale === "zh" ? "刃形展示轮廓" : "Blade-form display silhouette"}</dt>
+              <dt className="font-mono text-[8px] font-bold uppercase tracking-[.11em] text-fog">{locale === "zh" ? "中性中央插片轮廓" : "Neutral central-insert silhouette"}</dt>
               <dd className="mt-2 leading-5 text-white">{preset.insertCue[locale]}</dd>
             </div>
             <div className="py-4">
@@ -485,6 +518,8 @@ export function BalisongKineticShowcase() {
         </div>
       </div>
     </section>
+
+    <OpenMediaDossier />
 
     <section aria-labelledby="source-folios-heading" className="border-y border-ink/25 py-7">
       <div className="grid gap-5 lg:grid-cols-[260px_1fr] lg:items-end">

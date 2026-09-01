@@ -8,6 +8,18 @@
 
 Balisong Atlas is an evidence-first digital archive and AI-assisted visual reconstruction platform for studying the cultural, historical, and design evolution of the balisong, also known as the butterfly knife.
 
+The public research timeline also includes a rights-reviewed visual-media room:
+three continuous motion records from two source families and six photographs.
+Each local media copy has a Creative Commons attribution, SHA-256, source-family
+label, and explicit evidence limit. Modern media improves only the continuity of
+the nonfunctional browser visualization; it is not projected backward as proof
+of historical performance or form.
+
+公开研究时间轴还包含经过权利审核的影像证据阅览室：来自两个来源家族的
+三条连续运动记录，以及六张图片。每份本地媒体副本都记录 Creative Commons
+署名、SHA-256、来源家族与明确的证据边界。当代媒体只用于改善非功能性浏览器
+视觉代理的连续性，不会被倒推为历史表演或历史形态的证据。
+
 Balisong Atlas 是一个以证据为基础的数字档案与 AI 辅助视觉重建平台，用于研究 balisong，也就是蝴蝶刀的文化史、设计史、工艺传统、传播过程与视觉演变。
 
 The repository is a research and cultural-heritage system—not a store, operation guide, manufacturing resource, appraisal service, or movement tutorial.

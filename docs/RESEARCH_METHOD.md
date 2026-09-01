@@ -27,3 +27,24 @@ continuous procedural loop is a display animation, while every era palette is
 labelled as an interpretive hypothesis and names the source frame that informed
 its visual mood. No palette becomes an accepted period reconstruction without
 reviewed claims and observations.
+
+## Motion and photographic media
+
+Open licensing, evidential reliability, and historical relevance are evaluated
+separately. A Wikimedia uploader may grant a valid Creative Commons license while
+providing an unverified title, object date, origin story, or description. The
+license can permit public display without turning those statements into accepted
+claims.
+
+Modern motion records are grouped by creator/source family before comparison.
+Multiple clips from one creator are not treated as independent corroboration.
+The motion study extracts only broad relationships among visible external bodies
+and whole-object continuity. It excludes timing, exact angles, grip analysis,
+frame-level action decomposition, and technique. Modern motion is never projected
+backward as evidence for a historical period.
+
+Photographs can support bounded observations such as silhouette, surface motif,
+color appearance, photographic context, and occlusion. They do not support
+unseen structure, real scale, provenance, or date unless separate reviewed
+evidence establishes those claims. Uploader-dated images remain explicitly
+unverified.

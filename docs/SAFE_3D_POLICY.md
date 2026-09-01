@@ -34,11 +34,19 @@ play, pause, restart, and palette selection only; it omits download,
 measurement, frame stepping, export, and editable joint parameters.
 
 The runtime hierarchy uses one anchored handle, a central body revolving from
-that anchor, and a free handle revolving from the second pivot. The pose order
-was visually checked against
-[DJLO's CC BY-SA 3.0 Wikimedia Commons opening/closing reference](https://commons.wikimedia.org/wiki/File:Opening_and_closing_a_Balisong_aka_Butterfly_Knife.gif).
-Only the attribution URL is stored; the GIF is not bundled or treated as
-historical-form evidence.
+that anchor, and a free handle revolving from the second pivot. Its second motion
+track uses continuous Hermite interpolation for the whole-object carrier and a
+pose-to-pose joint sequence. This reduces visible stops while preserving short
+rest poses. Translation, roll, yaw, and pitch are intentionally small and have
+no public numeric readout.
+
+Three open-licensed Wikimedia Commons motion records from two source families
+are bundled in the media evidence room. The DJLO pair is one dependent source
+family; the Gumballwolf record is a second independent modern family. Only broad
+external-body order, orientation continuity, and transition character are
+transferred. The UI exposes no frame stepping, source speed, angles, grip data,
+or action breakdown. The generated cadence is synthetic, the hand is omitted,
+and no record is treated as historical-form or historical-performance evidence.
 
 The era selector changes geometry as well as color. It uses five distinct
 external visual hypotheses: an 1880 patent-documented paired-handle comparison
