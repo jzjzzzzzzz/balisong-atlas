@@ -99,7 +99,8 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByRole("tab", { name: /Record verified/ })).toBeVisible();
   await expect(page.getByRole("heading", { name: "A digitized Philippine popular-fiction issue used the word balisong in October 1947." })).toBeVisible();
   await expect(page.getByRole("heading", { name: /contemporaneous education report based on 1950-1951 provincial visits/ })).toBeVisible();
-  await expect(page.getByText("Historical proxy gated; evidence-bounded study available")).toBeVisible();
+  await expect(page.getByTestId("period-image-evidence")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Source image before visual hypothesis" })).toBeVisible();
   await expect(page.getByText("Accepted claims").locator("..").getByText("0", { exact: true })).toBeVisible();
   await expect(page.getByTestId("balisong-kinetic-showcase")).toBeVisible();
   await expect(page.getByTestId("object-design-images")).toBeVisible();

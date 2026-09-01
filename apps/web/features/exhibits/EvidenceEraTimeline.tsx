@@ -128,28 +128,17 @@ const periodImages: Record<string, Array<{ image: string; title: { en: string; z
   "contemporary-1995-present": [{ image: "/research/media/balisong-open-ringer.jpg", title: { en: "Open-state appearance", zh: "开放状态外观" }, note: { en: "CC-licensed contemporary photograph used for visible appearance.", zh: "用于可见外观研究的 CC 许可当代照片。" } }, { image: "/research/media/balisong-closed-ringer.jpg", title: { en: "Closed-state appearance", zh: "闭合状态外观" }, note: { en: "Matched view; no measurement or mechanism is inferred.", zh: "配对视图；不推断尺寸或机械结构。" } }, { image: "/research/media/before-1982-provenance-lead-szilas.jpg", title: { en: "Provenance lead", zh: "来源线索" }, note: { en: "Uploader dating remains unverified.", zh: "上传者标注年代仍未核验。" } }],
 };
 
-function LockedProxy({ onOpenDemo }: { onOpenDemo: () => void }) {
+function PeriodImageEvidence({ periodId, onOpenDemo }: { periodId: string; onOpenDemo: () => void }) {
   const { locale } = useLanguage();
-  return <section className="flex min-h-[520px] flex-col border border-ink/20 bg-[#e5ddce]">
+  const images = periodImages[periodId] ?? [];
+  const image = images[0];
+  return <section className="border border-ink/20 bg-[#e5ddce]" data-testid="period-image-evidence">
     <div className="flex items-start justify-between gap-4 border-b border-ink/15 px-6 py-5">
-      <div>
-        <p className="font-mono text-[10px] uppercase tracking-[.12em] text-quiet">{locale === "zh" ? "重建门禁" : "Reconstruction gate"}</p>
-        <h3 className="mt-1 font-display text-2xl">{locale === "zh" ? "历史视觉代理受门禁，证据边界研究已提供" : "Historical proxy gated; evidence-bounded study available"}</h3>
-      </div>
-      <LockKeyhole className="mt-1 shrink-0 text-quiet" aria-hidden="true" />
+      <div><p className="font-mono text-[10px] uppercase tracking-[.12em] text-redline">{locale === "zh" ? "实物图像证据" : "Object image evidence"}</p><h3 className="mt-1 font-display text-2xl">{locale === "zh" ? "先看来源图像，再看视觉假设" : "Source image before visual hypothesis"}</h3></div>
+      <Box className="mt-1 shrink-0 text-quiet" aria-hidden="true" />
     </div>
-    <div className="grid flex-1 place-items-center px-6 py-14 text-center">
-      <div className="max-w-md">
-        <div className="mx-auto grid h-20 w-20 place-items-center border border-dashed border-ink/35 text-quiet"><Box size={30} aria-hidden="true" /></div>
-        <p className="mt-7 text-base leading-7 text-quiet">{locale === "zh"
-          ? "只有经过人工接受的主张、图片观察与公开安全设计特征才能进入重建简报。本时期目前没有满足条件的视觉特征。"
-          : "Only human-accepted claims, image observations, and public-safe design features may enter a Reconstruction Brief. This period has no qualifying visual features yet."}</p>
-        <button type="button" onClick={onOpenDemo} className="focus-ring mt-7 inline-flex items-center gap-2 border border-ink px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[.1em] hover:bg-ink hover:text-white">
-          <FlaskConical size={15} aria-hidden="true" />{locale === "zh" ? "查看虚构 A-01 方法演示" : "View fictional A-01 method demo"}
-        </button>
-      </div>
-    </div>
-    <div className="border-t border-ink/15 px-5 py-3 font-mono text-[9px] uppercase tracking-[.1em] text-quiet">{locale === "zh" ? "无模型 · 无尺寸 · 无活动结构" : "No model · no dimensions · no moving structure"}</div>
+    {image && <div className="relative m-5 aspect-[4/3] overflow-hidden border border-ink/25 bg-[#cfc5b3]"><Image src={image.image} alt={image.title[locale]} fill sizes="(max-width: 1280px) 100vw, 55vw" className="object-cover" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent px-5 pb-4 pt-12 text-white"><p className="font-display text-2xl">{image.title[locale]}</p><p className="mt-1 text-xs leading-5 text-white/80">{image.note[locale]}</p></div></div>}
+    <div className="border-t border-ink/15 px-6 py-5"><p className="text-sm leading-6 text-quiet">{locale === "zh" ? "这是已保存的来源图像，不是生成图。它只展示该时期研究框架中的可用视觉材料；没有直接图像的年代仍保持未解决。" : "This is a saved source image, not a generated picture. It shows the visual material available for this research frame; periods without a direct image remain unresolved."}</p><button type="button" onClick={onOpenDemo} className="focus-ring mt-5 inline-flex items-center gap-2 border border-ink px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[.1em] hover:bg-ink hover:text-white"><FlaskConical size={15} aria-hidden="true" />{locale === "zh" ? "查看虚构 A-01 方法演示" : "View fictional A-01 method demo"}</button></div>
   </section>;
 }
 
@@ -200,7 +189,7 @@ export function EvidenceEraTimeline() {
             </div>
             <SafeProxyViewer />
           </div> : <div>
-            <LockedProxy onOpenDemo={() => setShowDemo(true)} />
+            <PeriodImageEvidence periodId={selected.id} onOpenDemo={() => setShowDemo(true)} />
             <div className="mt-4">
               <div className="mb-3 border border-ochre/40 bg-amber-50 px-4 py-3 text-xs leading-5 text-ochre">
                 {locale === "zh" ? "历史时期视觉代理仍被证据门禁阻止；下方仅展示不带时期断言的证据边界视觉研究。" : "The historical-period proxy remains gated; the study below is a method-only visual without a period claim."}
