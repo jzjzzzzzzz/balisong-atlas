@@ -102,6 +102,8 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByText("Historical proxy gated; evidence-bounded study available")).toBeVisible();
   await expect(page.getByText("Accepted claims").locator("..").getByText("0", { exact: true })).toBeVisible();
   await expect(page.getByTestId("balisong-kinetic-showcase")).toBeVisible();
+  await expect(page.getByTestId("object-design-images")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Not virtual: image evidence for this frame" })).toBeVisible();
   await expect(page.getByText("The historical-period proxy remains gated; the study below is a method-only visual without a period claim.")).toBeVisible();
 
   await page.getByRole("button", { name: "View fictional A-01 method demo" }).click();

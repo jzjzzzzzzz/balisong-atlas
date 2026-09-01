@@ -9,6 +9,7 @@ import {
   LockKeyhole,
 } from "lucide-react";
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { useLanguage } from "@/components/Providers";
 import { BalisongKineticShowcase } from "@/features/reconstruction/BalisongKineticShowcase";
 import { SafeProxyViewer } from "@/features/reconstruction/SafeProxyViewer";
@@ -119,6 +120,14 @@ const stateStyles: Record<PeriodState, string> = {
   metadata: "border-ink/40 bg-paper text-quiet",
 };
 
+const periodImages: Record<string, Array<{ image: string; title: { en: string; zh: string }; note: { en: string; zh: string } }>> = {
+  "comparative-1880": [{ image: "/research/sastron-batangas-1895.webp", title: { en: "1895 Batangas book title page", zh: "1895 年《八打雁》题名页" }, note: { en: "Regional context only; not an 1880 object image.", zh: "仅作地区背景；不是 1880 年物件图像。" } }],
+  "regional-1895-1919": [{ image: "/research/sastron-batangas-1895.webp", title: { en: "Regional publication record", zh: "地区出版物记录" }, note: { en: "Bibliographic context; no balisong form is identified on this cover.", zh: "书目背景；封面未识别出 balisong 形态。" } }, { image: "/research/media/baling-sungay-melchior22.jpg", title: { en: "Contemporary Batangas appearance", zh: "当代八打雁外观" }, note: { en: "Visible appearance only; photographed in 2021, not period evidence.", zh: "仅作可见外观；拍摄于 2021 年，不是同期证据。" } }],
+  "philippine-1947-1953": [{ image: "/research/media/balisong-open-ringer.jpg", title: { en: "Open-state photograph", zh: "开放状态照片" }, note: { en: "Modern visual comparison; it does not illustrate the 1947–1953 records.", zh: "现代视觉比较；不直接说明 1947—1953 年记录。" } }, { image: "/research/media/balisong-closed-ringer.jpg", title: { en: "Closed-state photograph", zh: "闭合状态照片" }, note: { en: "Matched contemporary view; no date or origin is inferred.", zh: "配对当代视图；不推断年代或起源。" } }],
+  "craft-1969-1994": [{ image: "/research/media/police-museum-display-sasha-taylor.jpg", title: { en: "Museum-display photograph", zh: "博物馆展示照片" }, note: { en: "Display context only; object-level catalogue metadata is absent.", zh: "仅作展示语境；缺少物件级目录元数据。" } }, { image: "/research/media/open-closed-comparison-iamthawalrus.jpg", title: { en: "Open / closed comparison", zh: "开合状态比较" }, note: { en: "Contemporary silhouette reference, not a 1969–1994 catalogue plate.", zh: "当代轮廓参考，不是 1969—1994 年目录图版。" } }],
+  "contemporary-1995-present": [{ image: "/research/media/balisong-open-ringer.jpg", title: { en: "Open-state appearance", zh: "开放状态外观" }, note: { en: "CC-licensed contemporary photograph used for visible appearance.", zh: "用于可见外观研究的 CC 许可当代照片。" } }, { image: "/research/media/balisong-closed-ringer.jpg", title: { en: "Closed-state appearance", zh: "闭合状态外观" }, note: { en: "Matched view; no measurement or mechanism is inferred.", zh: "配对视图；不推断尺寸或机械结构。" } }, { image: "/research/media/before-1982-provenance-lead-szilas.jpg", title: { en: "Provenance lead", zh: "来源线索" }, note: { en: "Uploader dating remains unverified.", zh: "上传者标注年代仍未核验。" } }],
+};
+
 function LockedProxy({ onOpenDemo }: { onOpenDemo: () => void }) {
   const { locale } = useLanguage();
   return <section className="flex min-h-[520px] flex-col border border-ink/20 bg-[#e5ddce]">
@@ -218,6 +227,11 @@ export function EvidenceEraTimeline() {
             <p className="mt-2 text-sm leading-6 text-quiet">{selected.gap[locale]}</p>
           </div>
         </aside>
+      </section>
+
+      <section className="border-t border-ink/20 pt-7" data-testid="object-design-images">
+        <div className="flex flex-wrap items-end justify-between gap-3"><div><p className="font-mono text-[9px] font-bold uppercase tracking-[.12em] text-redline">{locale === "zh" ? "实物与档案图像" : "Object and archival images"}</p><h2 className="mt-2 font-display text-3xl">{locale === "zh" ? "不是虚拟图：当前时期的图像证据" : "Not virtual: image evidence for this frame"}</h2></div><p className="max-w-xl text-xs leading-5 text-quiet">{locale === "zh" ? "图片按来源页和证据边界展示；现代照片不会被倒推成历史物件图像。" : "Images are shown with source limits; modern photographs are not projected backward as historical object images."}</p></div>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{(periodImages[selected.id] ?? []).map((item) => <article key={item.image} className="border border-ink/20 bg-white/30 p-3"><div className="relative aspect-[4/3] overflow-hidden bg-[#d2c8b7]"><Image src={item.image} alt={item.title[locale]} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" /></div><h3 className="mt-3 font-display text-xl leading-5">{item.title[locale]}</h3><p className="mt-2 text-xs leading-5 text-quiet">{item.note[locale]}</p></article>)}</div>
       </section>
 
       <section className="grid gap-8 border-t border-ink/20 pt-7 lg:grid-cols-[1.3fr_.7fr]">
