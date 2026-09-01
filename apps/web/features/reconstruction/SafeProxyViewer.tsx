@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { Environment, Html, OrbitControls, useGLTF } from "@react-three/drei";
+import { Environment, Html, OrbitControls, RoundedBox, useGLTF } from "@react-three/drei";
 import { Box, Info, Palette, Rotate3D } from "lucide-react";
 import { Suspense, useState } from "react";
 import { useLanguage, type Locale } from "@/components/Providers";
@@ -13,6 +13,23 @@ type SafeProxyViewerProps = {
 function Model({ locale }: { locale: Locale }) {
   const { scene } = useGLTF("/demo-abstract-proxy.glb");
   return <group rotation={[0.4, 0, -0.12]}><primitive object={scene.clone()} /><Html position={[0.18, .14, .08]} center distanceFactor={5}><span className="whitespace-nowrap border border-white/30 bg-night/90 px-3 py-1 font-mono text-[9px] uppercase tracking-[.08em] text-white">{locale === "zh" ? "推断 · 中性中央区域" : "Inferred · neutral central field"}</span></Html></group>;
+}
+
+function InferredButterflyProxy({ locale }: { locale: Locale }) {
+  return <group rotation={[0.32, -0.14, -0.08]} data-testid="inferred-butterfly-proxy">
+    <RoundedBox args={[0.18, 1.65, 0.13]} radius={0.06} smoothness={8} position={[-0.28, 0, 0]}>
+      <meshPhysicalMaterial color="#303638" metalness={0.72} roughness={0.3} clearcoat={0.3} />
+    </RoundedBox>
+    <RoundedBox args={[0.18, 1.65, 0.13]} radius={0.06} smoothness={8} position={[0.28, 0, 0]} rotation={[0, 0, 0.03]}>
+      <meshPhysicalMaterial color="#3d4243" metalness={0.7} roughness={0.32} clearcoat={0.28} />
+    </RoundedBox>
+    <RoundedBox args={[0.2, 1.15, 0.1]} radius={0.08} smoothness={8} position={[0, 0.12, 0.02]}>
+      <meshPhysicalMaterial color="#c7c4ba" metalness={0.78} roughness={0.34} clearcoat={0.2} />
+    </RoundedBox>
+    <mesh position={[-0.28, 0.7, 0.08]} rotation={[Math.PI / 2, 0, 0]}><cylinderGeometry args={[0.055, 0.055, 0.025, 24]} /><meshStandardMaterial color="#8b9292" metalness={0.88} roughness={0.22} /></mesh>
+    <mesh position={[0.28, 0.7, 0.08]} rotation={[Math.PI / 2, 0, 0]}><cylinderGeometry args={[0.055, 0.055, 0.025, 24]} /><meshStandardMaterial color="#8b9292" metalness={0.88} roughness={0.22} /></mesh>
+    <Html position={[0, -1.02, 0.08]} center distanceFactor={5}><span className="whitespace-nowrap border border-amber-300/50 bg-night/90 px-3 py-1 font-mono text-[9px] uppercase tracking-[.08em] text-amber-100">{locale === "zh" ? "推断 · 蝴蝶刀外部关系" : "Inferred · butterfly-knife external relation"}</span></Html>
+  </group>;
 }
 
 export function SafeProxyViewer({ mode = "demo" }: SafeProxyViewerProps) {
@@ -34,7 +51,7 @@ export function SafeProxyViewer({ mode = "demo" }: SafeProxyViewerProps) {
       <Canvas camera={{ position: [0, -1.7, .8], fov: 35 }} dpr={[1, 1.7]}>
         <color attach="background" args={[dark ? "#10191b" : "#e9e0cf"]}/>
         <ambientLight intensity={1.5}/><directionalLight position={[2, -2, 4]} intensity={3}/>
-        <Suspense fallback={<Html center><span className="text-xs text-fog">{locale === "zh" ? "正在加载视觉代理…" : "Loading visual proxy…"}</span></Html>}><Model locale={locale}/><Environment preset="studio"/></Suspense>
+        <Suspense fallback={<Html center><span className="text-xs text-fog">{locale === "zh" ? "正在加载视觉代理…" : "Loading visual proxy…"}</span></Html>}>{evidenceBounded ? <InferredButterflyProxy locale={locale}/> : <Model locale={locale}/>}<Environment preset="studio"/></Suspense>
         <OrbitControls autoRotate={turntable} autoRotateSpeed={0.55} enablePan={false} enableDamping minDistance={1.15} maxDistance={2.35} minPolarAngle={0.55} maxPolarAngle={2.45}/>
       </Canvas>
       <div className="pointer-events-none absolute bottom-4 left-4 flex items-center gap-2 border border-ink bg-paper/95 px-3 py-2 font-mono text-[9px] uppercase tracking-[.1em] text-ink"><Box size={13}/>{locale === "zh" ? "无单位 · 单一合并网格 · 无活动部件" : "Unitless · one joined mesh · no moving parts"}</div>
