@@ -32,3 +32,68 @@ a { text-underline-offset: .2em; }
   .folio-rail { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+/* Research paper */
+.research-paper-page {
+  background-image: linear-gradient(rgba(21,21,19,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(21,21,19,.018) 1px, transparent 1px);
+  background-size: 100% 32px, 32px 100%;
+}
+.reading-progress { position: fixed; inset: 0 0 auto; z-index: 80; height: 2px; background: transparent; pointer-events: none; }
+.reading-progress span { display: block; height: 100%; background: #455e52; transition: width 80ms linear; }
+.paper-header { background: linear-gradient(180deg, rgba(231,225,214,.55), rgba(243,240,233,.92)); }
+.paper-article { counter-reset: paper-figure; }
+.paper-article > .paper-section:not(:first-child) { border-top: 1px solid rgba(21,21,19,.16); padding-top: 4rem; }
+.paper-section p { hanging-punctuation: first last; }
+.citation-anchor { margin-inline: .08em; border: 0; padding: 0 .1em; background: transparent; cursor: pointer; text-decoration: underline; text-decoration-color: rgba(69,94,82,.35); text-underline-offset: .2em; }
+.citation-anchor:hover, .citation-anchor:focus-visible { color: #9e2d26; }
+.paper-note-rail { display: none; }
+.footnote-popover { border-top: 3px solid #151513; background: #e7e1d6; padding: 1.1rem; box-shadow: 0 16px 34px rgba(21,21,19,.1); }
+.paper-bibliography li { overflow-wrap: anywhere; }
+.paper-figure img { display: block; }
+.argument-map-canvas { background-image: radial-gradient(rgba(21,21,19,.09) .75px, transparent .75px); background-size: 14px 14px; }
+
+@media (min-width: 1024px) {
+  .paper-note-rail { display: block; min-width: 0; }
+}
+
+@media (max-width: 1023px) {
+  .paper-note-rail:has(.footnote-popover) { display: block; position: fixed; inset: auto 0 0; z-index: 70; padding: 1rem; background: rgba(16,16,15,.18); backdrop-filter: blur(5px); }
+  .paper-note-rail .footnote-popover { max-height: 45vh; overflow: auto; }
+}
+
+@media (max-width: 640px) {
+  .research-paper-page { background-image: none; }
+  .paper-header h1 { overflow-wrap: anywhere; }
+  .paper-tabs { scrollbar-width: none; }
+  .paper-tabs::-webkit-scrollbar { display: none; }
+  .paper-figure figcaption { display: block; }
+}
+
+@page { margin: 1in; size: auto; }
+@media print {
+  :root { color-scheme: light; }
+  html, body { background: white !important; color: black !important; }
+  body { font-family: Georgia, "Times New Roman", "Songti SC", serif; }
+  header, nav, footer, .reading-progress, .paper-tabs, .paper-note-rail, .print\:hidden, button, .argument-layout { display: none !important; }
+  .research-paper-page, .paper-header { background: white !important; background-image: none !important; }
+  .paper-header { display: block !important; padding: 0 0 .35in !important; border-bottom: 1px solid #000; }
+  .paper-header h1 { font-size: 30pt !important; line-height: 1 !important; }
+  .paper-header h1 + p { font-size: 18pt !important; }
+  .paper-header dl { display: grid !important; grid-template-columns: repeat(2, 1fr); }
+  .paper-english-details, .paper-english-details.hidden, .paper-english-details .paper-english-content { display: block !important; }
+  .paper-reading-grid { display: block !important; max-width: none !important; padding: .25in 0 0 !important; }
+  .paper-article { max-width: none !important; }
+  .paper-section { break-before: auto; padding-bottom: .25in !important; }
+  .paper-article > .paper-section:not(:first-child) { padding-top: .25in !important; }
+  .paper-section h2 { font-size: 20pt !important; break-after: avoid; }
+  .paper-section h3 { font-size: 15pt !important; break-after: avoid; }
+  .paper-section p { font-size: 12pt !important; line-height: 2 !important; orphans: 3; widows: 3; }
+  .paper-figure { break-inside: avoid; }
+  .paper-figure img { max-height: 5.5in !important; }
+  .paper-figure figcaption { font-size: 9pt; line-height: 1.35; }
+  .citation-anchor { display: inline !important; color: black !important; text-decoration: none; }
+  .paper-notes, .paper-bibliography { break-before: page; }
+  .paper-notes li, .paper-bibliography li { font-size: 10pt; line-height: 1.45; break-inside: avoid; }
+  a { color: black !important; text-decoration: none !important; }
+  a[href^="http"]::after { content: ""; }
+}

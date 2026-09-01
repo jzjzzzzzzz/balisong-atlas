@@ -1,0 +1,74 @@
+{
+  "center": {
+    "id": "visible-transformation",
+    "label": {"en": "Visible Transformation", "zh": "可见转化"},
+    "status": "interpretive",
+    "sectionId": "section-7",
+    "claimIds": ["C02", "C25", "C26"],
+    "sourceKeys": ["ramstead2016", "stargriesemer1989", "rosswensveen2010", "riddall1991"],
+    "summary": {
+      "en": "A shared, publicly legible capacity whose meanings are produced in different social worlds.",
+      "zh": "一种可以被公众识别、却由不同社会世界赋予意义的共同能力。"
+    }
+  },
+  "branches": [
+    {
+      "id": "craft-place",
+      "label": {"en": "Local Craft and Place", "zh": "地方工艺与地域"},
+      "status": "corroborated",
+      "sectionId": "section-3",
+      "claimIds": ["C06", "C07", "C08", "C09", "C12"],
+      "sourceKeys": ["lardizabal1951", "ilangilang1947", "ccp1994", "yasa2024", "universitybatangas2024"],
+      "contradictingSourceKeys": [],
+      "children": [
+        {"id": "intergenerational-knowledge", "label": {"en": "Intergenerational knowledge", "zh": "代际知识"}, "status": "contested", "claimIds": ["C09"]},
+        {"id": "livelihood", "label": {"en": "Livelihood", "zh": "地方生计"}, "status": "documented", "claimIds": ["C06", "C09"]},
+        {"id": "batangueno-identity", "label": {"en": "Batangueño identity", "zh": "Batangueño 身份"}, "status": "corroborated", "claimIds": ["C08", "C12"]}
+      ]
+    },
+    {
+      "id": "mechanical-aesthetics",
+      "label": {"en": "Mechanical Aesthetics", "zh": "机械美学"},
+      "status": "interpretive",
+      "sectionId": "section-4",
+      "claimIds": ["C13", "C14", "C15", "C16"],
+      "sourceKeys": ["hekkert2006", "rosswensveen2010", "vandijkrietveld2017", "ramstead2016"],
+      "contradictingSourceKeys": [],
+      "children": [
+        {"id": "symmetry", "label": {"en": "Symmetry", "zh": "对称"}, "status": "interpretive", "claimIds": ["C16"]},
+        {"id": "rotation", "label": {"en": "Rotation", "zh": "旋转"}, "status": "documented", "claimIds": ["C14"]},
+        {"id": "concealment-unfolding", "label": {"en": "Concealment and unfolding", "zh": "遮蔽与展开"}, "status": "interpretive", "claimIds": ["C16"]},
+        {"id": "functional-beauty", "label": {"en": "Dynamic form", "zh": "动态形式"}, "status": "corroborated", "claimIds": ["C13"]}
+      ]
+    },
+    {
+      "id": "performance-culture",
+      "label": {"en": "Performance Culture", "zh": "表演文化"},
+      "status": "contested",
+      "sectionId": "section-5",
+      "claimIds": ["C17", "C18", "C19", "C20"],
+      "sourceKeys": ["jenkins2006", "farnsworth2016", "cox2005"],
+      "contradictingSourceKeys": [],
+      "children": [
+        {"id": "observable-skill", "label": {"en": "Observable skill", "zh": "可观察技能"}, "status": "interpretive", "claimIds": ["C17"]},
+        {"id": "peer-learning", "label": {"en": "Peer learning", "zh": "同伴学习"}, "status": "contested", "claimIds": ["C17", "C19"]},
+        {"id": "reputation", "label": {"en": "Reputation", "zh": "声誉"}, "status": "interpretive", "claimIds": ["C18"]},
+        {"id": "media-circulation", "label": {"en": "Media circulation", "zh": "媒体传播"}, "status": "interpretive", "claimIds": ["C20"]}
+      ]
+    },
+    {
+      "id": "legal-classification",
+      "label": {"en": "Legal Classification", "zh": "法律分类"},
+      "status": "documented",
+      "sectionId": "section-6",
+      "claimIds": ["C21", "C22", "C23", "C24"],
+      "sourceKeys": ["usc1241", "customs1971", "taylor1988", "riddall1991", "strange1990", "quattrone1989"],
+      "contradictingSourceKeys": ["riddall1991", "strange1990"],
+      "children": [
+        {"id": "statutory-mechanism", "label": {"en": "Statutory mechanism", "zh": "法条中的机制"}, "status": "documented", "claimIds": ["C21"]},
+        {"id": "imagined-use", "label": {"en": "Imagined use", "zh": "预想使用"}, "status": "interpretive", "claimIds": ["C22"]},
+        {"id": "legal-ambiguity", "label": {"en": "Legal ambiguity", "zh": "法律歧义"}, "status": "corroborated", "claimIds": ["C22", "C23"]}
+      ]
+    }
+  ]
+}

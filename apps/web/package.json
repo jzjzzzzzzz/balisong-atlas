@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "playwright test"
+    "test": "playwright test",
+    "prebuild": "node ../../scripts/validate-research-paper.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "5.2.1",

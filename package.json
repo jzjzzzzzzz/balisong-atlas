@@ -8,6 +8,7 @@
     "lint": "corepack pnpm --filter @balisong-atlas/web lint",
     "typecheck": "corepack pnpm --filter @balisong-atlas/web typecheck",
     "build": "corepack pnpm --filter @balisong-atlas/web build",
-    "test": "corepack pnpm --filter @balisong-atlas/web test"
+    "test": "corepack pnpm --filter @balisong-atlas/web test",
+    "validate:research": "node scripts/validate-research-paper.ts"
   }
 }

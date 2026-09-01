@@ -22,3 +22,6 @@ build/
 data/*.db
 
 *.tsbuildinfo
+
+# Private research full-text downloads
+/research/library/raw/

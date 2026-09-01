@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "slug": "balisong-boundary-object",
+  "status": "research-draft",
+  "lastVerified": "2026-09-01",
+  "legalSourcesAsOf": "2026-09-01",
+  "canonicalPath": "/research/balisong-boundary-object",
+  "candidateSourceCount": 50,
+  "citedSourceCount": 36,
+  "lawfulLocalResearchCopies": 15,
+  "sourceStatuses": {
+    "verified_full_text": 34,
+    "verified_partial": 5,
+    "abstract_only": 6,
+    "metadata_only": 5,
+    "inaccessible": 0
+  },
+  "articleWordCount": 6850,
+  "abstractWordCount": 164,
+  "chineseAbstractHanCharacters": 1231,
+  "footnoteCount": 54,
+  "figureCount": 5,
+  "citationStyle": "Chicago Notes and Bibliography, 18th edition",
+  "aiDisclosure": {
+    "en": "AI assisted discovery, OCR cleanup, preliminary classification, code implementation, consistency checking, and draft structure. It is not a historical source.",
+    "zh": "AI 用于资料发现、OCR 清理、初步分类、代码实现、一致性检查与草稿结构；AI 不是历史来源。"
+  },
+  "excludedSourceCount": 14
+}
