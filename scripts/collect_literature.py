@@ -30,6 +30,7 @@ REPORT_PATH = ROOT / "data" / "research" / "download-report.json"
 CAS_ROOT = ROOT / "data" / "storage" / "research" / "sha256"
 USER_AGENT = "BalisongAtlasResearchCollector/1.0 (+https://github.com/jzjzzzzzzz/balisong-atlas)"
 ALLOWED_DOWNLOAD_HOSTS = {
+    "api.repository.upou.edu.ph",
     "archive.org",
     "nlpdl.nlp.gov.ph",
     "repository.si.edu",
@@ -169,6 +170,22 @@ DIRECT_SOURCES: tuple[dict[str, Any], ...] = (
         ],
     },
     {
+        "id": "yasa-nayong-pilipino-2024",
+        "title": "Transcending Diversity Through Aesthetics: Reflections on Taman Mini Indonesia Indah and Nayong Pilipino",
+        "creator": "Mary Vincelle C. Yasa",
+        "year": "2024",
+        "source_kind": "masters_thesis",
+        "priority_class": "paper",
+        "source_tier": "B",
+        "institution": "University of the Philippines Open University",
+        "canonical_url": "https://repository.upou.edu.ph/items/111fb70a-64da-46cb-92e7-8a874e1a6bbc",
+        "download_url": "https://api.repository.upou.edu.ph/api/core/bitstreams/87bb0a12-8f5a-4ae4-b874-f90da164402a/content",
+        "rights_status": "permission_granted",
+        "rights_note": "The repository permission page grants public distribution by the university; downstream quotation and reuse still require item-level review and attribution.",
+        "relevance": "Scholarly context for how Batangas craft was framed in Nayong Pilipino publications; any balisong passage requires page-level review.",
+        "safety_flags": ["manufacturing", "copyright_risk"],
+    },
+    {
         "id": "met-gods-of-war",
         "title": "The Gods of War: Sacred Imagery and the Decoration of Arms and Armor",
         "creator": "Donald J. La Rocca",
@@ -187,6 +204,26 @@ DIRECT_SOURCES: tuple[dict[str, Any], ...] = (
 )
 
 METADATA_ONLY_SOURCES: tuple[dict[str, Any], ...] = (
+    {
+        "id": "perret-art-du-coutelier-1771",
+        "title": "L'art du coutelier. Première partie",
+        "creator": "Jean-Jacques Perret",
+        "year": "1771",
+        "source_kind": "historical_book",
+        "priority_class": "book",
+        "source_tier": "A",
+        "institution": "Bibliothèque nationale de France / Gallica",
+        "canonical_url": "https://catalogue.bnf.fr/ark:/12148/cb31085475c.public",
+        "rights_status": "public_domain",
+        "rights_note": "BnF catalogue and Gallica digital-copy lead; the mechanically detailed volume remains metadata-only and excluded from AI/search.",
+        "relevance": "Primary bibliographic record for auditing recurring French-origin narratives. It does not by itself identify a balisong or establish an origin claim.",
+        "safety_flags": [
+            "exact_measurement",
+            "mechanism",
+            "manufacturing",
+            "assembly_instruction",
+        ],
+    },
     {
         "id": "galvan-2016-dlsu-thesis",
         "title": "Ang balisong bilang sagisag-kultura ng Barangay Balisong, Taal, Batangas City",
@@ -470,6 +507,10 @@ def download(target: DownloadTarget, max_bytes: int) -> dict[str, Any]:
                 if content_type not in {
                     "application/pdf",
                     "application/octet-stream",
+                    # The allow-listed UPOU DSpace endpoint currently labels
+                    # its PDF response as JSON.  The mandatory PDF signature
+                    # check below remains authoritative.
+                    "application/json",
                     "binary/octet-stream",
                 }:
                     raise ValueError(f"Unexpected MIME type {content_type} for {target.source_id}")

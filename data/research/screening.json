@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-01T02:26:49.852122+00:00",
+  "generated_at": "2026-09-01T03:28:57.237615+00:00",
   "method": "deterministic_local_term_screen_v1",
   "policy": {
     "stores_page_text": false,
@@ -10,7 +10,7 @@
     "creates_evidence": false,
     "note": "Discovery ranking only; every candidate requires human page review."
   },
-  "scanned_file_count": 76,
+  "scanned_file_count": 77,
   "failures": [],
   "records": [
     {
@@ -63,6 +63,103 @@
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
       "screening_rank": 1
+    },
+    {
+      "page_count": 268,
+      "searchable_page_count": 268,
+      "text_extraction_status": "searchable_text",
+      "relevance_band": "direct_term_lead",
+      "relevance_score": 100,
+      "matched_groups": {
+        "direct_subject": {
+          "page_count": 2,
+          "page_numbers": [
+            90,
+            112
+          ]
+        },
+        "regional_context": {
+          "page_count": 2,
+          "page_numbers": [
+            90,
+            112
+          ]
+        },
+        "material_culture": {
+          "page_count": 1,
+          "page_numbers": [
+            112
+          ]
+        },
+        "craft_history": {
+          "page_count": 50,
+          "page_numbers": [
+            12,
+            35,
+            71,
+            73,
+            80,
+            81,
+            82,
+            84,
+            86,
+            90,
+            91,
+            92,
+            97,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            111,
+            112,
+            113,
+            117,
+            124,
+            129,
+            134,
+            135,
+            167,
+            169,
+            170,
+            171,
+            173,
+            185,
+            190,
+            192,
+            193,
+            194,
+            195,
+            197,
+            198,
+            199,
+            231,
+            246,
+            247,
+            248,
+            251,
+            254,
+            255,
+            263
+          ]
+        }
+      },
+      "regional_material_cooccurrence_pages": [
+        112
+      ],
+      "source_id": "yasa-nayong-pilipino-2024",
+      "title": "Transcending Diversity Through Aesthetics: Reflections on Taman Mini Indonesia Indah and Nayong Pilipino",
+      "year": "2024",
+      "source_tier": "B",
+      "canonical_url": "https://repository.upou.edu.ph/items/111fb70a-64da-46cb-92e7-8a874e1a6bbc",
+      "file_sha256": "5406d4859a2020cf8eff3da23d2aa385b209c590b544a69d1bd37bc4750703db",
+      "requires_page_review": true,
+      "accepted_as_evidence": false,
+      "sensitive_review_status": "pending",
+      "screening_rank": 2
     },
     {
       "page_count": 320,
@@ -356,7 +453,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 2
+      "screening_rank": 3
     },
     {
       "page_count": 760,
@@ -562,7 +659,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 3
+      "screening_rank": 4
     },
     {
       "page_count": 84,
@@ -660,7 +757,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 4
+      "screening_rank": 5
     },
     {
       "page_count": 546,
@@ -833,7 +930,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 5
+      "screening_rank": 6
     },
     {
       "page_count": 136,
@@ -955,7 +1052,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 6
+      "screening_rank": 7
     },
     {
       "page_count": 724,
@@ -1276,7 +1373,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 7
+      "screening_rank": 8
     },
     {
       "page_count": 532,
@@ -1361,7 +1458,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 8
+      "screening_rank": 9
     },
     {
       "page_count": 842,
@@ -1603,7 +1700,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 9
+      "screening_rank": 10
     },
     {
       "page_count": 668,
@@ -1844,7 +1941,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 10
+      "screening_rank": 11
     },
     {
       "page_count": 394,
@@ -2011,7 +2108,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 11
+      "screening_rank": 12
     },
     {
       "page_count": 496,
@@ -2258,7 +2355,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 12
+      "screening_rank": 13
     },
     {
       "page_count": 104,
@@ -2330,7 +2427,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 13
+      "screening_rank": 14
     },
     {
       "page_count": 76,
@@ -2426,7 +2523,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 14
+      "screening_rank": 15
     },
     {
       "page_count": 116,
@@ -2509,7 +2606,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 15
+      "screening_rank": 16
     },
     {
       "page_count": 182,
@@ -2713,7 +2810,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 16
+      "screening_rank": 17
     },
     {
       "page_count": 100,
@@ -2838,7 +2935,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 17
+      "screening_rank": 18
     },
     {
       "page_count": 789,
@@ -2891,7 +2988,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 18
+      "screening_rank": 19
     },
     {
       "page_count": 76,
@@ -2961,7 +3058,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 19
+      "screening_rank": 20
     },
     {
       "page_count": 76,
@@ -3035,7 +3132,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 20
+      "screening_rank": 21
     },
     {
       "page_count": 346,
@@ -3104,7 +3201,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 21
+      "screening_rank": 22
     },
     {
       "page_count": 88,
@@ -3184,7 +3281,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 22
+      "screening_rank": 23
     },
     {
       "page_count": 84,
@@ -3290,7 +3387,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 23
+      "screening_rank": 24
     },
     {
       "page_count": 290,
@@ -3378,7 +3475,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 24
+      "screening_rank": 25
     },
     {
       "page_count": 846,
@@ -3459,7 +3556,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 25
+      "screening_rank": 26
     },
     {
       "page_count": 636,
@@ -3559,7 +3656,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 26
+      "screening_rank": 27
     },
     {
       "page_count": 268,
@@ -3625,7 +3722,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 27
+      "screening_rank": 28
     },
     {
       "page_count": 278,
@@ -3697,7 +3794,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 28
+      "screening_rank": 29
     },
     {
       "page_count": 64,
@@ -3770,7 +3867,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 29
+      "screening_rank": 30
     },
     {
       "page_count": 310,
@@ -3870,7 +3967,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 30
+      "screening_rank": 31
     },
     {
       "page_count": 100,
@@ -3950,7 +4047,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 31
+      "screening_rank": 32
     },
     {
       "page_count": 126,
@@ -4044,7 +4141,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 32
+      "screening_rank": 33
     },
     {
       "page_count": 540,
@@ -4099,7 +4196,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 33
+      "screening_rank": 34
     },
     {
       "page_count": 76,
@@ -4171,7 +4268,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 34
+      "screening_rank": 35
     },
     {
       "page_count": 92,
@@ -4253,7 +4350,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 35
+      "screening_rank": 36
     },
     {
       "page_count": 458,
@@ -4327,7 +4424,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 36
+      "screening_rank": 37
     },
     {
       "page_count": 392,
@@ -4381,7 +4478,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 37
+      "screening_rank": 38
     },
     {
       "page_count": 74,
@@ -4446,7 +4543,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 38
+      "screening_rank": 39
     },
     {
       "page_count": 146,
@@ -4497,7 +4594,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 39
+      "screening_rank": 40
     },
     {
       "page_count": 100,
@@ -4556,7 +4653,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 40
+      "screening_rank": 41
     },
     {
       "page_count": 212,
@@ -4606,7 +4703,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 41
+      "screening_rank": 42
     },
     {
       "page_count": 356,
@@ -4702,7 +4799,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 42
+      "screening_rank": 43
     },
     {
       "page_count": 440,
@@ -4775,7 +4872,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 43
+      "screening_rank": 44
     },
     {
       "page_count": 172,
@@ -4887,7 +4984,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 44
+      "screening_rank": 45
     },
     {
       "page_count": 152,
@@ -4943,7 +5040,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 45
+      "screening_rank": 46
     },
     {
       "page_count": 84,
@@ -5026,7 +5123,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 46
+      "screening_rank": 47
     },
     {
       "page_count": 84,
@@ -5101,7 +5198,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 47
+      "screening_rank": 48
     },
     {
       "page_count": 80,
@@ -5158,7 +5255,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 48
+      "screening_rank": 49
     },
     {
       "page_count": 230,
@@ -5205,7 +5302,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 49
+      "screening_rank": 50
     },
     {
       "page_count": 259,
@@ -5255,7 +5352,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 50
+      "screening_rank": 51
     },
     {
       "page_count": 266,
@@ -5304,7 +5401,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 51
+      "screening_rank": 52
     },
     {
       "page_count": 86,
@@ -5364,7 +5461,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 52
+      "screening_rank": 53
     },
     {
       "page_count": 96,
@@ -5457,7 +5554,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 53
+      "screening_rank": 54
     },
     {
       "page_count": 68,
@@ -5536,7 +5633,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 54
+      "screening_rank": 55
     },
     {
       "page_count": 360,
@@ -5584,7 +5681,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 55
+      "screening_rank": 56
     },
     {
       "page_count": 464,
@@ -5652,7 +5749,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 56
+      "screening_rank": 57
     },
     {
       "page_count": 134,
@@ -5693,7 +5790,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 57
+      "screening_rank": 58
     },
     {
       "page_count": 478,
@@ -5740,7 +5837,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 58
+      "screening_rank": 59
     },
     {
       "page_count": 84,
@@ -5822,7 +5919,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 59
+      "screening_rank": 60
     },
     {
       "page_count": 508,
@@ -5871,7 +5968,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 60
+      "screening_rank": 61
     },
     {
       "page_count": 68,
@@ -5928,7 +6025,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 61
+      "screening_rank": 62
     },
     {
       "page_count": 392,
@@ -5964,7 +6061,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 62
+      "screening_rank": 63
     },
     {
       "page_count": 570,
@@ -6000,7 +6097,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 63
+      "screening_rank": 64
     },
     {
       "page_count": 75,
@@ -6036,7 +6133,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 64
+      "screening_rank": 65
     },
     {
       "page_count": 1187,
@@ -6072,7 +6169,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 65
+      "screening_rank": 66
     },
     {
       "page_count": 527,
@@ -6108,7 +6205,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 66
+      "screening_rank": 67
     },
     {
       "page_count": 415,
@@ -6144,7 +6241,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 67
+      "screening_rank": 68
     },
     {
       "page_count": 127,
@@ -6180,7 +6277,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 68
+      "screening_rank": 69
     },
     {
       "page_count": 597,
@@ -6216,7 +6313,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 69
+      "screening_rank": 70
     },
     {
       "page_count": 1256,
@@ -6252,7 +6349,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 70
+      "screening_rank": 71
     },
     {
       "page_count": 747,
@@ -6288,7 +6385,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 71
+      "screening_rank": 72
     },
     {
       "page_count": 1191,
@@ -6324,7 +6421,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 72
+      "screening_rank": 73
     },
     {
       "page_count": 368,
@@ -6360,7 +6457,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 73
+      "screening_rank": 74
     },
     {
       "page_count": 675,
@@ -6396,7 +6493,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 74
+      "screening_rank": 75
     },
     {
       "page_count": 503,
@@ -6432,7 +6529,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 75
+      "screening_rank": 76
     },
     {
       "page_count": 49,
@@ -6468,7 +6565,7 @@
       "requires_page_review": true,
       "accepted_as_evidence": false,
       "sensitive_review_status": "pending",
-      "screening_rank": 76
+      "screening_rank": 77
     }
   ]
 }

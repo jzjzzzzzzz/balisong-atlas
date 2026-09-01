@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-01T02:07:35.487327+00:00",
+  "generated_at": "2026-09-01T03:28:12.963931+00:00",
   "collector_version": "1.0",
-  "catalog_records": 85,
+  "catalog_records": 87,
   "download_requested": true,
   "download_results": [
     {
@@ -583,7 +583,7 @@
     },
     {
       "source_id": "ia-traditionsofting141cole",
-      "status": "downloaded",
+      "status": "already_present",
       "original_filename": "traditionsofting141cole.pdf",
       "sha256": "d0092f4124baddd99e9c38a1d6c13a916db01c1910ea7de5e185ddec2327d34e",
       "bytes": 21157670,
@@ -612,6 +612,14 @@
       "sha256": "b5924fb3387bdba8c40c6f0ab5b795f8159b71506ce3b113708b9b777e2f77f0",
       "bytes": 7179863,
       "storage_key": "data/storage/research/sha256/b5/b5924fb3387bdba8c40c6f0ab5b795f8159b71506ce3b113708b9b777e2f77f0.pdf"
+    },
+    {
+      "source_id": "yasa-nayong-pilipino-2024",
+      "status": "downloaded",
+      "original_filename": "content",
+      "sha256": "5406d4859a2020cf8eff3da23d2aa385b209c590b544a69d1bd37bc4750703db",
+      "bytes": 16126815,
+      "storage_key": "data/storage/research/sha256/54/5406d4859a2020cf8eff3da23d2aa385b209c590b544a69d1bd37bc4750703db.pdf"
     }
   ]
 }

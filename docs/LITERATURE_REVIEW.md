@@ -26,6 +26,7 @@ one dependent source family.
 
 | Year | Source | Access in this checkout | Evaluation state |
 |---|---|---|---|
+| 1771 | Jean-Jacques Perret, *L'art du coutelier. Première partie* | BnF/Gallica metadata only | Primary bibliographic record for auditing recurring French-origin narratives. It does not by itself identify a balisong or establish origin; mechanically detailed content remains excluded from AI/search. |
 | 1880 | Edmund Jansen, *Clasp-Knife*, US Patent 229,706 | Metadata only | Comparative primary record. Mechanically detailed; excluded from AI and public search. It does not demonstrate Philippine origin. |
 | 1895 | Manuel Sastrón, *Filipinas: pequeños estudios; Batangas y su provincia* | Private research copy | Contemporary regional book. Page-level relevance has not yet been established. |
 | 1903 | *Official handbook of the Philippines and catalogue of the Philippine exhibit* | Private research copy | Period government catalogue for institutional and material-culture context. |
@@ -42,6 +43,7 @@ one dependent source family.
 | 1994 | “Metalcraft,” *CCP Encyclopedia of Philippine Art, Visual Arts* | Private restricted research copy | Direct craft context and bibliography; copyright and controlled-content flags are pending review. |
 | 2002 | Ramon N. Villegas, ed., *Batangas: Forged in Fire* | Catalogue metadata | Regional secondary-source lead; no digital copy was offered by the catalogue. |
 | 2016 | Daniel John Felix G. Galvan, *Ang balisong bilang sagisag-kultura…* | Institutional thesis metadata | Direct cultural-research lead. Full text was not publicly downloadable. |
+| 2024 | Mary Vincelle C. Yasa, *Transcending Diversity Through Aesthetics…* | Private institutional-repository research copy | Later scholarship on Nayong Pilipino. Deterministic screening found two direct-term page leads; period publications and the author's analysis must be reviewed separately. |
 
 The expanded private corpus also includes six Philippine Commission report
 volumes, ten annual volumes of *The Philippine Journal of Science* (1908–1919
@@ -57,6 +59,8 @@ verified statement about the exhibition subject merely because it is old.
 - [French Ministry of Culture, Musée de la Coutellerie record](https://pop.culture.gouv.fr/notice/museo/M0129)
 - [Philippine eLib catalogue: Historical data for Batangas](https://www.elib.gov.ph/details.php?uid=c62d892e4b1d809c4a4a339d55e3d021)
 - [DLSU institutional thesis record](https://animorepository.dlsu.edu.ph/etd_bachelors/2831/)
+- [BnF record: Jean-Jacques Perret, *L'art du coutelier* (1771)](https://catalogue.bnf.fr/ark:/12148/cb31085475c.public)
+- [UP Open University repository: Yasa thesis](https://repository.upou.edu.ph/items/111fb70a-64da-46cb-92e7-8a874e1a6bbc)
 
 The Thiers record is an institutional contact/collection lead. It does not by
 itself verify popular “French origin” narratives. The Met object record supplies
@@ -85,9 +89,9 @@ and manufacturing passages are not copied, embedded, or placed in public search.
 writes `data/research/screening.json`. It records term-group counts, page
 numbers, text-availability status, and a discovery rank. It does **not** retain
 page text or excerpts, extract measurements, send content to AI, or create
-evidence. The initial pass screened all 76 PDFs without failures: one file
+evidence. The current pass screened all 77 PDFs without failures: two files
 surfaced direct-term leads, six surfaced regional/material co-occurrence
-leads, and 75 contained at least some searchable text. Sixteen records were
+leads, and 76 contained at least some searchable text. Eighteen records were
 then prioritized in the public-safe reading-room interface for human review.
 
 Every collected file starts with:
@@ -104,11 +108,10 @@ recorded actions.
 
 ### Actual collection snapshot
 
-The 2026-09-01 expanded run catalogued **85 records** and placed **76 PDF
-research copies** in private CAS storage, totalling **1,781,829,481 bytes**
-(about 1.66 GiB). This second collection pass added **39 scanned volumes**,
-weighted toward old books, official records, and historical periodicals rather
-than web posts. The tracked
+The 2026-09-01 expanded run catalogued **87 records** and placed **77 PDF
+research copies** in private CAS storage, totalling **1,797,956,296 bytes**
+(about 1.67 GiB). The corpus is weighted toward old books, official records,
+and historical periodicals rather than web posts. The tracked
 download report contains the actual SHA-256 and byte count for every available
 copy. The original Smithsonian endpoint returned HTTP 403 to the collector, so
 the public-domain USNM Bulletin 137 scan was obtained from Wikimedia Commons;
