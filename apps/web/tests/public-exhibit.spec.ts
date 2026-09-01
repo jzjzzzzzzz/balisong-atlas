@@ -30,9 +30,9 @@ test("research reading room exposes citations but not private research copies", 
   await page.goto("/exhibits/between-two-handles/sources");
   await expect(page.getByRole("heading", { name: "Books before posts." })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Screened, not accepted." })).toBeVisible();
-  await expect(page.getByText("76", { exact: true })).toBeVisible();
+  await expect(page.getByText("77", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Direct lead", exact: true }).click();
-  await expect(page.getByText("Showing 4 of 16 prioritized records")).toBeVisible();
+  await expect(page.getByText("Showing 4 of 18 prioritized records")).toBeVisible();
   await expect(page.locator("td").filter({ hasText: "Filipinas: pequeños estudios; Batangas y su provincia" }).first()).toBeVisible();
   await expect(page.locator("table").getByRole("link", { name: "Cite" }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
@@ -73,7 +73,7 @@ test("all public exhibit routes honor the selected Chinese locale", async ({ pag
 
   const routes = [
     ["/exhibits/between-two-handles", "双柄之间：蝴蝶刀的视觉设计史"],
-    ["/exhibits/between-two-handles/timeline", "证据绑定时间线"],
+    ["/exhibits/between-two-handles/timeline", "设计演变时间轴"],
     ["/exhibits/between-two-handles/artifacts", "历史物件与设计假设"],
     ["/exhibits/balisong-atlas-demo/sources", "来源、权利与署名"],
     ["/exhibits/balisong-atlas-demo/artifacts/fictional-kinetic-folding-artifact-a-01", "虚构动态折叠物件 A-01"],
@@ -85,4 +85,23 @@ test("all public exhibit routes honor the selected Chinese locale", async ({ pag
     await expect(page.getByRole("heading", { name: heading })).toBeVisible();
     await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
   }
+});
+
+test("evidence-era timeline locks historical proxies and isolates the fictional method demo", async ({ page }) => {
+  await page.goto("/exhibits/between-two-handles/timeline");
+  await expect(page.getByRole("heading", { name: "Design evolution timeline" })).toBeVisible();
+  await expect(page.getByText("Evidence insufficient; visual proxy withheld")).toBeVisible();
+  await expect(page.getByText("Accepted claims").locator("..").getByText("0", { exact: true })).toBeVisible();
+  await expect(page.getByTestId("safe-proxy-viewer")).toHaveCount(0);
+
+  await page.getByRole("button", { name: "View fictional A-01 method demo" }).click();
+  await expect(page.getByText("Fictional A-01 demonstrates review and display methods only; it represents no historical period.")).toBeVisible();
+  await expect(page.getByTestId("safe-proxy-viewer")).toBeVisible();
+  await expect(page.getByRole("button", { name: /download/i })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /measure/i })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /joint/i })).toHaveCount(0);
+
+  await page.getByRole("tab", { name: "Performance / media study" }).click();
+  await expect(page.getByRole("heading", { name: "The performance and media timeline is sourcing evidence" })).toBeVisible();
+  await expect(page.getByText(/will not break movement into frames/)).toBeVisible();
 });

@@ -1,12 +1,13 @@
 import { PublicSection } from "@/features/exhibits/PublicSection";
-import { ExhibitTimeline } from "@/features/exhibits/ExhibitTimeline";
+import { EvidenceEraTimeline } from "@/features/exhibits/EvidenceEraTimeline";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   return <PublicSection
     slug={slug}
-    eyebrow={{ en: "Reviewed chronology", zh: "已审核的时间序列" }}
-    title={{ en: "Evidence-bound timeline", zh: "证据绑定时间线" }}
-    intro={{ en: "Public nodes require accepted claims, reviewer-verified evidence locations, confidence, and explicit uncertainty.", zh: "公开时间线节点必须绑定已接受主张、经审核的证据位置、置信度和明确的不确定性说明。" }}
-  ><div className="max-w-3xl"><ExhibitTimeline/></div></PublicSection>;
+    eyebrow={{ en: "Evidence-gated chronology", zh: "证据门禁时间序列" }}
+    title={{ en: "Design evolution timeline", zh: "设计演变时间轴" }}
+    intro={{ en: "Select a research period to inspect its sources, review status, uncertainty, and readiness for a nonfunctional visual proxy. Period frames are not historical conclusions.", zh: "选择一个研究时期，查看其来源、审核状态、不确定性以及生成非功能性视觉代理的准备程度。时期框架不等于历史结论。" }}
+    workspace
+  ><EvidenceEraTimeline /></PublicSection>;
 }

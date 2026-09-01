@@ -13,6 +13,7 @@ export function MuseumHeader({ compact = false }: { compact?: boolean }) {
       </Link>
       <nav className="hidden items-stretch justify-center text-[13px] md:flex" aria-label={messages.navExhibition}>
         <Link href="/exhibits/between-two-handles" className="flex items-center px-5 no-underline hover:bg-white/10">{messages.navExhibition}</Link>
+        <Link href="/exhibits/between-two-handles/timeline" className="flex items-center px-5 no-underline hover:bg-white/10">{messages.navTimeline}</Link>
         <Link href="/exhibits/between-two-handles/sources" className="flex items-center px-5 no-underline hover:bg-white/10">{messages.navReadingRoom}</Link>
         <Link href="/exhibits/between-two-handles/methodology" className="flex items-center px-5 no-underline hover:bg-white/10">{messages.navMethod}</Link>
         <Link href="/admin" className="flex items-center px-5 no-underline hover:bg-white/10">{messages.navResearchDesk}</Link>

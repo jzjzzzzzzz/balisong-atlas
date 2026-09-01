@@ -32,3 +32,20 @@ Interface messages and exhibit framing are bilingual. Evidence records preserve 
 
 The entity/event model is CIDOC CRM-inspired and does not claim complete CIDOC CRM conformance.
 
+## ADR-009 — Period selectors are research frames, not chronology claims
+
+The public design-evolution timeline may group sources into date-bounded review
+frames before a chronology is publishable. Those frames expose source coverage,
+review status, gaps, and zero-valued accepted-evidence counts; they do not become
+historical nodes. A frame can display a real visual proxy only after accepted
+claims, accepted observations, approved public-safe features, and an approved
+Reconstruction Brief exist. The fictional A-01 demonstrator is isolated from
+all real periods.
+
+## ADR-010 — 3D presentation motion never models operation
+
+The browser may rotate the camera around the single joined proxy manually or as
+a slow turntable. It does not animate parts, reproduce a manipulation sequence,
+or expose joint, grip, angle, speed, measurement, or frame-step controls. Media
+and performance history is represented through reviewed records and still-image
+observations rather than operational motion simulation.

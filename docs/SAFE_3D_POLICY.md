@@ -15,6 +15,11 @@ Public reconstruction is a nonfunctional museum visualization, evidence-based vi
 
 `generation_report.json` records renderer version, brief hash, used/excluded feature IDs, normalization, safety transformations, joined/scale/motion/neutral-insert confirmations, edge check, and validation result.
 
-The public viewer offers scene rotation, limited zoom, background, evidence annotations, epistemic legend, version, and brief summary. It omits download, measurement, section, exploded view, per-part visibility, joint control, animation, export, conversion, and real units.
+The public viewer offers manual scene rotation, a slow whole-scene turntable,
+limited zoom, background, evidence annotations, epistemic legend, version, and
+brief summary. The turntable changes only the viewing camera around the joined
+proxy; it is not object operation or part motion. The viewer omits download,
+measurement, section, exploded view, per-part visibility, joint control,
+part/operation animation, export, conversion, and real units.
 
 Release uses short-lived or controlled asset access. A browser-displayed asset cannot receive absolute DRM; no-download UI is an access/control limitation, not a claim that saving is impossible.

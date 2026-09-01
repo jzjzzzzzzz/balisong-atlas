@@ -186,6 +186,14 @@ The screening command performs a local, deterministic relevance pass over the
 private PDFs. It stores aggregate term-group counts and page numbers only—not
 source text or excerpts—and its ranking is a review queue rather than evidence.
 
+The public design-evolution timeline groups sources into explicit **research
+frames**, not asserted historical periods. Selecting a frame shows its sources,
+review state, gaps, and reconstruction readiness. A real-period 3D proxy remains
+locked until claims, observations, and visual features are accepted by a human
+reviewer. The fictional A-01 proxy is available only as a clearly separated
+method demonstrator. A parallel performance/media layer records research gaps
+without providing frame-by-frame movement, grip, speed, angle, or action steps.
+
 See [docs/LITERATURE_REVIEW.md](docs/LITERATURE_REVIEW.md) for the ranked register, evaluation notes, and open research gaps.
 
 ## Safe 3D
@@ -198,7 +206,7 @@ Public output is an **evidence-based visual hypothesis**, **interpretive reconst
 - creates no internal structure, armature, constraints, joints, animation, or separated parts;
 - emits GLB metadata `NONFUNCTIONAL MUSEUM VISUALIZATION` and a validation report.
 
-The public viewer offers whole-scene rotation, limited zoom, background choice, evidence annotations, legend, and version/brief information. It contains no download, measurement, section, exploded-view, part-isolation, joint, animation, export, conversion, or real-unit control.
+The public viewer offers manual whole-scene rotation, a slow whole-scene turntable, limited zoom, background choice, evidence annotations, legend, and version/brief information. It contains no download, measurement, section, exploded-view, part-isolation, joint, part/operation animation, export, conversion, or real-unit control.
 
 Browser assets cannot receive absolute DRM. “No download button” is an interface/access-control decision, not a promise that a displayed asset can never be saved.
 

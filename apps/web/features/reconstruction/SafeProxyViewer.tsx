@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Environment, Html, OrbitControls, useGLTF } from "@react-three/drei";
-import { Box, Info, Palette } from "lucide-react";
+import { Box, Info, Palette, Rotate3D } from "lucide-react";
 import { Suspense, useState } from "react";
 import { useLanguage, type Locale } from "@/components/Providers";
 
@@ -15,12 +15,14 @@ export function SafeProxyViewer() {
   const { locale } = useLanguage();
   const [dark, setDark] = useState(true);
   const [annotations, setAnnotations] = useState(true);
+  const [turntable, setTurntable] = useState(true);
   return <section className={`overflow-hidden border border-white/25 ${dark ? "bg-night" : "bg-parchment"}`} data-testid="safe-proxy-viewer">
     <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-5 py-4 text-white">
       <div><div className="eyebrow !text-fog/70">{locale === "zh" ? "非功能性博物馆视觉展示" : "Nonfunctional museum visualization"}</div><h3 className="mt-1 font-display text-xl">{locale === "zh" ? "A-01 视觉代理 · 版本 1" : "A-01 visual proxy · version 1"}</h3></div>
       <div className="flex gap-2">
         <button className="focus-ring inline-flex items-center gap-2 border border-white/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[.08em] hover:bg-white/10" onClick={() => setDark((value) => !value)}><Palette size={14}/>{locale === "zh" ? "背景" : "Background"}</button>
         <button className="focus-ring inline-flex items-center gap-2 border border-white/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[.08em] hover:bg-white/10" onClick={() => setAnnotations((value) => !value)}><Info size={14}/>{locale === "zh" ? "证据" : "Evidence"}</button>
+        <button className="focus-ring inline-flex items-center gap-2 border border-white/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[.08em] hover:bg-white/10" aria-pressed={turntable} onClick={() => setTurntable((value) => !value)}><Rotate3D size={14}/>{locale === "zh" ? "整体转台" : "Scene turntable"}</button>
       </div>
     </div>
     <div className="relative h-[420px] sm:h-[540px]">
@@ -28,7 +30,7 @@ export function SafeProxyViewer() {
         <color attach="background" args={[dark ? "#10191b" : "#e9e0cf"]}/>
         <ambientLight intensity={1.5}/><directionalLight position={[2, -2, 4]} intensity={3}/>
         <Suspense fallback={<Html center><span className="text-xs text-fog">{locale === "zh" ? "正在加载视觉代理…" : "Loading visual proxy…"}</span></Html>}><Model locale={locale}/><Environment preset="studio"/></Suspense>
-        <OrbitControls enablePan={false} enableDamping minDistance={1.15} maxDistance={2.35} minPolarAngle={0.55} maxPolarAngle={2.45}/>
+        <OrbitControls autoRotate={turntable} autoRotateSpeed={0.55} enablePan={false} enableDamping minDistance={1.15} maxDistance={2.35} minPolarAngle={0.55} maxPolarAngle={2.45}/>
       </Canvas>
       <div className="pointer-events-none absolute bottom-4 left-4 flex items-center gap-2 border border-ink bg-paper/95 px-3 py-2 font-mono text-[9px] uppercase tracking-[.1em] text-ink"><Box size={13}/>{locale === "zh" ? "无单位 · 单一合并网格 · 无活动部件" : "Unitless · one joined mesh · no moving parts"}</div>
     </div>
