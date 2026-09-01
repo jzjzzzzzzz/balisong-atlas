@@ -4,10 +4,21 @@
   "method": "研究方法",
   "admin": "研究工作台",
   "tagline": "每一次重建，都应当展示它的证据。",
-  "observed": "图片中可以直接观察到，或经审核文献直接陈述。",
+  "observedLabel": "直接观察",
+  "inferredLabel": "推断",
+  "unknownLabel": "未知",
+  "observed": "可以从已保存图片中直接观察，或由经审核文献直接陈述。",
   "inferred": "基于证据提出、但仍需要解释的推测。",
   "unknown": "当前来源不足，未进行补全。",
   "viewEvidence": "查看证据",
   "reviewQueue": "审核队列",
-  "language": "English"
+  "languageTarget": "EN",
+  "switchLanguage": "Switch to English",
+  "navExhibition": "数字展览",
+  "navReadingRoom": "研究阅览室",
+  "navMethod": "研究方法",
+  "navResearchDesk": "研究工作台",
+  "archiveSubtitle": "协同研究档案",
+  "backToExhibit": "返回展览",
+  "publicResearchPage": "公共研究页面"
 }

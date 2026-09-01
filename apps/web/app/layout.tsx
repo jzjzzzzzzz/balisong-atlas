@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import type { ReactNode } from "react";
-import { Providers } from "@/components/Providers";
+import { Providers, type Locale } from "@/components/Providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
-  return <html lang="en"><body><Providers>{children}</Providers></body></html>;
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const savedLocale = (await cookies()).get("atlas_locale")?.value;
+  const initialLocale: Locale = savedLocale === "zh" ? "zh" : "en";
+  return <html lang={initialLocale === "zh" ? "zh-CN" : "en"} suppressHydrationWarning><body><Providers initialLocale={initialLocale}>{children}</Providers></body></html>;
 }

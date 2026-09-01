@@ -38,3 +38,51 @@ test("research reading room exposes citations but not private research copies", 
   await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
   await expect(page.getByText("Access is not publication.")).toBeVisible();
 });
+
+test("language switch changes the complete public interface and persists", async ({ page }) => {
+  await page.goto("/exhibits/between-two-handles");
+  await expect(page.getByRole("heading", { name: "Between Two Handles: A Visual History of the Balisong" })).toBeVisible();
+  await expect(page.getByText("双柄之间", { exact: true })).toHaveCount(0);
+
+  await page.goto("/exhibits/between-two-handles/sources");
+  await expect(page.getByRole("heading", { name: "Books before posts." })).toBeVisible();
+
+  await page.getByRole("button", { name: "切换到中文" }).click();
+  await expect(page.getByRole("heading", { name: "书籍优先于网络帖子。" })).toBeVisible();
+  await expect(page.getByText("已筛选，不等于已接受。")).toBeVisible();
+  await expect(page.getByRole("navigation").getByText("研究方法")).toBeVisible();
+  await expect(page.getByText("Books before posts.")).toHaveCount(0);
+  await expect(page.getByText("Cultural Center of the Philippines editorial project")).toHaveCount(0);
+  await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
+
+  await page.reload();
+  await expect(page.getByRole("heading", { name: "书籍优先于网络帖子。" })).toBeVisible();
+  await page.getByRole("link", { name: "研究方法" }).click();
+  await expect(page.getByRole("heading", { name: "证据先于外观" })).toBeVisible();
+  await expect(page.getByText("Evidence before appearance")).toHaveCount(0);
+
+  await page.getByRole("button", { name: "Switch to English" }).click();
+  await expect(page.getByRole("heading", { name: "Evidence before appearance" })).toBeVisible();
+  await expect(page.getByText("证据先于外观")).toHaveCount(0);
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+});
+
+test("all public exhibit routes honor the selected Chinese locale", async ({ page }) => {
+  await page.goto("/exhibits/between-two-handles");
+  await page.getByRole("button", { name: "切换到中文" }).click();
+
+  const routes = [
+    ["/exhibits/between-two-handles", "双柄之间：蝴蝶刀的视觉设计史"],
+    ["/exhibits/between-two-handles/timeline", "证据绑定时间线"],
+    ["/exhibits/between-two-handles/artifacts", "历史物件与设计假设"],
+    ["/exhibits/balisong-atlas-demo/sources", "来源、权利与署名"],
+    ["/exhibits/balisong-atlas-demo/artifacts/fictional-kinetic-folding-artifact-a-01", "虚构动态折叠物件 A-01"],
+    ["/exhibits/balisong-atlas-demo/reconstruction", "非功能性博物馆视觉展示"],
+  ] as const;
+
+  for (const [route, heading] of routes) {
+    await page.goto(route);
+    await expect(page.getByRole("heading", { name: heading })).toBeVisible();
+    await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
+  }
+});

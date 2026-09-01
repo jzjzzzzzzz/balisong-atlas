@@ -4,10 +4,21 @@
   "method": "Research method",
   "admin": "Research workspace",
   "tagline": "Every reconstruction should reveal its evidence.",
+  "observedLabel": "Observed",
+  "inferredLabel": "Inferred",
+  "unknownLabel": "Unknown",
   "observed": "Directly visible in a saved image or stated in a reviewed document.",
   "inferred": "An evidence-based interpretation that still requires explanation.",
   "unknown": "Current sources are insufficient; no completion has been made.",
   "viewEvidence": "View evidence",
   "reviewQueue": "Review queue",
-  "language": "中文"
+  "languageTarget": "中文",
+  "switchLanguage": "切换到中文",
+  "navExhibition": "Exhibition",
+  "navReadingRoom": "Reading Room",
+  "navMethod": "Method",
+  "navResearchDesk": "Research Desk",
+  "archiveSubtitle": "Coordinated research archive",
+  "backToExhibit": "Back to exhibit",
+  "publicResearchPage": "Public research page"
 }
