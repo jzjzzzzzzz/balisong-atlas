@@ -29,6 +29,10 @@ test("public source register excludes unknown-rights originals", async ({ page }
 test("research reading room exposes citations but not private research copies", async ({ page }) => {
   await page.goto("/exhibits/between-two-handles/sources");
   await expect(page.getByRole("heading", { name: "Books before posts." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Screened, not accepted." })).toBeVisible();
+  await expect(page.getByText("76", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Direct lead", exact: true }).click();
+  await expect(page.getByText("Showing 4 of 16 prioritized records")).toBeVisible();
   await expect(page.locator("td").filter({ hasText: "Filipinas: pequeños estudios; Batangas y su provincia" }).first()).toBeVisible();
   await expect(page.locator("table").getByRole("link", { name: "Cite" }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);

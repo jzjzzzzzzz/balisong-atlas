@@ -81,6 +81,15 @@ and manufacturing passages are not copied, embedded, or placed in public search.
 - `data/research/download-report.json`: tracked actual hashes, byte counts, failures, and CAS keys;
 - `data/storage/research/sha256/<prefix>/<sha256>.pdf`: ignored private research copies.
 
+`scripts/screen_literature.py` performs a deterministic local relevance pass and
+writes `data/research/screening.json`. It records term-group counts, page
+numbers, text-availability status, and a discovery rank. It does **not** retain
+page text or excerpts, extract measurements, send content to AI, or create
+evidence. The initial pass screened all 76 PDFs without failures: one file
+surfaced direct-term leads, six surfaced regional/material co-occurrence
+leads, and 75 contained at least some searchable text. Sixteen records were
+then prioritized in the public-safe reading-room interface for human review.
+
 Every collected file starts with:
 
 - `sensitive_review_status: pending`;
@@ -109,6 +118,7 @@ the canonical Smithsonian record and DOI remain the bibliographic authority.
 
 ```bash
 make collect-literature
+make screen-literature
 ```
 
 The downloader accepts only a fixed HTTPS host allow-list, has a per-item size

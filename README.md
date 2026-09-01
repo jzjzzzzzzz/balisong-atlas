@@ -177,9 +177,14 @@ The research register deliberately ranks archives and books ahead of papers, and
 
 ```bash
 make collect-literature
+make screen-literature
 ```
 
 The command builds `data/research/bibliography.json`, downloads only explicitly allow-listed research files, records actual hashes and failures in `data/research/download-report.json`, and writes originals into ignored content-addressed storage under `data/storage/research/sha256/`. Every new research copy is private and excluded from AI, embeddings, public search, and publication until rights and sensitive-content review are complete. Loan-only and unavailable works remain metadata records; the collector does not bypass access controls.
+
+The screening command performs a local, deterministic relevance pass over the
+private PDFs. It stores aggregate term-group counts and page numbers only—not
+source text or excerpts—and its ranking is a review queue rather than evidence.
 
 See [docs/LITERATURE_REVIEW.md](docs/LITERATURE_REVIEW.md) for the ranked register, evaluation notes, and open research gaps.
 
