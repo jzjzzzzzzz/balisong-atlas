@@ -5,14 +5,12 @@ import {
   BookOpenText,
   Box,
   ExternalLink,
-  FlaskConical,
   LockKeyhole,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/components/Providers";
 import { BalisongKineticShowcase } from "@/features/reconstruction/BalisongKineticShowcase";
-import { SafeProxyViewer } from "@/features/reconstruction/SafeProxyViewer";
 import { CertaintyAuditPanel } from "@/features/exhibits/CertaintyAuditPanel";
 import { researchLibrary } from "@/lib/research-library";
 
@@ -128,7 +126,7 @@ const periodImages: Record<string, Array<{ image: string; title: { en: string; z
   "contemporary-1995-present": [{ image: "/research/media/balisong-open-ringer.jpg", title: { en: "Open-state appearance", zh: "开放状态外观" }, note: { en: "CC-licensed contemporary photograph used for visible appearance.", zh: "用于可见外观研究的 CC 许可当代照片。" } }, { image: "/research/media/balisong-closed-ringer.jpg", title: { en: "Closed-state appearance", zh: "闭合状态外观" }, note: { en: "Matched view; no measurement or mechanism is inferred.", zh: "配对视图；不推断尺寸或机械结构。" } }, { image: "/research/media/before-1982-provenance-lead-szilas.jpg", title: { en: "Provenance lead", zh: "来源线索" }, note: { en: "Uploader dating remains unverified.", zh: "上传者标注年代仍未核验。" } }],
 };
 
-function PeriodImageEvidence({ periodId, onOpenDemo }: { periodId: string; onOpenDemo: () => void }) {
+function PeriodImageEvidence({ periodId }: { periodId: string }) {
   const { locale } = useLanguage();
   const images = periodImages[periodId] ?? [];
   const image = images[0];
@@ -138,14 +136,13 @@ function PeriodImageEvidence({ periodId, onOpenDemo }: { periodId: string; onOpe
       <Box className="mt-1 shrink-0 text-quiet" aria-hidden="true" />
     </div>
     {image && <div className="relative m-5 aspect-[4/3] overflow-hidden border border-ink/25 bg-[#cfc5b3]"><Image src={image.image} alt={image.title[locale]} fill sizes="(max-width: 1280px) 100vw, 55vw" className="object-cover" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent px-5 pb-4 pt-12 text-white"><p className="font-display text-2xl">{image.title[locale]}</p><p className="mt-1 text-xs leading-5 text-white/80">{image.note[locale]}</p></div></div>}
-    <div className="border-t border-ink/15 px-6 py-5"><p className="text-sm leading-6 text-quiet">{locale === "zh" ? "这是已保存的来源图像，不是生成图。它只展示该时期研究框架中的可用视觉材料；没有直接图像的年代仍保持未解决。" : "This is a saved source image, not a generated picture. It shows the visual material available for this research frame; periods without a direct image remain unresolved."}</p><button type="button" onClick={onOpenDemo} className="focus-ring mt-5 inline-flex items-center gap-2 border border-ink px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[.1em] hover:bg-ink hover:text-white"><FlaskConical size={15} aria-hidden="true" />{locale === "zh" ? "查看虚构 A-01 方法演示" : "View fictional A-01 method demo"}</button></div>
+    <div className="border-t border-ink/15 px-6 py-5"><p className="text-sm leading-6 text-quiet">{locale === "zh" ? "这是已保存的来源图像，不是生成图。它只展示该时期研究框架中的可用视觉材料；没有直接图像的年代仍保持未解决。" : "This is a saved source image, not a generated picture. It shows the visual material available for this research frame; periods without a direct image remain unresolved."}</p></div>
   </section>;
 }
 
 export function EvidenceEraTimeline() {
   const { locale } = useLanguage();
   const [selectedId, setSelectedId] = useState(periods[3].id);
-  const [showDemo, setShowDemo] = useState(false);
   const [layer, setLayer] = useState<"design" | "performance">("design");
   const selected = periods.find((period) => period.id === selectedId) ?? periods[0];
   const sources = useMemo(
@@ -157,8 +154,8 @@ export function EvidenceEraTimeline() {
     <CertaintyAuditPanel />
     <div className="flex flex-wrap items-center justify-between gap-4 border-y border-ink/20 py-3">
       <div className="flex gap-1" role="tablist" aria-label={locale === "zh" ? "时间线研究层" : "Timeline research layer"}>
-        <button type="button" role="tab" aria-selected={layer === "design"} onClick={() => { setLayer("design"); setShowDemo(false); }} className={`focus-ring px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[.1em] ${layer === "design" ? "bg-ink text-white" : "text-quiet hover:bg-ink/5"}`}>{locale === "zh" ? "物件设计史" : "Object design history"}</button>
-        <button type="button" role="tab" aria-selected={layer === "performance"} onClick={() => { setLayer("performance"); setShowDemo(false); }} className={`focus-ring px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[.1em] ${layer === "performance" ? "bg-ink text-white" : "text-quiet hover:bg-ink/5"}`}>{locale === "zh" ? "表演／媒体研究" : "Performance / media study"}</button>
+        <button type="button" role="tab" aria-selected={layer === "design"} onClick={() => setLayer("design")} className={`focus-ring px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[.1em] ${layer === "design" ? "bg-ink text-white" : "text-quiet hover:bg-ink/5"}`}>{locale === "zh" ? "物件设计史" : "Object design history"}</button>
+        <button type="button" role="tab" aria-selected={layer === "performance"} onClick={() => setLayer("performance")} className={`focus-ring px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[.1em] ${layer === "performance" ? "bg-ink text-white" : "text-quiet hover:bg-ink/5"}`}>{locale === "zh" ? "表演／媒体研究" : "Performance / media study"}</button>
       </div>
       <p className="max-w-xl text-right text-xs leading-5 text-quiet">{locale === "zh" ? "时间区间是研究框架，不是已经接受的历史结论。" : "Date ranges are research frames, not accepted historical conclusions."}</p>
     </div>
@@ -169,7 +166,7 @@ export function EvidenceEraTimeline() {
           {periods.map((period, index) => {
             const active = period.id === selected.id;
             return <li key={period.id} className="relative px-3 text-center">
-              <button type="button" onClick={() => { setSelectedId(period.id); setShowDemo(false); }} className="focus-ring group w-full" aria-current={active ? "step" : undefined}>
+              <button type="button" onClick={() => setSelectedId(period.id)} className="focus-ring group w-full" aria-current={active ? "step" : undefined}>
                 <span className={`relative z-10 mx-auto grid h-10 w-10 place-items-center rounded-full border-2 font-mono text-xs font-bold transition-transform group-hover:scale-110 ${active ? "border-ink bg-ink text-white" : stateStyles[period.state]}`}>{index + 1}</span>
                 <span className="mt-4 block font-mono text-[10px] font-bold uppercase tracking-[.12em] text-quiet">{locale === "zh" ? period.dateZh ?? period.date : period.date}</span>
                 <span className={`mt-2 block font-display text-lg leading-5 ${active ? "text-ink" : "text-quiet"}`}>{period.title[locale]}</span>
@@ -182,21 +179,15 @@ export function EvidenceEraTimeline() {
 
       <section className="grid border border-ink/20 xl:grid-cols-[minmax(0,1.45fr)_minmax(330px,.75fr)]">
         <div className="min-w-0 border-b border-ink/20 p-4 xl:border-b-0 xl:border-r">
-          {showDemo ? <div>
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-3 border border-ochre/40 bg-amber-50 px-4 py-3 text-xs leading-5 text-ochre">
-              <span>{locale === "zh" ? "虚构 A-01 仅演示审核和显示方法，不代表任何历史时期。" : "Fictional A-01 demonstrates review and display methods only; it represents no historical period."}</span>
-              <button type="button" onClick={() => setShowDemo(false)} className="focus-ring font-mono text-[9px] font-bold uppercase tracking-[.1em] underline underline-offset-4">{locale === "zh" ? "返回时期门禁" : "Return to period gate"}</button>
-            </div>
-            <SafeProxyViewer />
-          </div> : <div>
-            <PeriodImageEvidence periodId={selected.id} onOpenDemo={() => setShowDemo(true)} />
+          <div>
+            <PeriodImageEvidence periodId={selected.id} />
             <div className="mt-4">
               <div className="mb-3 border border-ochre/40 bg-amber-50 px-4 py-3 text-xs leading-5 text-ochre">
                 {locale === "zh" ? "历史时期视觉代理仍被证据门禁阻止；下方仅展示不带时期断言的证据边界视觉研究。" : "The historical-period proxy remains gated; the study below is a method-only visual without a period claim."}
               </div>
               <BalisongKineticShowcase />
             </div>
-          </div>}
+          </div>
         </div>
 
         <aside className="bg-white/35 px-6 py-7">

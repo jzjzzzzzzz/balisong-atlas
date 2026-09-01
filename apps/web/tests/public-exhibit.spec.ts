@@ -3,8 +3,8 @@ import { expect, test } from "@playwright/test";
 test("draft first exhibit publishes no historical claims", async ({ page }) => {
   await page.goto("/exhibits/between-two-handles");
   await expect(page.getByRole("heading", { name: "Between Two Handles: A Visual History of the Balisong" })).toBeVisible();
-  await expect(page.getByText("Evidence collection is in progress.")).toBeVisible();
-  await expect(page.getByText("No unreviewed historical conclusions have been published.")).toBeVisible();
+  await expect(page.getByText("97 records screened; evidence review continues.")).toBeVisible();
+  await expect(page.getByText(/No unreviewed historical conclusions have been published/)).toBeVisible();
 });
 
 test("fictional demo renders evidence legend and constrained viewer", async ({ page }) => {
@@ -107,12 +107,7 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByRole("heading", { name: "Not virtual: image evidence for this frame" })).toBeVisible();
   await expect(page.getByText("The historical-period proxy remains gated; the study below is a method-only visual without a period claim.")).toBeVisible();
 
-  await page.getByRole("button", { name: "View fictional A-01 method demo" }).click();
-  await expect(page.getByText("Fictional A-01 demonstrates review and display methods only; it represents no historical period.")).toBeVisible();
-  await expect(page.getByTestId("safe-proxy-viewer")).toBeVisible();
-  await expect(page.getByRole("button", { name: /download/i })).toHaveCount(0);
-  await expect(page.getByRole("button", { name: /measure/i })).toHaveCount(0);
-  await expect(page.getByRole("button", { name: /joint/i })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "View fictional A-01 method demo" })).toHaveCount(0);
 
   await page.getByRole("tab", { name: "Performance / media study" }).click();
   await expect(page.getByRole("heading", { name: "Period form and kinetic study" })).toBeVisible();
