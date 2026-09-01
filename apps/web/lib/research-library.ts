@@ -25,12 +25,12 @@ export type ResearchLibraryItem = {
 };
 
 export const literatureScreeningSummary = {
-  catalogued: 87,
+  catalogued: 88,
   privatePdfs: 77,
   textBearingPdfs: 76,
   directTermLeads: 2,
   regionalMaterialLeads: 6,
-  curatedForReview: 18,
+  curatedForReview: 19,
 } as const;
 
 // Public-safe bibliographic metadata and aggregate screening status only.
@@ -420,5 +420,26 @@ export const researchLibrary: ResearchLibraryItem[] = [
     locatedPages: 2,
     note: "The deterministic screen found two direct-term pages in a study of national cultural display. They are navigation leads only; page-level review must separate period publications from the thesis author's later analysis.",
     noteZh: "确定性筛选在这项国家文化展示研究中发现两页直接术语线索。它们仅用于导航；逐页审核必须区分时期出版物与论文作者后来的分析。",
+  },
+  {
+    rank: 19,
+    type: "Institutional record",
+    year: "Undated catalogue record",
+    yearZh: "目录未标明日期",
+    title: "Balisong — short-film thesis catalogue record",
+    titleZh: "《Balisong》短片论文目录记录",
+    creator: "Leo Joseph S. Mercado",
+    creatorZh: "莱奥·约瑟夫·S·梅尔卡多",
+    institution: "University of the Philippines Diliman College of Mass Communication / UP Libraries",
+    institutionZh: "菲律宾大学迪利曼大众传播学院／菲律宾大学图书馆",
+    tier: "B",
+    rights: "Catalogue metadata",
+    rightsZh: "目录元数据",
+    access: "Metadata only",
+    url: "https://tuklas.up.edu.ph/Record/UP-99796217613424750",
+    lane: "Direct lead",
+    screening: "Metadata priority",
+    note: "Institutional media-representation lead. Obtain an authorized viewing copy and create locatable observations before proposing any period visualization.",
+    noteZh: "机构媒体呈现研究线索。提出任何时期视觉呈现之前，必须通过授权渠道取得可观看副本并创建可定位的观察。",
   },
 ];

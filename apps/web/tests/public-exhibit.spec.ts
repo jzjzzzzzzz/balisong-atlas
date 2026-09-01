@@ -32,7 +32,7 @@ test("research reading room exposes citations but not private research copies", 
   await expect(page.getByRole("heading", { name: "Screened, not accepted." })).toBeVisible();
   await expect(page.getByText("77", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Direct lead", exact: true }).click();
-  await expect(page.getByText("Showing 4 of 18 prioritized records")).toBeVisible();
+  await expect(page.getByText("Showing 5 of 19 prioritized records")).toBeVisible();
   await expect(page.locator("td").filter({ hasText: "Filipinas: pequeños estudios; Batangas y su provincia" }).first()).toBeVisible();
   await expect(page.locator("table").getByRole("link", { name: "Cite" }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
@@ -102,6 +102,16 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByRole("button", { name: /joint/i })).toHaveCount(0);
 
   await page.getByRole("tab", { name: "Performance / media study" }).click();
-  await expect(page.getByRole("heading", { name: "The performance and media timeline is sourcing evidence" })).toBeVisible();
-  await expect(page.getByText(/will not break movement into frames/)).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Narrative motion scene study" })).toBeVisible();
+  await expect(page.getByTestId("narrative-motion-study")).toBeVisible();
+  await expect(page.getByText("Abstract narrative cue · not an object-motion path")).toBeVisible();
+  await expect(page.getByText("Static fictional joined mesh")).toBeVisible();
+  await expect(page.getByText("Period motion proxy locked").first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "View institutional catalogue" })).toHaveAttribute("href", /tuklas\.up\.edu\.ph/);
+  await expect(page.getByRole("button", { name: /download/i })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /measure/i })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /joint/i })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /frame/i })).toHaveCount(0);
+  await page.getByRole("tab", { name: "Uncertainty field" }).click();
+  await expect(page.getByText(/broken trace marks missing views/)).toBeVisible();
 });

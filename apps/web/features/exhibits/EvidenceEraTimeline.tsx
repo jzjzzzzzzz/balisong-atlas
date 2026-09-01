@@ -7,10 +7,10 @@ import {
   ExternalLink,
   FlaskConical,
   LockKeyhole,
-  ScanSearch,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/components/Providers";
+import { NarrativeMotionStudy } from "@/features/reconstruction/NarrativeMotionStudy";
 import { SafeProxyViewer } from "@/features/reconstruction/SafeProxyViewer";
 import { researchLibrary } from "@/lib/research-library";
 
@@ -108,7 +108,7 @@ const periods: EvidencePeriod[] = [
       zh: "最直接相关的论文目前只有元数据。仍需合法取得研究副本并完成逐页审核。",
     },
     state: "metadata",
-    sourceRanks: [14, 2],
+    sourceRanks: [14, 2, 19],
   },
 ];
 
@@ -163,22 +163,7 @@ export function EvidenceEraTimeline() {
       <p className="max-w-xl text-right text-xs leading-5 text-quiet">{locale === "zh" ? "时间区间是研究框架，不是已经接受的历史结论。" : "Date ranges are research frames, not accepted historical conclusions."}</p>
     </div>
 
-    {layer === "performance" ? <section className="grid min-h-[540px] place-items-center border border-ink/20 bg-white/35 px-6 py-16 text-center">
-      <div className="max-w-2xl">
-        <ScanSearch className="mx-auto text-ochre" size={38} aria-hidden="true" />
-        <h2 className="mt-6 font-display text-3xl">{locale === "zh" ? "表演与媒体时间线正在建立来源" : "The performance and media timeline is sourcing evidence"}</h2>
-        <p className="mt-4 text-base leading-7 text-quiet">{locale === "zh"
-          ? "这一研究层将记录电影、电视、游戏和互联网中的视觉呈现、术语与文化语境。它不会逐帧分解动作，也不会提供速度、角度、握持或可模仿步骤。"
-          : "This layer will document visual representation, terminology, and cultural context across film, television, games, and the web. It will not break movement into frames or provide speed, angle, grip, or imitable steps."}</p>
-        <div className="mt-8 grid gap-px border border-ink/20 bg-ink/20 text-left sm:grid-cols-3">
-          {[
-            { en: "Needed: dated media records", zh: "缺口：有明确年代的媒体记录" },
-            { en: "Needed: rights-cleared stills", zh: "缺口：权利清晰的静帧图片" },
-            { en: "Needed: expert review", zh: "缺口：专家审核" },
-          ].map((item) => <div key={item.en} className="bg-paper p-4 text-sm text-quiet">{locale === "zh" ? item.zh : item.en}</div>)}
-        </div>
-      </div>
-    </section> : <>
+    {layer === "performance" ? <NarrativeMotionStudy /> : <>
       <div className="overflow-x-auto pb-3">
         <ol className="relative grid min-w-[980px] grid-cols-5 before:absolute before:left-[10%] before:right-[10%] before:top-5 before:h-px before:bg-ink/25">
           {periods.map((period, index) => {

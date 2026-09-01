@@ -6,6 +6,7 @@
 - **Secondary source:** peer-reviewed scholarship, academic monograph, or formal research publication interpreting primary material.
 - **Oral tradition:** culturally significant testimony preserved with speaker/context/provenance and uncertainty; not silently converted into documentary fact.
 - **Unverified narrative:** a report whose origin or chain cannot presently be established. It remains searchable for researchers only when rights/policy allow, but is labelled and cannot independently justify certainty.
+- **Fiction and media narrative:** evidence for cultural imagination, terminology, or media representation only. Described movement may become a proposed curatorial cue, but never historical-form evidence or an operational trajectory.
 
 ## Claim lifecycle
 
@@ -20,3 +21,8 @@ AI output begins `proposed`. A human checks spans, page/region, source identity/
 - **Unknown:** evidence is insufficient; the project does not fill the gap.
 
 AI is not a source. A summary is not evidence. Generated/missing views are not evidence. Timeline nodes use accepted claims only. Reconstruction is an interpretive hypothesis, not certainty.
+
+Scene-level narrative motion keeps the reconstructed proxy static. Camera paths
+and detached abstract traces may communicate circulation, attention, or missing
+evidence. They are labelled interpretation and remain separate from object
+operation, frame sequences, joint movement, and period design claims.

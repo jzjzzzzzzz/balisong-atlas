@@ -191,8 +191,11 @@ frames**, not asserted historical periods. Selecting a frame shows its sources,
 review state, gaps, and reconstruction readiness. A real-period 3D proxy remains
 locked until claims, observations, and visual features are accepted by a human
 reviewer. The fictional A-01 proxy is available only as a clearly separated
-method demonstrator. A parallel performance/media layer records research gaps
-without providing frame-by-frame movement, grip, speed, angle, or action steps.
+method demonstrator. A parallel performance/media layer now renders an abstract
+**narrative motion scene study**: camera movement and detached curatorial traces
+can represent circulation, attention, or uncertainty, while the joined proxy
+remains static. Literature and fiction may inform proposed media-representation
+cues, but never frame-by-frame movement, grip, speed, angle, or action steps.
 
 See [docs/LITERATURE_REVIEW.md](docs/LITERATURE_REVIEW.md) for the ranked register, evaluation notes, and open research gaps.
 
@@ -207,6 +210,11 @@ Public output is an **evidence-based visual hypothesis**, **interpretive reconst
 - emits GLB metadata `NONFUNCTIONAL MUSEUM VISUALIZATION` and a validation report.
 
 The public viewer offers manual whole-scene rotation, a slow whole-scene turntable, limited zoom, background choice, evidence annotations, legend, and version/brief information. It contains no download, measurement, section, exploded-view, part-isolation, joint, part/operation animation, export, conversion, or real-unit control.
+
+`NarrativeMotionStudyV1` is a separate media-research schema. It requires source
+and evidence identifiers and fixes scene-only constraints to `true`. Its output
+may move the camera or an abstract detached marker; it cannot move proxy parts
+or encode an operational sequence.
 
 Browser assets cannot receive absolute DRM. “No download button” is an interface/access-control decision, not a promise that a displayed asset can never be saved.
 

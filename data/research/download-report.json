@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-01T03:28:12.963931+00:00",
+  "generated_at": "2026-09-01T04:07:58.614537+00:00",
   "collector_version": "1.0",
-  "catalog_records": 87,
+  "catalog_records": 88,
   "download_requested": true,
   "download_results": [
     {
@@ -615,7 +615,7 @@
     },
     {
       "source_id": "yasa-nayong-pilipino-2024",
-      "status": "downloaded",
+      "status": "already_present",
       "original_filename": "content",
       "sha256": "5406d4859a2020cf8eff3da23d2aa385b209c590b544a69d1bd37bc4750703db",
       "bytes": 16126815,

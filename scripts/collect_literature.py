@@ -205,6 +205,21 @@ DIRECT_SOURCES: tuple[dict[str, Any], ...] = (
 
 METADATA_ONLY_SOURCES: tuple[dict[str, Any], ...] = (
     {
+        "id": "mercado-up-balisong-short-film-thesis",
+        "title": "Balisong — short-film thesis catalogue record",
+        "creator": "Leo Joseph S. Mercado",
+        "year": "undated catalogue record",
+        "source_kind": "short_film_thesis_catalogue",
+        "priority_class": "paper",
+        "source_tier": "B",
+        "institution": "University of the Philippines Diliman College of Mass Communication / UP Libraries",
+        "canonical_url": "https://tuklas.up.edu.ph/Record/UP-99796217613424750",
+        "rights_status": "metadata_only",
+        "rights_note": "Institutional catalogue metadata only; no viewing copy is cached.",
+        "relevance": "Direct media-representation lead. It cannot support a movement visualization until an authorized viewing copy receives locatable human review.",
+        "safety_flags": ["operational_instruction", "copyright_risk"],
+    },
+    {
         "id": "perret-art-du-coutelier-1771",
         "title": "L'art du coutelier. Première partie",
         "creator": "Jean-Jacques Perret",

@@ -44,6 +44,7 @@ one dependent source family.
 | 2002 | Ramon N. Villegas, ed., *Batangas: Forged in Fire* | Catalogue metadata | Regional secondary-source lead; no digital copy was offered by the catalogue. |
 | 2016 | Daniel John Felix G. Galvan, *Ang balisong bilang sagisag-kultura…* | Institutional thesis metadata | Direct cultural-research lead. Full text was not publicly downloadable. |
 | 2024 | Mary Vincelle C. Yasa, *Transcending Diversity Through Aesthetics…* | Private institutional-repository research copy | Later scholarship on Nayong Pilipino. Deterministic screening found two direct-term page leads; period publications and the author's analysis must be reviewed separately. |
+| Undated record | Leo Joseph S. Mercado, *Balisong* short-film thesis | UP Libraries catalogue metadata | Direct media-representation lead. An authorized viewing copy and locatable review are required before any visual cue is proposed. |
 
 The expanded private corpus also includes six Philippine Commission report
 volumes, ten annual volumes of *The Philippine Journal of Science* (1908–1919
@@ -61,6 +62,7 @@ verified statement about the exhibition subject merely because it is old.
 - [DLSU institutional thesis record](https://animorepository.dlsu.edu.ph/etd_bachelors/2831/)
 - [BnF record: Jean-Jacques Perret, *L'art du coutelier* (1771)](https://catalogue.bnf.fr/ark:/12148/cb31085475c.public)
 - [UP Open University repository: Yasa thesis](https://repository.upou.edu.ph/items/111fb70a-64da-46cb-92e7-8a874e1a6bbc)
+- [UP Libraries: Mercado *Balisong* short-film thesis record](https://tuklas.up.edu.ph/Record/UP-99796217613424750)
 
 The Thiers record is an institutional contact/collection lead. It does not by
 itself verify popular “French origin” narratives. The Met object record supplies
@@ -91,7 +93,7 @@ numbers, text-availability status, and a discovery rank. It does **not** retain
 page text or excerpts, extract measurements, send content to AI, or create
 evidence. The current pass screened all 77 PDFs without failures: two files
 surfaced direct-term leads, six surfaced regional/material co-occurrence
-leads, and 76 contained at least some searchable text. Eighteen records were
+leads, and 76 contained at least some searchable text. Nineteen records were
 then prioritized in the public-safe reading-room interface for human review.
 
 Every collected file starts with:
@@ -108,7 +110,7 @@ recorded actions.
 
 ### Actual collection snapshot
 
-The 2026-09-01 expanded run catalogued **87 records** and placed **77 PDF
+The 2026-09-01 expanded run catalogued **88 records** and placed **77 PDF
 research copies** in private CAS storage, totalling **1,797,956,296 bytes**
 (about 1.67 GiB). The corpus is weighted toward old books, official records,
 and historical periodicals rather than web posts. The tracked

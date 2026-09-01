@@ -49,3 +49,13 @@ a slow turntable. It does not animate parts, reproduce a manipulation sequence,
 or expose joint, grip, angle, speed, measurement, or frame-step controls. Media
 and performance history is represented through reviewed records and still-image
 observations rather than operational motion simulation.
+
+## ADR-011 — Literary movement becomes a narrative cue, not object kinematics
+
+Fiction, film, oral history, and other media may support reviewed claims about
+representation and cultural imagination. A `NarrativeMotionStudyV1` can render
+camera movement or detached abstract cues for circulation, attention, and
+uncertainty. It cannot derive or store object-part motion, joint motion,
+operational sequences, frame breakdowns, grip, angle, or speed. Until a media
+record has locatable accepted observations, every real-period motion proxy stays
+locked; the animated A-01 scene is explicitly fictional.
