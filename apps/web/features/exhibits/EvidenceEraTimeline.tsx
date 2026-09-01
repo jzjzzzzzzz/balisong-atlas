@@ -125,7 +125,7 @@ function LockedProxy({ onOpenDemo }: { onOpenDemo: () => void }) {
     <div className="flex items-start justify-between gap-4 border-b border-ink/15 px-6 py-5">
       <div>
         <p className="font-mono text-[10px] uppercase tracking-[.12em] text-quiet">{locale === "zh" ? "重建门禁" : "Reconstruction gate"}</p>
-        <h3 className="mt-1 font-display text-2xl">{locale === "zh" ? "证据不足，暂不生成视觉代理" : "Evidence insufficient; visual proxy withheld"}</h3>
+        <h3 className="mt-1 font-display text-2xl">{locale === "zh" ? "历史视觉代理受门禁，证据边界研究已提供" : "Historical proxy gated; evidence-bounded study available"}</h3>
       </div>
       <LockKeyhole className="mt-1 shrink-0 text-quiet" aria-hidden="true" />
     </div>

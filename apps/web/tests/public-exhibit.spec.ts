@@ -13,7 +13,7 @@ test("fictional demo renders evidence legend and constrained viewer", async ({ p
   await expect(page.getByText("Observed", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("Inferred", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("Unknown", { exact: true }).first()).toBeVisible();
-  await expect(page.getByTestId("balisong-kinetic-showcase")).toBeVisible();
+  await expect(page.getByTestId("safe-proxy-viewer")).toBeVisible();
   await expect(page.getByRole("button", { name: /download/i })).toHaveCount(0);
   await expect(page.getByRole("button", { name: /measure/i })).toHaveCount(0);
   await expect(page.getByRole("button", { name: /exploded/i })).toHaveCount(0);
@@ -99,7 +99,7 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByRole("tab", { name: /Record verified/ })).toBeVisible();
   await expect(page.getByRole("heading", { name: "A digitized Philippine popular-fiction issue used the word balisong in October 1947." })).toBeVisible();
   await expect(page.getByRole("heading", { name: /contemporaneous education report based on 1950-1951 provincial visits/ })).toBeVisible();
-  await expect(page.getByText("Evidence insufficient; visual proxy withheld")).toBeVisible();
+  await expect(page.getByText("Historical proxy gated; evidence-bounded study available")).toBeVisible();
   await expect(page.getByText("Accepted claims").locator("..").getByText("0", { exact: true })).toBeVisible();
   await expect(page.getByTestId("balisong-kinetic-showcase")).toBeVisible();
   await expect(page.getByText("The historical-period proxy remains gated; the study below is a method-only visual without a period claim.")).toBeVisible();
