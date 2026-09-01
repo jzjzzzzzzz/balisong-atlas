@@ -11,3 +11,8 @@ the reviewed, public-safe register in `apps/web/lib/research-library.ts`.
 
 Concept and implementation images are project-design artifacts, not historical
 source assets. They are not exposed as archive evidence.
+
+`kinetic-era-geometry-comparison.png` is a browser-rendered QA contact sheet for
+the five runtime geometry families. It verifies that period selection changes
+handle treatment and central silhouette, not only color. The labels describe
+research frames and do not assert exact historical replicas.

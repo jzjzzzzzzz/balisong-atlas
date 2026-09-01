@@ -40,10 +40,20 @@ was visually checked against
 Only the attribution URL is stored; the GIF is not bundled or treated as
 historical-form evidence.
 
-The contemporary browser preset uses modern manufacturer anatomy imagery only
-to calibrate broad visible design language: a slender silhouette, narrow paired
-handles, restrained machined-metal shading, surface recesses, and visible pivot
-caps. It does not reproduce a named commercial model or ingest published
-measurements.
+The era selector changes geometry as well as color. It uses five distinct
+external visual hypotheses: segmented scale-and-collar handles with a leaf-form
+comparison insert; horn-appearance scales and bolsters with a spear/leaf insert;
+plain pinned slabs with a straight-back insert; all-metal skeletonized handles
+with an angular clip-form insert; and a narrow milled-channel handle with a
+slender contemporary insert. The interface exposes the active handle and insert
+cue plus its evidence state.
+
+The regional cues are inferred from the CCP's 1994 `Metalcraft` description of
+horn appearance, metal nail decoration, and multiple external forms. The
+industrial cues are observed in 1979–1994 catalogue scans. The contemporary
+cues use modern manufacturer anatomy imagery. The 1771 and 1926–1951 frames
+remain explicitly unknown/inferred where no object-level record supports a
+specific balisong geometry. None of these presets reproduces internal structure,
+a named commercial model, a process sequence, or published measurements.
 
 Release uses short-lived or controlled asset access. A browser-displayed asset cannot receive absolute DRM; no-download UI is an access/control limitation, not a claim that saving is impossible.

@@ -107,6 +107,15 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByText("Real-time WebGL · smooth loop · no download")).toBeVisible();
   await expect(page.getByRole("tab", { name: /Contemporary media silhouette/ })).toHaveAttribute("aria-selected", "true");
   await expect(page.getByText("Public manufacturer anatomy imagery + UP media lead")).toBeVisible();
+  await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-handle-style", "milled-channel");
+  await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-insert-style", "contemporary-drop");
+  await page.getByRole("tab", { name: /Batangas craft palette/ }).click();
+  await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-handle-style", "horn-and-bolster");
+  await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-insert-style", "regional-spear");
+  await page.getByRole("tab", { name: /Industrial catalogue transition/ }).click();
+  await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-handle-style", "skeletonized-metal");
+  await expect(page.getByTestId("kinetic-geometry-stage")).toHaveAttribute("data-insert-style", "industrial-clip");
+  await page.getByRole("tab", { name: /Contemporary media silhouette/ }).click();
   await expect(page.getByRole("button", { name: "Pause" })).toBeVisible();
   await page.getByRole("button", { name: "Pause" }).click();
   await expect(page.getByRole("button", { name: "Play" })).toBeVisible();
@@ -115,4 +124,6 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await expect(page.getByRole("button", { name: /export/i })).toHaveCount(0);
   await expect(page.getByRole("link", { name: "View CC BY-SA 3.0 video" })).toHaveAttribute("href", /commons\.wikimedia\.org/);
   await expect(page.getByRole("link", { name: "View public anatomy reference" })).toHaveAttribute("href", /squidindustries\.co/);
+  await expect(page.getByRole("link", { name: "View 1994 craft entry" })).toHaveAttribute("href", /nlpdl\.nlp\.gov\.ph/);
+  await expect(page.getByRole("link", { name: "View period catalogue scans" })).toHaveAttribute("href", /pbase\.com/);
 });

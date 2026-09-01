@@ -27,3 +27,16 @@ as a public visual-language reference. Only broad visible cues—slender overall
 form, paired channel-style handles, surface slots, exposed pivot hardware, and
 metal finish categories—were observed. Product imagery is neither bundled nor
 reproduced, and no specific commercial model geometry is copied.
+
+The regional external-form hypotheses cite the 1994 `Metalcraft` entry in the
+*CCP Encyclopedia of Philippine Art*, made available through the National
+Library of the Philippines. The linked entry supports horn appearance, metal
+nail decoration, and named external form variants. The source PDF is linked for
+research provenance and is not bundled or republished here.
+
+The 1979–1994 industrial preset was visually checked against collector-hosted
+scans of Bali-Song, Pacific Cutlery, and Benchmade catalogues at
+[PBase](https://www.pbase.com/balisong/balisong_catalogs). The scans are treated
+as rights-unknown linked reference material: no scan is copied into the project,
+and the derived proxy uses only broad visible changes such as scale-clad versus
+all-metal skeletonized handles.

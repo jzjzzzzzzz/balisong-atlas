@@ -75,6 +75,13 @@ source-lineage leads. They remain Tier D until their statements can be traced to
 an archival or scholarly source. The project does not count a transcription and
 its archival original as two independent sources.
 
+The PBase Bali-Song catalogue gallery is used narrowly as a rights-unknown host
+for visible scans of 1979–1994 company catalogues. The runtime exhibit observes
+only broad external changes visible in those period artifacts—scale-clad versus
+all-metal skeletonized handles and changing silhouette families. Collector
+captions are not promoted to accepted historical claims, and no scan is bundled
+or publicly reproduced.
+
 The Batangas History transcription is particularly controlled: its page can
 help locate the National Library local-history collection, but its operational
 and manufacturing passages are not copied, embedded, or placed in public search.

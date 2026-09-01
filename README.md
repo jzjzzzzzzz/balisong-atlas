@@ -222,6 +222,10 @@ The contemporary preset also uses a public manufacturer anatomy article to
 calibrate broad visible design language—slender form, narrow channel-style
 handles, surface slots, pivot caps, and subdued metal finishes—without copying a
 named product or ingesting its measurements.
+The era selector changes public-safe external geometry rather than merely
+recoloring one object: each frame has a distinct handle treatment and central
+silhouette, with the sidebar stating whether that difference is observed,
+inferred, or unknown.
 
 Browser assets cannot receive absolute DRM. “No download button” is an interface/access-control decision, not a promise that a displayed asset can never be saved.
 
