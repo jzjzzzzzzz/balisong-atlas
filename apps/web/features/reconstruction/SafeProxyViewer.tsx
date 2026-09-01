@@ -16,7 +16,7 @@ function Model({ locale }: { locale: Locale }) {
 }
 
 function InferredButterflyProxy({ locale }: { locale: Locale }) {
-  return <group rotation={[0.32, -0.14, -0.08]} data-testid="inferred-butterfly-proxy">
+  return <group rotation={[0.32, -0.14, -0.08]}>
     <RoundedBox args={[0.18, 1.65, 0.13]} radius={0.06} smoothness={8} position={[-0.28, 0, 0]}>
       <meshPhysicalMaterial color="#303638" metalness={0.72} roughness={0.3} clearcoat={0.3} />
     </RoundedBox>
