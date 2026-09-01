@@ -196,7 +196,7 @@ export function EvidenceEraTimeline() {
               <div className="mb-3 border border-ochre/40 bg-amber-50 px-4 py-3 text-xs leading-5 text-ochre">
                 {locale === "zh" ? "历史时期视觉代理仍被证据门禁阻止；下方仅展示不带时期断言的证据边界视觉研究。" : "The historical-period proxy remains gated; the study below is a method-only visual without a period claim."}
               </div>
-              <SafeProxyViewer mode="evidence-bounded" />
+              <BalisongKineticShowcase />
             </div>
           </div>}
         </div>
