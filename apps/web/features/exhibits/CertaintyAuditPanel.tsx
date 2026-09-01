@@ -44,6 +44,12 @@ export function CertaintyAuditPanel() {
     eyebrow: "确定性核查 · 2026-09-01",
     title: "把“记录确定”与“起源确定”分开",
     intro: "这轮核查完成了七条记录级验证、两条相互印证的线索，并保留三项尚未解决的问题。AI 只能提出 proposed 记录；accepted 仍须人工审核签署。",
+    collectionUpdate: "资料收集更新",
+    collectionNote: "本轮已筛选 97 条书目记录（其中 81 份本地 PDF）与 9 项开放许可影像。影像用于受限的外观和运动关系研究，不会把现代媒体倒推为历史事实。",
+    literature: "书目记录",
+    localPdfs: "本地 PDF",
+    openMedia: "开放许可影像",
+    pending: "待补证问题",
     all: "全部",
     verified_record: "记录已核验",
     corroborated_lead: "已相互印证",
@@ -57,6 +63,12 @@ export function CertaintyAuditPanel() {
     eyebrow: "Certainty audit · 2026-09-01",
     title: "Separate a verified record from a certain origin",
     intro: "This pass completed seven record-level verifications, retained two corroborated leads, and kept three questions unresolved. AI can propose records only; accepted status still requires a signed human review.",
+    collectionUpdate: "Collection update",
+    collectionNote: "This pass screened 97 bibliography records (81 local PDFs) and 9 open-licensed media items. Media supports bounded appearance and motion studies only; modern media is not projected backward as historical fact.",
+    literature: "Bibliography records",
+    localPdfs: "Local PDFs",
+    openMedia: "Open media",
+    pending: "Pending questions",
     all: "All",
     verified_record: "Record verified",
     corroborated_lead: "Corroborated lead",
@@ -86,6 +98,19 @@ export function CertaintyAuditPanel() {
         <p className="max-w-2xl text-sm leading-6 text-quiet">{labels.intro}</p>
         <p className="mt-3 font-mono text-[9px] font-bold uppercase tracking-[.09em] text-ink">{labels.proposed}</p>
       </div>
+    </div>
+
+    <div className="border-b border-ink bg-[#ded3c1] px-5 py-5 lg:px-7" data-testid="collection-update">
+      <p className="font-mono text-[9px] font-bold uppercase tracking-[.12em] text-redline">{labels.collectionUpdate}</p>
+      <p className="mt-2 max-w-4xl text-sm leading-6 text-quiet">{labels.collectionNote}</p>
+      <dl className="mt-4 grid grid-cols-2 gap-px border border-ink/20 bg-ink/20 sm:grid-cols-4">
+        {[
+          ["97", labels.literature],
+          ["81", labels.localPdfs],
+          ["09", labels.openMedia],
+          ["03", labels.pending],
+        ].map(([value, label]) => <div key={label} className="bg-[#e8dfcf] px-3 py-3"><dd className="font-display text-2xl text-redline">{value}</dd><dt className="mt-1 font-mono text-[8px] font-bold uppercase tracking-[.08em] text-quiet">{label}</dt></div>)}
+      </dl>
     </div>
 
     <div className="grid grid-cols-2 border-b border-ink lg:grid-cols-4" role="tablist" aria-label={labels.title}>

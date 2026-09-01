@@ -91,6 +91,10 @@ test("evidence-era timeline locks historical proxies and isolates the fictional 
   await page.goto("/exhibits/between-two-handles/timeline");
   await expect(page.getByRole("heading", { name: "Design evolution timeline" })).toBeVisible();
   await expect(page.getByTestId("certainty-audit")).toBeVisible();
+  await expect(page.getByTestId("collection-update")).toBeVisible();
+  await expect(page.getByText("Collection update")).toBeVisible();
+  await expect(page.getByText("Bibliography records", { exact: true })).toBeVisible();
+  await expect(page.getByText("Open media", { exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Separate a verified record from a certain origin" })).toBeVisible();
   await expect(page.getByRole("tab", { name: /Record verified/ })).toBeVisible();
   await expect(page.getByRole("heading", { name: "A digitized Philippine popular-fiction issue used the word balisong in October 1947." })).toBeVisible();
