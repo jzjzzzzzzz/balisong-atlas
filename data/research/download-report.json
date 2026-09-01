@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-01T01:47:19.906897+00:00",
+  "generated_at": "2026-09-01T02:07:35.487327+00:00",
   "collector_version": "1.0",
-  "catalog_records": 46,
+  "catalog_records": 85,
   "download_requested": true,
   "download_results": [
     {
@@ -190,6 +190,30 @@
       "storage_key": "data/storage/research/sha256/8f/8fa4b6e6fb5cdd085076442c5ff9a6475e6a10b77c88c604d1452d32aaf0d793.pdf"
     },
     {
+      "source_id": "ia-afl2786.0001.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "afl2786.0001.001.umich.edu.pdf",
+      "sha256": "18ed473f2c90ea08ebcacf1ca9d5bf10c4dc8f162a3f19a0ee2841d61712ca36",
+      "bytes": 20526949,
+      "storage_key": "data/storage/research/sha256/18/18ed473f2c90ea08ebcacf1ca9d5bf10c4dc8f162a3f19a0ee2841d61712ca36.pdf"
+    },
+    {
+      "source_id": "ia-afq6770.0001.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "afq6770.0001.001.umich.edu.pdf",
+      "sha256": "aa4e1f042edc25b92335ea0c729814cb69ae40625f7afdd1c2bd3b47772198d8",
+      "bytes": 24994722,
+      "storage_key": "data/storage/research/sha256/aa/aa4e1f042edc25b92335ea0c729814cb69ae40625f7afdd1c2bd3b47772198d8.pdf"
+    },
+    {
+      "source_id": "ia-aja8481.0001.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "aja8481.0001.001.umich.edu.pdf",
+      "sha256": "bc90504eebb4eabd4c49101bb77e540876c94f1338cb18767f4e7bc9c3715ba1",
+      "bytes": 29814754,
+      "storage_key": "data/storage/research/sha256/bc/bc90504eebb4eabd4c49101bb77e540876c94f1338cb18767f4e7bc9c3715ba1.pdf"
+    },
+    {
       "source_id": "ia-ajb5834.0004.001.umich.edu",
       "status": "already_present",
       "original_filename": "ajb5834.0004.001.umich.edu.pdf",
@@ -206,12 +230,92 @@
       "storage_key": "data/storage/research/sha256/0c/0cf96d0fec90479c4db2f6caad6de7846730af326a8f4bdabaca3e3d015f55ae.pdf"
     },
     {
+      "source_id": "ia-atf7591.0001.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "atf7591.0001.001.umich.edu.pdf",
+      "sha256": "098471540b012cf6a75cf6b8d6085b3b163856eeb8ec4a7acc0219fb96e53b4e",
+      "bytes": 80972893,
+      "storage_key": "data/storage/research/sha256/09/098471540b012cf6a75cf6b8d6085b3b163856eeb8ec4a7acc0219fb96e53b4e.pdf"
+    },
+    {
+      "source_id": "ia-atf7593.0001.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "atf7593.0001.001.umich.edu.pdf",
+      "sha256": "d2729cab2dfc9876802beb0e0568f8f704bf598fd4114af7b6c5c97fcc599453",
+      "bytes": 64652656,
+      "storage_key": "data/storage/research/sha256/d2/d2729cab2dfc9876802beb0e0568f8f704bf598fd4114af7b6c5c97fcc599453.pdf"
+    },
+    {
+      "source_id": "ia-atf7597.0001.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "atf7597.0001.001.umich.edu.pdf",
+      "sha256": "9e81ed2b910842b0e03f577722f978d75c2bb5e0e2c1a5c2ac1c8df09680069b",
+      "bytes": 74615944,
+      "storage_key": "data/storage/research/sha256/9e/9e81ed2b910842b0e03f577722f978d75c2bb5e0e2c1a5c2ac1c8df09680069b.pdf"
+    },
+    {
       "source_id": "ia-bontocigorot00jenkgoog",
       "status": "already_present",
       "original_filename": "bontocigorot00jenkgoog.pdf",
       "sha256": "572a65af63f266f6667b2ab95d017ce8af49afa71c2121358dc38a22ba429a1c",
       "bytes": 12886817,
       "storage_key": "data/storage/research/sha256/57/572a65af63f266f6667b2ab95d017ce8af49afa71c2121358dc38a22ba429a1c.pdf"
+    },
+    {
+      "source_id": "ia-censusphilippin01ganngoog",
+      "status": "already_present",
+      "original_filename": "censusphilippin01ganngoog.pdf",
+      "sha256": "9643e404e27feed476b7711aed8b2499b2b9064271c4d5077024b176c3a371b6",
+      "bytes": 73521867,
+      "storage_key": "data/storage/research/sha256/96/9643e404e27feed476b7711aed8b2499b2b9064271c4d5077024b176c3a371b6.pdf"
+    },
+    {
+      "source_id": "ia-censusphilippin02ganngoog",
+      "status": "already_present",
+      "original_filename": "censusphilippin02ganngoog.pdf",
+      "sha256": "51eff6687d3c12d01a48845dfc9a474382b751fd0cecc8ae2c14afd58edd597d",
+      "bytes": 48109926,
+      "storage_key": "data/storage/research/sha256/51/51eff6687d3c12d01a48845dfc9a474382b751fd0cecc8ae2c14afd58edd597d.pdf"
+    },
+    {
+      "source_id": "ia-censusphilippin03ganngoog",
+      "status": "already_present",
+      "original_filename": "censusphilippin03ganngoog.pdf",
+      "sha256": "22dea169b51d4918227097411437e237b869cfd468414fd5367d64e1e2829e4f",
+      "bytes": 72574458,
+      "storage_key": "data/storage/research/sha256/22/22dea169b51d4918227097411437e237b869cfd468414fd5367d64e1e2829e4f.pdf"
+    },
+    {
+      "source_id": "ia-commercialgeogra00millrich",
+      "status": "already_present",
+      "original_filename": "commercialgeogra00millrich.pdf",
+      "sha256": "31763cb3d38a7d64957b36f32998978a43a9039066e1744c498561e67ab51e8a",
+      "bytes": 9182709,
+      "storage_key": "data/storage/research/sha256/31/31763cb3d38a7d64957b36f32998978a43a9039066e1744c498561e67ab51e8a.pdf"
+    },
+    {
+      "source_id": "ia-cu31924023453776",
+      "status": "already_present",
+      "original_filename": "cu31924023453776.pdf",
+      "sha256": "80e384ba6c3e38fd92cd01f648be1812733b5bfbf8b94a0ed175b2c45194e931",
+      "bytes": 4708191,
+      "storage_key": "data/storage/research/sha256/80/80e384ba6c3e38fd92cd01f648be1812733b5bfbf8b94a0ed175b2c45194e931.pdf"
+    },
+    {
+      "source_id": "ia-divisionethnolo00ethngoog",
+      "status": "already_present",
+      "original_filename": "divisionethnolo00ethngoog.pdf",
+      "sha256": "0d4728ffe5334bafe6bded3cb510ad3f69751ba1cb38bfe046324b3d76e7af90",
+      "bytes": 10015230,
+      "storage_key": "data/storage/research/sha256/0d/0d4728ffe5334bafe6bded3cb510ad3f69751ba1cb38bfe046324b3d76e7af90.pdf"
+    },
+    {
+      "source_id": "ia-economicconditio00millrich",
+      "status": "already_present",
+      "original_filename": "economicconditio00millrich.pdf",
+      "sha256": "1d20c0385a673f9718c572d3547f8f6c76306a5e2e0b0f9205a13d660fd9f3d3",
+      "bytes": 34995058,
+      "storage_key": "data/storage/research/sha256/1d/1d20c0385a673f9718c572d3547f8f6c76306a5e2e0b0f9205a13d660fd9f3d3.pdf"
     },
     {
       "source_id": "ia-filipinaspequeo01sastgoog",
@@ -222,12 +326,44 @@
       "storage_key": "data/storage/research/sha256/6d/6d1f176bbb6d2eb24c9abee894df4c273cc3b1d801501067678e15b9ee344705.pdf"
     },
     {
+      "source_id": "ia-filipinopopular00fansgoog",
+      "status": "already_present",
+      "original_filename": "filipinopopular00fansgoog.pdf",
+      "sha256": "e2347fa44abf67915d38731b537a158253e1804f9577fcdc14ab7d8776b5f939",
+      "bytes": 10383337,
+      "storage_key": "data/storage/research/sha256/e2/e2347fa44abf67915d38731b537a158253e1804f9577fcdc14ab7d8776b5f939.pdf"
+    },
+    {
+      "source_id": "ia-historyofphilipp00barriala",
+      "status": "already_present",
+      "original_filename": "historyofphilipp00barriala.pdf",
+      "sha256": "421b19349324d67fa0ddf97162f264c54c9d613bdff3bbe79fb56c31a25f05ef",
+      "bytes": 16093812,
+      "storage_key": "data/storage/research/sha256/42/421b19349324d67fa0ddf97162f264c54c9d613bdff3bbe79fb56c31a25f05ef.pdf"
+    },
+    {
+      "source_id": "ia-ifugaolawroy00bartrich",
+      "status": "already_present",
+      "original_filename": "ifugaolawroy00bartrich.pdf",
+      "sha256": "6d9b30d2a43cff32384dac490736e3433d9a173198e917bcf462823a93c3245c",
+      "bytes": 19061369,
+      "storage_key": "data/storage/research/sha256/6d/6d9b30d2a43cff32384dac490736e3433d9a173198e917bcf462823a93c3245c.pdf"
+    },
+    {
       "source_id": "ia-island00forephilippinerich",
       "status": "already_present",
       "original_filename": "island00forephilippinerich.pdf",
       "sha256": "b397eb8ad43d527b49ec2f62bb9bab52b9446ab7798426c7b51d90e9d2556c71",
       "bytes": 60483435,
       "storage_key": "data/storage/research/sha256/b3/b397eb8ad43d527b49ec2f62bb9bab52b9446ab7798426c7b51d90e9d2556c71.pdf"
+    },
+    {
+      "source_id": "ia-negritosofzambal00reed",
+      "status": "already_present",
+      "original_filename": "negritosofzambal00reed.pdf",
+      "sha256": "75784e94ef57ddfd86463d514d313d2cd18bf4e2d0c8f145d0dae7ccad928539",
+      "bytes": 10950962,
+      "storage_key": "data/storage/research/sha256/75/75784e94ef57ddfd86463d514d313d2cd18bf4e2d0c8f145d0dae7ccad928539.pdf"
     },
     {
       "source_id": "ia-officialcatalogu00loui_2",
@@ -246,6 +382,110 @@
       "storage_key": "data/storage/research/sha256/70/70bfae20f8adf7983c0076f6ffad9bd3b5ee0717fc91b7b5e8b0478ee6c1f416.pdf"
     },
     {
+      "source_id": "ia-peoplephilippin00affagoog",
+      "status": "already_present",
+      "original_filename": "peoplephilippin00affagoog.pdf",
+      "sha256": "6d9be495c597206bf7d0370df7892efa5840430ded241e47d544c96066f6b493",
+      "bytes": 6956287,
+      "storage_key": "data/storage/research/sha256/6d/6d9be495c597206bf7d0370df7892efa5840430ded241e47d544c96066f6b493.pdf"
+    },
+    {
+      "source_id": "ia-philippinefolklo00millrich",
+      "status": "already_present",
+      "original_filename": "philippinefolklo00millrich.pdf",
+      "sha256": "4a11376086be250d9eaab4bd59fa1e03acc5453b903ffbfc2a011bf84d0bcedc",
+      "bytes": 7641271,
+      "storage_key": "data/storage/research/sha256/4a/4a11376086be250d9eaab4bd59fa1e03acc5453b903ffbfc2a011bf84d0bcedc.pdf"
+    },
+    {
+      "source_id": "ia-philippineislan00worcgoog",
+      "status": "already_present",
+      "original_filename": "philippineislan00worcgoog.pdf",
+      "sha256": "80abcef8534f1f7e5af70ade8f1f5a9f809d42fcec359d7bb5781fd2739e47e4",
+      "bytes": 18089076,
+      "storage_key": "data/storage/research/sha256/80/80abcef8534f1f7e5af70ade8f1f5a9f809d42fcec359d7bb5781fd2739e47e4.pdf"
+    },
+    {
+      "source_id": "ia-philippinej111916phil",
+      "status": "already_present",
+      "original_filename": "philippinej111916phil.pdf",
+      "sha256": "2bd93081538f433b6082a69ab7cdb7224e1990cff6e96849722ab72e9b5f87da",
+      "bytes": 22967439,
+      "storage_key": "data/storage/research/sha256/2b/2bd93081538f433b6082a69ab7cdb7224e1990cff6e96849722ab72e9b5f87da.pdf"
+    },
+    {
+      "source_id": "ia-philippinejour101915phil",
+      "status": "already_present",
+      "original_filename": "philippinejour101915phil.pdf",
+      "sha256": "2b4ca1f2076b103e1d22a0d20f4ad65d1bcd6fe6318c4db3ba66d7de06b381eb",
+      "bytes": 32168124,
+      "storage_key": "data/storage/research/sha256/2b/2b4ca1f2076b103e1d22a0d20f4ad65d1bcd6fe6318c4db3ba66d7de06b381eb.pdf"
+    },
+    {
+      "source_id": "ia-philippinejour121917phil",
+      "status": "already_present",
+      "original_filename": "philippinejour121917phil.pdf",
+      "sha256": "921a1b6808f4fe292756428faff6538bf9576b0a71a6430d903267e3efbdf7ba",
+      "bytes": 19396732,
+      "storage_key": "data/storage/research/sha256/92/921a1b6808f4fe292756428faff6538bf9576b0a71a6430d903267e3efbdf7ba.pdf"
+    },
+    {
+      "source_id": "ia-philippinejour131918phil",
+      "status": "already_present",
+      "original_filename": "philippinejour131918phil.pdf",
+      "sha256": "ecc06fabca2e6e09dd67bbf7dbd882b44d3f28dba3a7c56fd30bdc19334272c3",
+      "bytes": 26255536,
+      "storage_key": "data/storage/research/sha256/ec/ecc06fabca2e6e09dd67bbf7dbd882b44d3f28dba3a7c56fd30bdc19334272c3.pdf"
+    },
+    {
+      "source_id": "ia-philippinejourn141919phil",
+      "status": "already_present",
+      "original_filename": "philippinejourn141919phil.pdf",
+      "sha256": "cd6886ff1fb08c09b46190299d145db7810eef061e2f1aa1ed5798e32af7e61f",
+      "bytes": 49767047,
+      "storage_key": "data/storage/research/sha256/cd/cd6886ff1fb08c09b46190299d145db7810eef061e2f1aa1ed5798e32af7e61f.pdf"
+    },
+    {
+      "source_id": "ia-philippinejourn31908phil",
+      "status": "already_present",
+      "original_filename": "philippinejourn31908phil.pdf",
+      "sha256": "266d430a3a3b63a7aa608137d2805898a00e4d0e130898bffd795d42965e62d0",
+      "bytes": 38973877,
+      "storage_key": "data/storage/research/sha256/26/266d430a3a3b63a7aa608137d2805898a00e4d0e130898bffd795d42965e62d0.pdf"
+    },
+    {
+      "source_id": "ia-philippinejourn91914phil",
+      "status": "already_present",
+      "original_filename": "philippinejourn91914phil.pdf",
+      "sha256": "c8b1e888a67ad8c3b55f9baddb1ff4db6db903f3e1a3325f7d44f780d2acbb66",
+      "bytes": 33531443,
+      "storage_key": "data/storage/research/sha256/c8/c8b1e888a67ad8c3b55f9baddb1ff4db6db903f3e1a3325f7d44f780d2acbb66.pdf"
+    },
+    {
+      "source_id": "ia-philippinejourna51910phil",
+      "status": "already_present",
+      "original_filename": "philippinejourna51910phil.pdf",
+      "sha256": "37b6ebe28652709f93caf00eac2862cc4b28406c2d62f4e99a292719572890e6",
+      "bytes": 21002864,
+      "storage_key": "data/storage/research/sha256/37/37b6ebe28652709f93caf00eac2862cc4b28406c2d62f4e99a292719572890e6.pdf"
+    },
+    {
+      "source_id": "ia-philippinejourna71912ph",
+      "status": "already_present",
+      "original_filename": "philippinejourna71912ph.pdf",
+      "sha256": "ea9bacd6aba8beacd3c1e406f3f752b7d4b7070da785d27d40e65a0d3ac85c70",
+      "bytes": 25906347,
+      "storage_key": "data/storage/research/sha256/ea/ea9bacd6aba8beacd3c1e406f3f752b7d4b7070da785d27d40e65a0d3ac85c70.pdf"
+    },
+    {
+      "source_id": "ia-philippinejourna81913ph",
+      "status": "already_present",
+      "original_filename": "philippinejourna81913ph.pdf",
+      "sha256": "b2f9d2acf0258688f3dd8ac53bc8d108ce7f85621d8deb5c09056c12dcb1986f",
+      "bytes": 38908478,
+      "storage_key": "data/storage/research/sha256/b2/b2f9d2acf0258688f3dd8ac53bc8d108ce7f85621d8deb5c09056c12dcb1986f.pdf"
+    },
+    {
       "source_id": "ia-philippinelifei01lerogoog",
       "status": "already_present",
       "original_filename": "philippinelifei01lerogoog.pdf",
@@ -262,6 +502,38 @@
       "storage_key": "data/storage/research/sha256/54/54b541ad8bfc6592205d910a4797eb969d6b528c40d0f268e178bc5bdd456383.pdf"
     },
     {
+      "source_id": "ia-reportofphil00unit",
+      "status": "already_present",
+      "original_filename": "reportofphil00unit.pdf",
+      "sha256": "d82adf24976ef9041c7bce6a868b0355434eca31f8a7d791c920b5e7f7992c36",
+      "bytes": 24350512,
+      "storage_key": "data/storage/research/sha256/d8/d82adf24976ef9041c7bce6a868b0355434eca31f8a7d791c920b5e7f7992c36.pdf"
+    },
+    {
+      "source_id": "ia-reportofphilip00unit",
+      "status": "already_present",
+      "original_filename": "reportofphilip00unit.pdf",
+      "sha256": "c61f9f43ae09b13b63bee34c2490acf43ceeafd90d80bcd37caa27f7e8c54fee",
+      "bytes": 20565621,
+      "storage_key": "data/storage/research/sha256/c6/c61f9f43ae09b13b63bee34c2490acf43ceeafd90d80bcd37caa27f7e8c54fee.pdf"
+    },
+    {
+      "source_id": "ia-reportofphilipp02unit",
+      "status": "already_present",
+      "original_filename": "reportofphilipp02unit.pdf",
+      "sha256": "13276f544901042f207cb81faad8e846af8c9edc6dfde88da8165f788bafb500",
+      "bytes": 56202736,
+      "storage_key": "data/storage/research/sha256/13/13276f544901042f207cb81faad8e846af8c9edc6dfde88da8165f788bafb500.pdf"
+    },
+    {
+      "source_id": "ia-reportofphilipp03unit",
+      "status": "already_present",
+      "original_filename": "reportofphilipp03unit.pdf",
+      "sha256": "0909f21059cbdca44832828c1788c16f33789a65fd45c333afe87cfd2618bd14",
+      "bytes": 99286231,
+      "storage_key": "data/storage/research/sha256/09/0909f21059cbdca44832828c1788c16f33789a65fd45c333afe87cfd2618bd14.pdf"
+    },
+    {
       "source_id": "ia-reportofphilippi00philrich",
       "status": "already_present",
       "original_filename": "reportofphilippi00philrich.pdf",
@@ -270,12 +542,52 @@
       "storage_key": "data/storage/research/sha256/da/da9eed0b8626f71937953c5dee2a31d0c5c3ce8534b606f9a979a9ebeb72e361.pdf"
     },
     {
+      "source_id": "ia-reportofphilippi01unit",
+      "status": "already_present",
+      "original_filename": "reportofphilippi01unit.pdf",
+      "sha256": "fa9a3dd0272ddb18eb3c3eaca116d13fc05515581fca273eb71a0c7ad09a0b5b",
+      "bytes": 19426068,
+      "storage_key": "data/storage/research/sha256/fa/fa9a3dd0272ddb18eb3c3eaca116d13fc05515581fca273eb71a0c7ad09a0b5b.pdf"
+    },
+    {
+      "source_id": "ia-reportofphilippi02unit",
+      "status": "already_present",
+      "original_filename": "reportofphilippi02unit.pdf",
+      "sha256": "66bab115b6e5e35704066117f57dbf1218a9e59fe58c789fd0ef754d4f704779",
+      "bytes": 86706370,
+      "storage_key": "data/storage/research/sha256/66/66bab115b6e5e35704066117f57dbf1218a9e59fe58c789fd0ef754d4f704779.pdf"
+    },
+    {
+      "source_id": "ia-shorthistoryofph00jernrich",
+      "status": "already_present",
+      "original_filename": "shorthistoryofph00jernrich.pdf",
+      "sha256": "ccfc8909d470e106c658b3f04f4d65682b992aa8a9cffce0bd2713dea9c51e15",
+      "bytes": 17165039,
+      "storage_key": "data/storage/research/sha256/cc/ccfc8909d470e106c658b3f04f4d65682b992aa8a9cffce0bd2713dea9c51e15.pdf"
+    },
+    {
       "source_id": "ia-souvenirofphilip00loui",
       "status": "already_present",
       "original_filename": "souvenirofphilip00loui.pdf",
       "sha256": "1195bef642fe7d53d310000a66d90a4603721a1fbcb802d1e7ae07ff7f5caa21",
       "bytes": 11146805,
       "storage_key": "data/storage/research/sha256/11/1195bef642fe7d53d310000a66d90a4603721a1fbcb802d1e7ae07ff7f5caa21.pdf"
+    },
+    {
+      "source_id": "ia-tinguiansocialre142cole",
+      "status": "already_present",
+      "original_filename": "tinguiansocialre142cole.pdf",
+      "sha256": "3d0ff84d59631614688ec4d722f676de648e73b056c1c61800adf809d60bac6d",
+      "bytes": 23323435,
+      "storage_key": "data/storage/research/sha256/3d/3d0ff84d59631614688ec4d722f676de648e73b056c1c61800adf809d60bac6d.pdf"
+    },
+    {
+      "source_id": "ia-traditionsofting141cole",
+      "status": "downloaded",
+      "original_filename": "traditionsofting141cole.pdf",
+      "sha256": "d0092f4124baddd99e9c38a1d6c13a916db01c1910ea7de5e185ddec2327d34e",
+      "bytes": 21157670,
+      "storage_key": "data/storage/research/sha256/d0/d0092f4124baddd99e9c38a1d6c13a916db01c1910ea7de5e185ddec2327d34e.pdf"
     },
     {
       "source_id": "ia-wildtribesofdava122cole",

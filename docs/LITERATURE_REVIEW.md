@@ -30,7 +30,7 @@ one dependent source family.
 | 1895 | Manuel Sastrón, *Filipinas: pequeños estudios; Batangas y su provincia* | Private research copy | Contemporary regional book. Page-level relevance has not yet been established. |
 | 1903 | *Official handbook of the Philippines and catalogue of the Philippine exhibit* | Private research copy | Period government catalogue for institutional and material-culture context. |
 | 1904 | *Official catalogue, Philippine exhibits, Universal Exposition, St. Louis* | Private research copy | Period catalogue; requires provenance and bias review. |
-| 1905 | *Census of the Philippine Islands* (selected volume) | Private research copy | Official statistical and regional context; not a direct design history. |
+| 1905 | *Census of the Philippine Islands* (four-volume scan set) | Private research copies | Official statistical and regional context; not a direct design history. |
 | 1905 | A. E. Jenks, *The Bontoc Igorot* | Private research copy | Ethnographic context; requires critical reading of colonial method and terminology. |
 | 1905/1907 | James A. LeRoy, *Philippine Life in Town and Country* | Private research copy | Social context; not assumed to document the exhibition subject. |
 | 1906 | John Foreman, *The Philippine Islands* | Private research copy | Broad historical context; source dependence and authorial position require review. |
@@ -42,6 +42,13 @@ one dependent source family.
 | 1994 | “Metalcraft,” *CCP Encyclopedia of Philippine Art, Visual Arts* | Private restricted research copy | Direct craft context and bibliography; copyright and controlled-content flags are pending review. |
 | 2002 | Ramon N. Villegas, ed., *Batangas: Forged in Fire* | Catalogue metadata | Regional secondary-source lead; no digital copy was offered by the catalogue. |
 | 2016 | Daniel John Felix G. Galvan, *Ang balisong bilang sagisag-kultura…* | Institutional thesis metadata | Direct cultural-research lead. Full text was not publicly downloadable. |
+
+The expanded private corpus also includes six Philippine Commission report
+volumes, ten annual volumes of *The Philippine Journal of Science* (1908–1919
+selection), early economic and commercial surveys, and historical works on
+Philippine law, folklore, language, social life, and ethnography. These provide
+context and vocabulary for later page-level research; none is treated as a
+verified statement about the exhibition subject merely because it is old.
 
 ## Contextual institutional records
 
@@ -88,8 +95,11 @@ recorded actions.
 
 ### Actual collection snapshot
 
-The 2026-09-01 run catalogued **46 records** and placed **37 PDF research
-copies** in private CAS storage, totalling **466,906,441 bytes**. The tracked
+The 2026-09-01 expanded run catalogued **85 records** and placed **76 PDF
+research copies** in private CAS storage, totalling **1,781,829,481 bytes**
+(about 1.66 GiB). This second collection pass added **39 scanned volumes**,
+weighted toward old books, official records, and historical periodicals rather
+than web posts. The tracked
 download report contains the actual SHA-256 and byte count for every available
 copy. The original Smithsonian endpoint returned HTTP 403 to the collector, so
 the public-domain USNM Bulletin 137 scan was obtained from Wikimedia Commons;
@@ -111,5 +121,6 @@ use unauthorized mirrors or evade institutional access controls.
 1. Obtain the full DLSU thesis through an authorized institutional channel.
 2. Compare the National Library Batangas microfilm with online transcriptions.
 3. Request object-level records from Taal/Batangas institutions and the Thiers museum.
-4. Search the 22 *Philippine Craftsman* issues at page level after sensitive-content screening.
+4. Screen and search the 22 *Philippine Craftsman* issues and ten selected
+   *Philippine Journal of Science* volumes at page level.
 5. Audit the citation lineage of recurring origin dates before proposing any chronology claim.

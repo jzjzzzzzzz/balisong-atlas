@@ -16,6 +16,7 @@ import json
 import re
 import shutil
 import tempfile
+import time
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
@@ -75,6 +76,57 @@ IA_BOOK_IDS = (
     "ajb5834.0004.001.umich.edu",
     "officialcatalogu00loui_2",
     "souvenirofphilip00loui",
+)
+
+# A deliberately broad second tranche of public-domain scans.  These are
+# research leads, not accepted evidence: the catalogue keeps every item private
+# and outside AI/search until page-level review and sensitive-content redaction.
+OFFICIAL_RECORD_IDS = (
+    "censusphilippin01ganngoog",
+    "censusphilippin02ganngoog",
+    "censusphilippin03ganngoog",
+    "reportofphilippi01unit",
+    "reportofphilipp02unit",
+    "reportofphilipp03unit",
+    "reportofphilippi02unit",
+    "reportofphilip00unit",
+    "reportofphil00unit",
+)
+
+PHILIPPINE_JOURNAL_OF_SCIENCE_IDS = (
+    "philippinejourn31908phil",
+    "philippinejourna51910phil",
+    "philippinejourna71912ph",
+    "philippinejourna81913ph",
+    "philippinejourn91914phil",
+    "philippinejour101915phil",
+    "philippinej111916phil",
+    "philippinejour121917phil",
+    "philippinejour131918phil",
+    "philippinejourn141919phil",
+)
+
+EXPANDED_HISTORICAL_BOOK_IDS = (
+    "atf7593.0001.001.umich.edu",
+    "atf7591.0001.001.umich.edu",
+    "atf7597.0001.001.umich.edu",
+    "traditionsofting141cole",
+    "ifugaolawroy00bartrich",
+    "negritosofzambal00reed",
+    "tinguiansocialre142cole",
+    "divisionethnolo00ethngoog",
+    "aja8481.0001.001.umich.edu",
+    "filipinopopular00fansgoog",
+    "philippinefolklo00millrich",
+    "afl2786.0001.001.umich.edu",
+    "philippineislan00worcgoog",
+    "historyofphilipp00barriala",
+    "shorthistoryofph00jernrich",
+    "cu31924023453776",
+    "commercialgeogra00millrich",
+    "afq6770.0001.001.umich.edu",
+    "economicconditio00millrich",
+    "peoplephilippin00affagoog",
 )
 
 DIRECT_SOURCES: tuple[dict[str, Any], ...] = (
@@ -282,12 +334,21 @@ class DownloadTarget:
 
 
 def request_json(url: str) -> dict[str, Any]:
-    request = urllib.request.Request(  # noqa: S310 - caller supplies fixed Internet Archive HTTPS URL
-        url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"}
-    )
-    with urllib.request.urlopen(request, timeout=45) as response:  # noqa: S310 - fixed allow-listed URLs
-        payload: dict[str, Any] = json.load(response)
-    return payload
+    last_error: Exception | None = None
+    for attempt in range(3):
+        request = urllib.request.Request(  # noqa: S310 - fixed Internet Archive HTTPS URL
+            url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"}
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=45) as response:  # noqa: S310
+                payload: dict[str, Any] = json.load(response)
+            return payload
+        except (TimeoutError, OSError) as exc:
+            last_error = exc
+            if attempt < 2:
+                time.sleep(2**attempt)
+    assert last_error is not None
+    raise last_error
 
 
 def normalize_metadata_value(value: object) -> str:
@@ -332,9 +393,13 @@ def archive_record(
         "title": title,
         "creator": normalize_metadata_value(metadata.get("creator")) or "Creator not normalized",
         "year": year or "Date not normalized",
-        "source_kind": "historical_periodical"
-        if "craftsman" in title.lower()
-        else "historical_book",
+        "source_kind": (
+            "historical_periodical"
+            if priority_class == "period_publication"
+            else "official_record"
+            if priority_class == "archive"
+            else "historical_book"
+        ),
         "priority_class": priority_class,
         "source_tier": "A",
         "institution": normalize_metadata_value(metadata.get("contributor"))
@@ -516,6 +581,12 @@ def main() -> int:
     for identifier in PHILIPPINE_CRAFTSMAN_IDS:
         add_archive(identifier, "period_publication")
     for identifier in IA_BOOK_IDS:
+        add_archive(identifier, "book")
+    for identifier in OFFICIAL_RECORD_IDS:
+        add_archive(identifier, "archive")
+    for identifier in PHILIPPINE_JOURNAL_OF_SCIENCE_IDS:
+        add_archive(identifier, "period_publication")
+    for identifier in EXPANDED_HISTORICAL_BOOK_IDS:
         add_archive(identifier, "book")
 
     records.sort(key=priority)
