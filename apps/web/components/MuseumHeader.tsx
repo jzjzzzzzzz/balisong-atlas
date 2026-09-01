@@ -1,18 +1,17 @@
 import Link from "next/link";
-import { Archive, ArrowUpRight } from "lucide-react";
 import { LanguageToggle } from "./LanguageToggle";
 
 export function MuseumHeader({ compact = false }: { compact?: boolean }) {
-  return <header className="sticky top-0 z-40 border-b border-ink/10 bg-paper/90 backdrop-blur-xl">
-    <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-5 px-5 py-3 lg:px-10">
-      <Link href="/" className="focus-ring flex items-center gap-3 no-underline">
-        <span className="grid h-9 w-9 place-items-center rounded-full bg-ink text-paper"><Archive size={17} /></span>
-        <span><strong className="block font-display text-lg leading-none tracking-tight">Balisong Atlas</strong>{!compact && <small className="mt-1 block text-[10px] uppercase tracking-[.15em] text-quiet">Visual history · Evidence archive</small>}</span>
+  return <header className="sticky top-0 z-40 border-b border-white/25 bg-night text-white">
+    <div className="grid min-h-16 grid-cols-[1fr_auto] md:grid-cols-[34%_1fr_auto]">
+      <Link href="/" className="focus-ring flex items-center border-r border-white/25 px-5 font-semibold tracking-[-.02em] no-underline md:px-10">
+        Balisong Atlas{!compact && <span className="ml-3 hidden font-mono text-[9px] font-normal uppercase tracking-[.12em] text-fog xl:inline">Coordinated research archive</span>}
       </Link>
-      <nav className="hidden items-center gap-5 text-sm md:flex" aria-label="Primary navigation">
-        <Link href="/exhibits/between-two-handles" className="hover:text-ochre">Exhibit</Link>
-        <Link href="/exhibits/between-two-handles/methodology" className="hover:text-ochre">Methodology</Link>
-        <Link href="/admin" className="inline-flex items-center gap-1 hover:text-ochre">Research workspace <ArrowUpRight size={14} /></Link>
+      <nav className="hidden items-stretch justify-center text-[13px] md:flex" aria-label="Primary navigation">
+        <Link href="/exhibits/between-two-handles" className="flex items-center px-5 no-underline hover:bg-white/10">Exhibition</Link>
+        <Link href="/exhibits/between-two-handles/sources" className="flex items-center px-5 no-underline hover:bg-white/10">Reading Room</Link>
+        <Link href="/exhibits/between-two-handles/methodology" className="flex items-center px-5 no-underline hover:bg-white/10">Method</Link>
+        <Link href="/admin" className="flex items-center px-5 no-underline hover:bg-white/10">Research Desk</Link>
       </nav>
       <LanguageToggle />
     </div>

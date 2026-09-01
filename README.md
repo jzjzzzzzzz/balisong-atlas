@@ -171,6 +171,18 @@ The confidence formula is transparent and advisory:
 
 A Tier D source cannot produce a `high` label. Scores never replace reviewer judgment.
 
+## Literature collection
+
+The research register deliberately ranks archives and books ahead of papers, and papers ahead of ordinary web posts. This is a discovery preference—not a truth score. Old books, institutional catalogues, oral histories, and recent scholarship still receive independent source criticism.
+
+```bash
+make collect-literature
+```
+
+The command builds `data/research/bibliography.json`, downloads only explicitly allow-listed research files, records actual hashes and failures in `data/research/download-report.json`, and writes originals into ignored content-addressed storage under `data/storage/research/sha256/`. Every new research copy is private and excluded from AI, embeddings, public search, and publication until rights and sensitive-content review are complete. Loan-only and unavailable works remain metadata records; the collector does not bypass access controls.
+
+See [docs/LITERATURE_REVIEW.md](docs/LITERATURE_REVIEW.md) for the ranked register, evaluation notes, and open research gaps.
+
 ## Safe 3D
 
 Public output is an **evidence-based visual hypothesis**, **interpretive reconstruction**, **nonfunctional museum visualization**, or **visual proxy**. SafeProxyBackend:

@@ -5,11 +5,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#172225", paper: "#f4f0e7", parchment: "#e9e0cf", ochre: "#a96532",
-        moss: "#405a55", fog: "#c8cfca", quiet: "#687574", night: "#10191b"
+        ink: "#151513", paper: "#f3f0e9", parchment: "#e7e1d6", ochre: "#9e2d26",
+        redline: "#9e2d26", moss: "#455e52", fog: "#cac8c0", quiet: "#62615b", night: "#10100f"
       },
       fontFamily: { display: ["var(--font-display)", "Georgia", "serif"], sans: ["var(--font-sans)", "Arial", "sans-serif"] },
-      boxShadow: { museum: "0 18px 50px rgba(19,31,33,.12)" }
+      boxShadow: { museum: "0 16px 34px rgba(21,21,19,.10)" }
     }
   },
   plugins: [],

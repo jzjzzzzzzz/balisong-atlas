@@ -2,7 +2,7 @@ SHELL := /bin/bash
 PNPM := corepack pnpm
 PY := uv run
 
-.PHONY: bootstrap dev down logs migrate seed test lint typecheck create-admin process-demo render-demo reset-db
+.PHONY: bootstrap dev down logs migrate seed test lint typecheck create-admin process-demo render-demo collect-literature reset-db
 bootstrap:
 	python3 scripts/bootstrap_env.py
 	$(PNPM) install --frozen-lockfile
@@ -44,6 +44,9 @@ process-demo:
 
 render-demo:
 	docker compose exec api python scripts/render_demo.py
+
+collect-literature:
+	python3 scripts/collect_literature.py --download --jobs 4 --max-item-mb 140
 
 reset-db:
 	@read -p "Delete local volumes and database? [y/N] " answer; [ "$$answer" = "y" ]

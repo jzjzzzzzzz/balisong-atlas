@@ -23,3 +23,5 @@ Add an Alembic migration for every database change. Add tests for policy boundar
 - Do not describe unavailable capabilities as verified.
 
 AI-generated code or prose must be reviewed by the contributor. AI output cannot be committed as historical evidence.
+
+Large research copies belong in ignored content-addressed storage, never Git. Commit bibliographic metadata, access/rights state, hashes, and review notes instead. Running the collector does not authorize ingestion or publication.

@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-01T01:47:19.906897+00:00",
+  "collector_version": "1.0",
+  "catalog_records": 46,
+  "download_requested": true,
+  "download_results": [
+    {
+      "source_id": "ccp-encyclopedia-metalcraft-1994",
+      "status": "already_present",
+      "original_filename": "v17.pdf",
+      "sha256": "d64fd5e230fa2ca494089048fa1219f765491ccf61dd795d0fa9b36d0def6932",
+      "bytes": 42638,
+      "storage_key": "data/storage/research/sha256/d6/d64fd5e230fa2ca494089048fa1219f765491ccf61dd795d0fa9b36d0def6932.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0001.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0001.001.umich.edu.pdf",
+      "sha256": "404e0ff6982543d5e0c671f39148b4aaecfe67331ccc064039e5ac954d2bc3b7",
+      "bytes": 4943459,
+      "storage_key": "data/storage/research/sha256/40/404e0ff6982543d5e0c671f39148b4aaecfe67331ccc064039e5ac954d2bc3b7.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0001.002.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0001.002.umich.edu.pdf",
+      "sha256": "7b5554b3d1bbd7980b35d04e99df9b38c6726ce56acc7e1db921cbfa8dc6a885",
+      "bytes": 4236222,
+      "storage_key": "data/storage/research/sha256/7b/7b5554b3d1bbd7980b35d04e99df9b38c6726ce56acc7e1db921cbfa8dc6a885.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0001.003.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0001.003.umich.edu.pdf",
+      "sha256": "1f882142a974c996027ff498f958e9d317aba66e1ac4e2c0ab972635c6fd1c14",
+      "bytes": 4334129,
+      "storage_key": "data/storage/research/sha256/1f/1f882142a974c996027ff498f958e9d317aba66e1ac4e2c0ab972635c6fd1c14.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0001.004.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0001.004.umich.edu.pdf",
+      "sha256": "776b864cde19e59e4c411e6a01ae39f6e4a83ca5eb3fca7700522d6df9fa5bfc",
+      "bytes": 10969222,
+      "storage_key": "data/storage/research/sha256/77/776b864cde19e59e4c411e6a01ae39f6e4a83ca5eb3fca7700522d6df9fa5bfc.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0001.005.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0001.005.umich.edu.pdf",
+      "sha256": "58c58e809ca3da8cb70ae86b7eee6f9cf68c02b1141095fa9a880ed48148988a",
+      "bytes": 5146079,
+      "storage_key": "data/storage/research/sha256/58/58c58e809ca3da8cb70ae86b7eee6f9cf68c02b1141095fa9a880ed48148988a.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0001.006.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0001.006.umich.edu.pdf",
+      "sha256": "2c645295aedb2a85470e749db7d594abc59882bb5fd5adffc1ba5b8176ee2e75",
+      "bytes": 4172026,
+      "storage_key": "data/storage/research/sha256/2c/2c645295aedb2a85470e749db7d594abc59882bb5fd5adffc1ba5b8176ee2e75.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0001.007.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0001.007.umich.edu.pdf",
+      "sha256": "5b00e9c3d7ff91bb4b32bf82439b670b781a83f2ebeb7a06ac1159a304a3cdfe",
+      "bytes": 3530567,
+      "storage_key": "data/storage/research/sha256/5b/5b00e9c3d7ff91bb4b32bf82439b670b781a83f2ebeb7a06ac1159a304a3cdfe.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0001.008.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0001.008.umich.edu.pdf",
+      "sha256": "13364debfb720acaef3182f258d2d3b1fe9897b45485872d01b0239bb234a858",
+      "bytes": 2767056,
+      "storage_key": "data/storage/research/sha256/13/13364debfb720acaef3182f258d2d3b1fe9897b45485872d01b0239bb234a858.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0001.009.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0001.009.umich.edu.pdf",
+      "sha256": "578c77a0e20d6264becfa120c18b8cebb6a9cab2421402138a78057e9ef09199",
+      "bytes": 5034986,
+      "storage_key": "data/storage/research/sha256/57/578c77a0e20d6264becfa120c18b8cebb6a9cab2421402138a78057e9ef09199.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0002.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0002.001.umich.edu.pdf",
+      "sha256": "2229ee3d818598e7f9118473d96f213ffb0e0e8ed34992eba960b2c1eb2955ad",
+      "bytes": 2740079,
+      "storage_key": "data/storage/research/sha256/22/2229ee3d818598e7f9118473d96f213ffb0e0e8ed34992eba960b2c1eb2955ad.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0002.002.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0002.002.umich.edu.pdf",
+      "sha256": "685fe735bf9c29dc66025923d1609a8415cabe20f02d59bf4348c99734b68553",
+      "bytes": 2919525,
+      "storage_key": "data/storage/research/sha256/68/685fe735bf9c29dc66025923d1609a8415cabe20f02d59bf4348c99734b68553.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0002.003.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0002.003.umich.edu.pdf",
+      "sha256": "61afe0df29f22ed970289f39ca8b032f68bd7be38d56926aefaf9182bce138c6",
+      "bytes": 3871155,
+      "storage_key": "data/storage/research/sha256/61/61afe0df29f22ed970289f39ca8b032f68bd7be38d56926aefaf9182bce138c6.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0002.004.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0002.004.umich.edu.pdf",
+      "sha256": "9e79a034ede2eea7369e10b13c7289029656747cf98caae50320bd3f451376ba",
+      "bytes": 4763264,
+      "storage_key": "data/storage/research/sha256/9e/9e79a034ede2eea7369e10b13c7289029656747cf98caae50320bd3f451376ba.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0002.005.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0002.005.umich.edu.pdf",
+      "sha256": "3f6af015a9cbcfbc6ddfaea1750ef1aa4a5d3f7dd929bfb2c9db68446fa7881e",
+      "bytes": 4193848,
+      "storage_key": "data/storage/research/sha256/3f/3f6af015a9cbcfbc6ddfaea1750ef1aa4a5d3f7dd929bfb2c9db68446fa7881e.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0002.006.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0002.006.umich.edu.pdf",
+      "sha256": "330ad3c96d40ca256998185ef2b286622b0e6e65ef7ae6430dfedd8d8422fb9e",
+      "bytes": 5296778,
+      "storage_key": "data/storage/research/sha256/33/330ad3c96d40ca256998185ef2b286622b0e6e65ef7ae6430dfedd8d8422fb9e.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0002.007.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0002.007.umich.edu.pdf",
+      "sha256": "65a648a366b6dc22662379f3d76904ef99cfc0f00022a2d61b7fdf996b18bae7",
+      "bytes": 6145416,
+      "storage_key": "data/storage/research/sha256/65/65a648a366b6dc22662379f3d76904ef99cfc0f00022a2d61b7fdf996b18bae7.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0002.008.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0002.008.umich.edu.pdf",
+      "sha256": "d0eaec275be8396a265a410850ddb055c59bc1c29f8ab2af8b3de6da75907e8e",
+      "bytes": 6788271,
+      "storage_key": "data/storage/research/sha256/d0/d0eaec275be8396a265a410850ddb055c59bc1c29f8ab2af8b3de6da75907e8e.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0002.009.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0002.009.umich.edu.pdf",
+      "sha256": "80674c87d3d772a207e96f4d39d9e36a1672479308be3ab38553b6c312bc01c4",
+      "bytes": 5443455,
+      "storage_key": "data/storage/research/sha256/80/80674c87d3d772a207e96f4d39d9e36a1672479308be3ab38553b6c312bc01c4.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0003.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0003.001.umich.edu.pdf",
+      "sha256": "fd4180bd7d0a537f70e48d0ff8ea808feece19e33897673a3919e19ec56b4956",
+      "bytes": 7490743,
+      "storage_key": "data/storage/research/sha256/fd/fd4180bd7d0a537f70e48d0ff8ea808feece19e33897673a3919e19ec56b4956.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0005.002.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0005.002.umich.edu.pdf",
+      "sha256": "eb1fc58d5f88ff940f42ad816c34ac6728a3ebfe3a095f88f495e9125d0e6618",
+      "bytes": 3925365,
+      "storage_key": "data/storage/research/sha256/eb/eb1fc58d5f88ff940f42ad816c34ac6728a3ebfe3a095f88f495e9125d0e6618.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0005.003.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0005.003.umich.edu.pdf",
+      "sha256": "d0e1f4cd63511724fcd293990d13d5fc0383b0d643661f737c2221342db95eca",
+      "bytes": 5142833,
+      "storage_key": "data/storage/research/sha256/d0/d0e1f4cd63511724fcd293990d13d5fc0383b0d643661f737c2221342db95eca.pdf"
+    },
+    {
+      "source_id": "ia-acw9599.0005.004.umich.edu",
+      "status": "already_present",
+      "original_filename": "acw9599.0005.004.umich.edu.pdf",
+      "sha256": "8fa4b6e6fb5cdd085076442c5ff9a6475e6a10b77c88c604d1452d32aaf0d793",
+      "bytes": 4078410,
+      "storage_key": "data/storage/research/sha256/8f/8fa4b6e6fb5cdd085076442c5ff9a6475e6a10b77c88c604d1452d32aaf0d793.pdf"
+    },
+    {
+      "source_id": "ia-ajb5834.0004.001.umich.edu",
+      "status": "already_present",
+      "original_filename": "ajb5834.0004.001.umich.edu.pdf",
+      "sha256": "2493232c9c8a9d3fa25ed03763055d6d1a406694de8153975820cd27fd704df7",
+      "bytes": 54306095,
+      "storage_key": "data/storage/research/sha256/24/2493232c9c8a9d3fa25ed03763055d6d1a406694de8153975820cd27fd704df7.pdf"
+    },
+    {
+      "source_id": "ia-apronouncinggaz00keimgoog",
+      "status": "already_present",
+      "original_filename": "apronouncinggaz00keimgoog.pdf",
+      "sha256": "0cf96d0fec90479c4db2f6caad6de7846730af326a8f4bdabaca3e3d015f55ae",
+      "bytes": 72816111,
+      "storage_key": "data/storage/research/sha256/0c/0cf96d0fec90479c4db2f6caad6de7846730af326a8f4bdabaca3e3d015f55ae.pdf"
+    },
+    {
+      "source_id": "ia-bontocigorot00jenkgoog",
+      "status": "already_present",
+      "original_filename": "bontocigorot00jenkgoog.pdf",
+      "sha256": "572a65af63f266f6667b2ab95d017ce8af49afa71c2121358dc38a22ba429a1c",
+      "bytes": 12886817,
+      "storage_key": "data/storage/research/sha256/57/572a65af63f266f6667b2ab95d017ce8af49afa71c2121358dc38a22ba429a1c.pdf"
+    },
+    {
+      "source_id": "ia-filipinaspequeo01sastgoog",
+      "status": "already_present",
+      "original_filename": "filipinaspequeo01sastgoog.pdf",
+      "sha256": "6d1f176bbb6d2eb24c9abee894df4c273cc3b1d801501067678e15b9ee344705",
+      "bytes": 8181265,
+      "storage_key": "data/storage/research/sha256/6d/6d1f176bbb6d2eb24c9abee894df4c273cc3b1d801501067678e15b9ee344705.pdf"
+    },
+    {
+      "source_id": "ia-island00forephilippinerich",
+      "status": "already_present",
+      "original_filename": "island00forephilippinerich.pdf",
+      "sha256": "b397eb8ad43d527b49ec2f62bb9bab52b9446ab7798426c7b51d90e9d2556c71",
+      "bytes": 60483435,
+      "storage_key": "data/storage/research/sha256/b3/b397eb8ad43d527b49ec2f62bb9bab52b9446ab7798426c7b51d90e9d2556c71.pdf"
+    },
+    {
+      "source_id": "ia-officialcatalogu00loui_2",
+      "status": "already_present",
+      "original_filename": "officialcatalogu00loui_2.pdf",
+      "sha256": "0c00283f57b34ceb98d159364c753bb7533ea95de86ae950a7e5eaff8203dc16",
+      "bytes": 31129975,
+      "storage_key": "data/storage/research/sha256/0c/0c00283f57b34ceb98d159364c753bb7533ea95de86ae950a7e5eaff8203dc16.pdf"
+    },
+    {
+      "source_id": "ia-officialhandboo00wilsgoog",
+      "status": "already_present",
+      "original_filename": "officialhandboo00wilsgoog.pdf",
+      "sha256": "70bfae20f8adf7983c0076f6ffad9bd3b5ee0717fc91b7b5e8b0478ee6c1f416",
+      "bytes": 17157583,
+      "storage_key": "data/storage/research/sha256/70/70bfae20f8adf7983c0076f6ffad9bd3b5ee0717fc91b7b5e8b0478ee6c1f416.pdf"
+    },
+    {
+      "source_id": "ia-philippinelifei01lerogoog",
+      "status": "already_present",
+      "original_filename": "philippinelifei01lerogoog.pdf",
+      "sha256": "34b2d6a288a74c373c8467f50a069409ec06596bcd64dc1554dec961e5862cf2",
+      "bytes": 4041694,
+      "storage_key": "data/storage/research/sha256/34/34b2d6a288a74c373c8467f50a069409ec06596bcd64dc1554dec961e5862cf2.pdf"
+    },
+    {
+      "source_id": "ia-philippinespast00unkngoog",
+      "status": "already_present",
+      "original_filename": "philippinespast00unkngoog.pdf",
+      "sha256": "54b541ad8bfc6592205d910a4797eb969d6b528c40d0f268e178bc5bdd456383",
+      "bytes": 19313021,
+      "storage_key": "data/storage/research/sha256/54/54b541ad8bfc6592205d910a4797eb969d6b528c40d0f268e178bc5bdd456383.pdf"
+    },
+    {
+      "source_id": "ia-reportofphilippi00philrich",
+      "status": "already_present",
+      "original_filename": "reportofphilippi00philrich.pdf",
+      "sha256": "da9eed0b8626f71937953c5dee2a31d0c5c3ce8534b606f9a979a9ebeb72e361",
+      "bytes": 27703199,
+      "storage_key": "data/storage/research/sha256/da/da9eed0b8626f71937953c5dee2a31d0c5c3ce8534b606f9a979a9ebeb72e361.pdf"
+    },
+    {
+      "source_id": "ia-souvenirofphilip00loui",
+      "status": "already_present",
+      "original_filename": "souvenirofphilip00loui.pdf",
+      "sha256": "1195bef642fe7d53d310000a66d90a4603721a1fbcb802d1e7ae07ff7f5caa21",
+      "bytes": 11146805,
+      "storage_key": "data/storage/research/sha256/11/1195bef642fe7d53d310000a66d90a4603721a1fbcb802d1e7ae07ff7f5caa21.pdf"
+    },
+    {
+      "source_id": "ia-wildtribesofdava122cole",
+      "status": "already_present",
+      "original_filename": "wildtribesofdava122cole.pdf",
+      "sha256": "ef4ed0982839ca6014efd154ce80f47fc7ade7d9b311accb2df14fc8548c1f89",
+      "bytes": 20086903,
+      "storage_key": "data/storage/research/sha256/ef/ef4ed0982839ca6014efd154ce80f47fc7ade7d9b311accb2df14fc8548c1f89.pdf"
+    },
+    {
+      "source_id": "krieger-1926-usnm-bulletin-137",
+      "status": "already_present",
+      "original_filename": "Bulletin_-_United_States_National_Museum_%28IA_bulletinunitedst1371926unit%29.pdf",
+      "sha256": "67b39c14c750232b6cb6678e5a46e21776d8fa995c5ed617f5fdb2c9e6f174b8",
+      "bytes": 12498149,
+      "storage_key": "data/storage/research/sha256/67/67b39c14c750232b6cb6678e5a46e21776d8fa995c5ed617f5fdb2c9e6f174b8.pdf"
+    },
+    {
+      "source_id": "met-gods-of-war",
+      "status": "already_present",
+      "original_filename": "The_Gods_of_War_Sacred_Imagery_and_the_Decoration_of_Arms_and_Armor.pdf",
+      "sha256": "b5924fb3387bdba8c40c6f0ab5b795f8159b71506ce3b113708b9b777e2f77f0",
+      "bytes": 7179863,
+      "storage_key": "data/storage/research/sha256/b5/b5924fb3387bdba8c40c6f0ab5b795f8159b71506ce3b113708b9b777e2f77f0.pdf"
+    }
+  ]
+}

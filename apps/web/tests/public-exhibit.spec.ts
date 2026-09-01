@@ -25,3 +25,12 @@ test("public source register excludes unknown-rights originals", async ({ page }
   await expect(page.getByText("Public domain").first()).toBeVisible();
   await expect(page.getByText("Rights unknown")).toHaveCount(0);
 });
+
+test("research reading room exposes citations but not private research copies", async ({ page }) => {
+  await page.goto("/exhibits/between-two-handles/sources");
+  await expect(page.getByRole("heading", { name: "Books before posts." })).toBeVisible();
+  await expect(page.getByText("Filipinas: pequeños estudios; Batangas y su provincia").first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Cite" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
+  await expect(page.getByText("Access is not publication.")).toBeVisible();
+});
